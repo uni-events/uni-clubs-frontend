@@ -1,4 +1,7 @@
 import logo from "../../Assets/RGS-logo.png";
+import ExecutiveCard from "./components/executivesCard";
+import SocialsCard from "./components/socialsCard";
+import EventsCardsWidget from "./eventsCardsWidget";
 const ClubInfo = () => {
   const longStr =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae massa in rutrum. Maecenas nec consectetur libero. Fusce in dapibus tortor, sit amet faucibus arcu. Suspendisse vel nunc turpis. Pellentesque justo risus, gravida et metus id, vestibulum rutrum libero. Donec molestie vehicula ornare. Quisque ultrices odio ac ante tincidunt egestas.";
@@ -22,17 +25,14 @@ const ClubInfo = () => {
               <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
                 Club Name Club Name (CN CN)
               </h1>
-              <p className=" text-md mt-4 text-black dark:text-WhiteBG">
+              <p className=" text-md mt-4 text-black dark:text-WhiteBG max-w-4xl">
                 {longStr}
               </p>
+              <EventsCardsWidget />
             </div>
             <div className="flex flex-col md:col-span-1 space-y-8">
-              <div className="w-full h-fit p-4 rounded-lg bg-BlueGrey dark:bg-BlueBlack">
-                {longStr}
-              </div>
-              <div className="w-full h-fit p-4 rounded-lg bg-BlueGrey dark:bg-BlueBlack">
-                {longStr}
-              </div>
+              <ExecutiveCard />
+              <SocialsCard />
             </div>
           </div>
         </div>
