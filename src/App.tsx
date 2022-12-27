@@ -8,7 +8,7 @@ import AdminDashboard from "./Screens/Admin/Dashboard/adminDashboard";
 import AdminReview from "./Screens/Admin/Reviews/review";
 import ManageEvents from "./Screens/Admin/ManageEvents/manageEvents";
 import ClubDetails from "./Screens/Admin/ClubDetails/clubDetails";
-import ClubPage from "./Screens/Club/clubInfo";
+import ClubPage from "./Screens/Club/clubPage";
 function App() {
   return (
     <div>

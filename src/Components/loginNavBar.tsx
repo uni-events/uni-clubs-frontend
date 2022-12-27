@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const LoginNavbar = () => {
   return (
     <>
-      <nav className="relative mx-auto p-6">
+      <nav className="sticky top-0 z-30 bg-WhiteBG dark:bg-BlueBlack h-fit mx-auto p-6">
         <div className="flex items-center justify-between">
           <button className="block md:hidden">
             <svg
