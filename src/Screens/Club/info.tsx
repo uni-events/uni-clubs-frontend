@@ -36,7 +36,9 @@ const ClubInfo = () => {
               <SocialsCard />
             </div>
           </div>
-          <MerchandiseWidget />
+          <div className="-translate-y-12 md:-translate-y-24 mt-12">
+            <MerchandiseWidget />
+          </div>
         </div>
       </div>
     </>

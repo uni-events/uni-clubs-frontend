@@ -3,7 +3,7 @@ import logo from "../../../../Assets/RGS-logo.png";
 const ClubTile = () => {
   return (
     <>
-      <body className="p-2 bg-BlueGrey dark:bg-BlackBG rounded-lg">
+      <body className="p-2 bg-BlueGrey dark:bg-BlueBlack rounded-lg">
         <div className="relative">
           <img
             className="rounded-lg w-full h-24 object-cover mb-6"

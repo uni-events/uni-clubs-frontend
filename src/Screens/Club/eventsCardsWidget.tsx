@@ -3,7 +3,7 @@ import EventCard from "./components/eventCard";
 const EventsCardsWidget = () => {
   return (
     <>
-      <div className="my-8">
+      <div className="mt-8">
         <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
           Upcoming Events
         </h1>
