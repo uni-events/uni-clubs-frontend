@@ -2,6 +2,7 @@ import logo from "../../Assets/RGS-logo.png";
 import ExecutiveCard from "./components/executivesCard";
 import SocialsCard from "./components/socialsCard";
 import EventsCardsWidget from "./eventsCardsWidget";
+import MerchandiseWidget from "./merchandiseWidget";
 const ClubInfo = () => {
   const longStr =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae massa in rutrum. Maecenas nec consectetur libero. Fusce in dapibus tortor, sit amet faucibus arcu. Suspendisse vel nunc turpis. Pellentesque justo risus, gravida et metus id, vestibulum rutrum libero. Donec molestie vehicula ornare. Quisque ultrices odio ac ante tincidunt egestas.";
@@ -35,6 +36,7 @@ const ClubInfo = () => {
               <SocialsCard />
             </div>
           </div>
+          <MerchandiseWidget />
         </div>
       </div>
     </>
