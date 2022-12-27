@@ -1,27 +1,44 @@
+import logo from "../../Assets/RGS-logo.png";
+import ExecutiveCard from "./components/executivesCard";
+import SocialsCard from "./components/socialsCard";
+import EventsCardsWidget from "./eventsCardsWidget";
+import MerchandiseWidget from "./merchandiseWidget";
 const ClubInfo = () => {
+  const longStr =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae massa in rutrum. Maecenas nec consectetur libero. Fusce in dapibus tortor, sit amet faucibus arcu. Suspendisse vel nunc turpis. Pellentesque justo risus, gravida et metus id, vestibulum rutrum libero. Donec molestie vehicula ornare. Quisque ultrices odio ac ante tincidunt egestas.";
   return (
     <>
-      <div className=" mt-0">
+      <div>
         <div
-          className=" bg-fixed h-40"
+          className="bg-fixed h-40 md:h-96"
           style={{
             backgroundImage: `url(${require("../../Assets/page-banner.png")})`,
           }}
-        ></div>
-        <div className="bg-white p-4 sm:p-8">
-          <div className="font-inter font-extrabold text-2xl text-black tracking-tight">
-            My trip to the summit
+        />
+        <div className="bg-WhiteBG dark:bg-BlackBG p-4 mx-6 md:mx-12">
+          <img
+            className="-translate-y-12 h-24 w-24 md:h-32 md:w-32 md:-translate-y-24 bg-center object-cover drop-shadow-lg"
+            src={logo}
+            alt="logo"
+          />
+          <div className="flex flex-col md:grid md:grid-cols-4 -translate-y-12 md:-translate-y-24 mt-8 space-y-8">
+            <div className="flex flex-col md:col-span-3">
+              <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
+                Club Name Club Name (CN CN)
+              </h1>
+              <p className=" text-md mt-4 text-black dark:text-WhiteBG max-w-4xl">
+                {longStr}
+              </p>
+              <EventsCardsWidget />
+            </div>
+            <div className="flex flex-col md:col-span-1 space-y-8">
+              <ExecutiveCard />
+              <SocialsCard />
+            </div>
           </div>
-          <div className="mt-1 font-medium text-sm text-slate-500">
-            November 16, 2021 · 4 min read
+          <div className="-translate-y-12 md:-translate-y-24 mt-12">
+            <MerchandiseWidget />
           </div>
-          <p className="mt-4 leading-7 text-slate-500">
-            Maybe we can live without libraries, people like you and me. Maybe.
-            Sure, we're too old to change the world, but what about that kid,
-            sitting down, opening a book, right now, in a branch at the local
-            library and finding drawings of pee-pees and wee-wees on the Cat in
-            the Hat and the Five Chinese Brothers? Doesn't HE deserve better?
-          </p>
         </div>
       </div>
     </>
