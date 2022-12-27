@@ -4,23 +4,37 @@ const ClubInfo = () => {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae massa in rutrum. Maecenas nec consectetur libero. Fusce in dapibus tortor, sit amet faucibus arcu. Suspendisse vel nunc turpis. Pellentesque justo risus, gravida et metus id, vestibulum rutrum libero. Donec molestie vehicula ornare. Quisque ultrices odio ac ante tincidunt egestas.";
   return (
     <>
-      <div className=" mt-0">
+      <div>
         <div
-          className=" bg-fixed h-40 md:h-96"
+          className="bg-fixed h-40 md:h-96"
           style={{
             backgroundImage: `url(${require("../../Assets/page-banner.png")})`,
           }}
         />
         <div className="bg-WhiteBG dark:bg-BlackBG p-4 mx-6 md:mx-12">
           <img
-            className="-translate-y-12 h-24 w-24 md:h-32 md:w-32 md:-translate-y-24 bg-center object-cover"
+            className="-translate-y-12 h-24 w-24 md:h-32 md:w-32 md:-translate-y-24 bg-center object-cover drop-shadow-lg"
             src={logo}
             alt="logo"
           />
-          <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
-            Club Name Club Name (CN CN)
-          </h1>
-          <p className=" text-md text-black dark:text-WhiteBG">{longStr}</p>
+          <div className="flex flex-col md:grid md:grid-cols-4 -translate-y-12 md:-translate-y-24 mt-8 space-y-8">
+            <div className="flex flex-col md:col-span-3">
+              <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
+                Club Name Club Name (CN CN)
+              </h1>
+              <p className=" text-md mt-4 text-black dark:text-WhiteBG">
+                {longStr}
+              </p>
+            </div>
+            <div className="flex flex-col md:col-span-1 space-y-8">
+              <div className="w-full h-fit p-4 rounded-lg bg-BlueGrey dark:bg-BlueBlack">
+                {longStr}
+              </div>
+              <div className="w-full h-fit p-4 rounded-lg bg-BlueGrey dark:bg-BlueBlack">
+                {longStr}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
