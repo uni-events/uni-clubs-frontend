@@ -12,6 +12,7 @@ const Navbar = () => {
               xmlns="http://www.w3.org/2000/svg"
               height="40"
               width="40"
+              viewBox=" 0 0 40 40"
             >
               <path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z" />
             </svg>
@@ -29,7 +30,6 @@ const Navbar = () => {
             >
               Discover
             </NavLink>
-
             <NavLink
               to="/events"
               className="text-Blue text-2xl font-bold hover:text-Green hover:underline underline-offset-4 mt-1 hidden md:flex"
