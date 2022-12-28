@@ -12,7 +12,7 @@ const Event = () => {
           <div className="flex flex-col my-2 space-y-2 p-4">
             <h1 className="font-bold ">Weekly Meetup</h1>
             {doEdit ? (
-              <textarea className="p-4 rounded-md h-24 max-h-128 dark:bg-BlackBG dark:text-white">
+              <textarea className="p-4 rounded-md h-24 max-h-128 focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white">
                 {eventStr}
               </textarea>
             ) : (
@@ -31,7 +31,7 @@ const Event = () => {
               </svg>
               {doEdit ? (
                 <input
-                  className="rounded-md dark:bg-BlackBG dark:text-white"
+                  className="rounded-md dark:bg-BlackBG dark:text-white focus:outline-none focus:ring-2 focus:ring-Green"
                   type="datetime-local"
                 />
               ) : (
