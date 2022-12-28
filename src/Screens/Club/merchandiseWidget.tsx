@@ -13,9 +13,6 @@ const MerchandiseWidget = () => {
           <MerchCard />
           <MerchCard />
           <MerchCard />
-          <MerchCard />
-          <MerchCard />
-          <MerchCard />
         </div>
       </div>
     </>

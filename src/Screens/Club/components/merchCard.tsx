@@ -9,7 +9,7 @@ const MerchCard = () => {
           alt="merch"
         />
         <div className="h-fit w-64 p-4 text-left bg-BlueGrey dark:bg-BlueBlack text-black dark:text-WhiteBG rounded-b-lg">
-          <h1 className="text-lg font-bold">Exquisite Marvelous Keychain</h1>
+          <h1 className="text-lg font-bold">Keychain Keychain Keychain</h1>
           <p className="text-base">$45</p>
         </div>
       </div>
