@@ -13,7 +13,7 @@ const Social = () => {
         </div>
 
         <div className="flex flex-col">
-          <h1 className="text-lg font-bold">Discord Server</h1>
+          <h1 className="text-md font-semibold">Discord Server</h1>
           <p className="text-md font-extralight">1803 Members</p>
         </div>
       </div>

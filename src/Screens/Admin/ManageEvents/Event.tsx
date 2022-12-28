@@ -7,12 +7,12 @@ const Event = () => {
 
   return (
     <>
-      <div className="flex flex-row my-2 h-fit  ">
-        <div className="flex flex-col w-5/6 p-4 bg-BlueGrey rounded-l-lg">
+      <div className="flex flex-row my-2 h-fit">
+        <div className="flex flex-col w-5/6 p-4 bg-BlueGrey dark:bg-BlueBlack dark:text-white rounded-l-lg">
           <div className="flex flex-col my-2 space-y-2 p-4">
             <h1 className="font-bold ">Weekly Meetup</h1>
             {doEdit ? (
-              <textarea className="p-4 rounded-md h-24 max-h-128">
+              <textarea className="p-4 rounded-md h-24 max-h-128 focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white">
                 {eventStr}
               </textarea>
             ) : (
@@ -30,7 +30,10 @@ const Event = () => {
                 <path d="M14.5 18q-1.05 0-1.775-.725Q12 16.55 12 15.5q0-1.05.725-1.775Q13.45 13 14.5 13q1.05 0 1.775.725Q17 14.45 17 15.5q0 1.05-.725 1.775Q15.55 18 14.5 18ZM5 22q-.825 0-1.413-.587Q3 20.825 3 20V6q0-.825.587-1.412Q4.175 4 5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588Q21 5.175 21 6v14q0 .825-.587 1.413Q19.825 22 19 22Zm0-2h14V10H5v10ZM5 8h14V6H5Zm0 0V6v2Z" />
               </svg>
               {doEdit ? (
-                <input className="rounded-md" type="datetime-local" />
+                <input
+                  className="rounded-md dark:bg-BlackBG dark:text-white focus:outline-none focus:ring-2 focus:ring-Green"
+                  type="datetime-local"
+                />
               ) : (
                 <h1>19th December 11:00am</h1>
               )}
@@ -72,7 +75,7 @@ const Event = () => {
           </div>
         ) : (
           <button
-            className="flex flex-col items-center justify-center w-1/6 p-4 bg-LightBlueGrey hover:bg-BlueGrey rounded-r-lg"
+            className="flex flex-col items-center justify-center w-1/6 p-4 bg-LightBlueGrey hover:bg-BlueGrey dark:bg-LightBlueBlack dark:hover:bg-BlueBlack dark:text-white  rounded-r-lg"
             onClick={() => setDoEdit(!doEdit)}
           >
             <svg

@@ -12,8 +12,8 @@ const ExecutiveInfo = () => {
         </div>
 
         <div className="flex flex-col">
-          <h1 className="text-lg font-bold">Name Name Exec</h1>
-          <p className="text-md font-extralight">President</p>
+          <h1 className="text-md font-semibold">Name Name Exec</h1>
+          <p className="text-base font-extralight">President</p>
         </div>
       </div>
     </>
