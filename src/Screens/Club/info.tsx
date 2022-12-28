@@ -4,6 +4,7 @@ import SocialsCard from "./components/socialsCard";
 import EventsCardsWidget from "./components/eventsCardsWidget";
 import MerchandiseWidget from "./components/merchandiseWidget";
 import AnnouncementsWidget from "./components/announcementsWidget";
+import FeesCard from "./components/feesCard";
 
 const ClubInfo = () => {
   const longStr =
@@ -36,6 +37,7 @@ const ClubInfo = () => {
             </div>
             <div className="flex flex-col md:col-span-1 space-y-8">
               <ExecutiveCard />
+              <FeesCard />
               <SocialsCard />
             </div>
           </div>
