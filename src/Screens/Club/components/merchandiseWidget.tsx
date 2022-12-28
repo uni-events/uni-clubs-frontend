@@ -1,4 +1,4 @@
-import MerchCard from "./components/merchCard";
+import MerchCard from "./merchCard";
 
 const MerchandiseWidget = () => {
   return (
