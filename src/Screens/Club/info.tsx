@@ -1,8 +1,10 @@
 import logo from "../../Assets/RGS-logo.png";
 import ExecutiveCard from "./components/executivesCard";
 import SocialsCard from "./components/socialsCard";
-import EventsCardsWidget from "./eventsCardsWidget";
-import MerchandiseWidget from "./merchandiseWidget";
+import EventsCardsWidget from "./components/eventsCardsWidget";
+import MerchandiseWidget from "./components/merchandiseWidget";
+import AnnouncementsWidget from "./components/announcementsWidget";
+
 const ClubInfo = () => {
   const longStr =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae massa in rutrum. Maecenas nec consectetur libero. Fusce in dapibus tortor, sit amet faucibus arcu. Suspendisse vel nunc turpis. Pellentesque justo risus, gravida et metus id, vestibulum rutrum libero. Donec molestie vehicula ornare. Quisque ultrices odio ac ante tincidunt egestas.";
@@ -21,15 +23,16 @@ const ClubInfo = () => {
             src={logo}
             alt="logo"
           />
-          <div className="flex flex-col md:grid md:grid-cols-4 -translate-y-12 md:-translate-y-24 mt-8 space-y-8">
+          <div className="flex flex-col md:grid md:grid-cols-4  -translate-y-12 md:-translate-y-24 mt-8 md:space-x-4 space-y-8">
             <div className="flex flex-col md:col-span-3">
               <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
                 Club Name Club Name (CN CN)
               </h1>
-              <p className=" text-md mt-4 text-black dark:text-WhiteBG max-w-4xl">
+              <p className="text-md mt-4 text-black dark:text-WhiteBG max-w-4xl">
                 {longStr}
               </p>
               <EventsCardsWidget />
+              <AnnouncementsWidget />
             </div>
             <div className="flex flex-col md:col-span-1 space-y-8">
               <ExecutiveCard />

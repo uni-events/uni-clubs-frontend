@@ -1,4 +1,4 @@
-import MerchCard from "./components/merchCard";
+import MerchCard from "./merchCard";
 
 const MerchandiseWidget = () => {
   return (
@@ -8,9 +8,6 @@ const MerchandiseWidget = () => {
           Merchandise
         </h1>
         <div className="flex flex-row mt-4 w-full space-x-8 h-full pb-32 snap-x snap-mandatory overflow-y-hidden overflow-x-scroll  scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-lg">
-          <MerchCard />
-          <MerchCard />
-          <MerchCard />
           <MerchCard />
           <MerchCard />
           <MerchCard />

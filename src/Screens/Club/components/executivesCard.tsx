@@ -1,10 +1,40 @@
-const ExecutiveCard = () => {
-  const longStr =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae massa in rutrum. Maecenas nec consectetur libero. Fusce in dapibus tortor, sit amet faucibus arcu. Suspendisse vel nunc turpis. Pellentesque justo risus, gravida et metus id, vestibulum rutrum libero. Donec molestie vehicula ornare. Quisque ultrices odio ac ante tincidunt egestas.";
+import pfp from "../../../Assets/pfp.png";
+const ExecutiveInfo = () => {
   return (
     <>
-      <div className="w-full h-fit p-4 rounded-lg bg-BlueGrey dark:bg-BlueBlack text-black dark:text-WhiteBG">
-        {longStr}
+      <div className="flex flex-row space-x-4">
+        <div className="my-auto">
+          <img
+            className="h-12 w-12 rounded-lg object-cover bg-center"
+            src={pfp}
+            alt="pfp"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <h1 className="text-lg font-bold">Name Name Exec</h1>
+          <p className="text-md font-extralight">President</p>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const ExecutiveCard = () => {
+  return (
+    <>
+      <div className="w-full h-fit p-4 space-y-2 rounded-lg bg-BlueGrey dark:bg-BlueBlack text-black dark:text-WhiteBG">
+        <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
+          Current Executives
+        </h1>
+        <div className="flex flex-col space-y-2">
+          <ExecutiveInfo />
+          <ExecutiveInfo />
+          <ExecutiveInfo />
+          <ExecutiveInfo />
+          <ExecutiveInfo />
+          <ExecutiveInfo />
+        </div>
       </div>
     </>
   );
