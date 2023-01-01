@@ -1,10 +1,10 @@
 import logo from "../../Assets/RGS-logo.png";
 import ExecutiveCard from "./components/executivesCard";
 import SocialsCard from "./components/socialsCard";
-import EventsCardsWidget from "./components/eventsCardsWidget";
 import MerchandiseWidget from "./components/merchandiseWidget";
 import AnnouncementsWidget from "./components/announcementsWidget";
 import FeesCard from "./components/feesCard";
+import EventsCarousel from "./components/eventsCarousel";
 
 const ClubInfo = () => {
   const longStr =
@@ -24,7 +24,7 @@ const ClubInfo = () => {
             src={logo}
             alt="logo"
           />
-          <div className="flex flex-col md:grid md:grid-cols-4  -translate-y-12 md:-translate-y-24 mt-8 md:space-x-4 space-y-8">
+          <div className="flex flex-col md:grid md:grid-cols-4 -translate-y-12 md:-translate-y-24 mt-8 md:space-x-4 space-y-8">
             <div className="flex flex-col md:col-span-3">
               <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
                 Club Name Club Name (CN CN)
@@ -32,7 +32,7 @@ const ClubInfo = () => {
               <p className="text-md mt-4 text-black dark:text-WhiteBG max-w-4xl">
                 {longStr}
               </p>
-              <EventsCardsWidget />
+              <EventsCarousel />
               <AnnouncementsWidget />
             </div>
             <div className="flex flex-col md:col-span-1 space-y-8">
