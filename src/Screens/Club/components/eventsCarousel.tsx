@@ -46,7 +46,7 @@ const EventsCarousel = () => {
 
   return (
     <>
-      <div className="w-full h-full">
+      <div className="w-full h-fit">
         <h1 className="text-2xl font-bold text-black dark:text-WhiteBG mt-8">
           Upcoming Events
         </h1>
@@ -116,7 +116,7 @@ const EventsCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-fit w-full justify-center p-4">
+        <div className="flex h-fit w-full justify-center px-2 pb-2 pt-4">
           {CarouselData.map((element, index) => {
             return (
               <div
