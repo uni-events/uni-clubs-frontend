@@ -3,22 +3,32 @@ import React, { useState } from "react";
 const EventsCarousel = () => {
   const CarouselData = [
     {
+      name: "Weekly Meetup 1",
+      date: "Wed 28th December",
       image:
         "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80",
     },
     {
+      name: "Weekly Meetup 2",
+      date: "Wed 28th December",
       image:
         "https://images.unsplash.com/photo-1501446529957-6226bd447c46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1489&q=80",
     },
     {
+      name: "Weekly Meetup 3",
+      date: "Wed 28th December",
       image:
         "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
     },
     {
+      name: "Weekly Meetup 4",
+      date: "Wed 28th December",
       image:
         "https://images.unsplash.com/photo-1475189778702-5ec9941484ae?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80",
     },
     {
+      name: "Weekly Meetup 5",
+      date: "Wed 28th December",
       image:
         "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
     },
@@ -61,16 +71,31 @@ const EventsCarousel = () => {
             <div className="w-full h-96 flex overflow-hidden relative">
               {CarouselData.map((slide, index) => {
                 return (
-                  <img
-                    src={slide.image}
-                    alt="This is a carousel slide"
-                    key={index}
-                    className={
-                      index === cState
-                        ? "block w-full h-auto object-cover bg-center"
-                        : "hidden"
-                    }
-                  />
+                  <>
+                    <div className="flex flex-col">
+                      <img
+                        src={slide.image}
+                        alt="This is a carousel slide"
+                        key={index}
+                        className={
+                          index === cState
+                            ? "block w-full h-full object-cover bg-center rounded-xl"
+                            : "hidden"
+                        }
+                      />
+                      <div
+                        key={index}
+                        className={
+                          index === cState
+                            ? "block w-fit h-fit rounded-xl p-4 text-black bg-WhiteBG dark:bg-BlueBlack dark:text-WhiteBG -translate-y-24 translate-x-4 drop-shadow-lg"
+                            : "hidden"
+                        }
+                      >
+                        <h1 className="text-xl font-bold">{slide.name}</h1>
+                        <p className="text-base font-light">{slide.date}</p>
+                      </div>
+                    </div>
+                  </>
                 );
               })}
             </div>
@@ -91,7 +116,7 @@ const EventsCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-fit w-full justify-center p-2">
+        <div className="flex h-fit w-full justify-center p-4">
           {CarouselData.map((element, index) => {
             return (
               <div
