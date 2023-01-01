@@ -24,7 +24,7 @@ const ClubInfo = () => {
             src={logo}
             alt="logo"
           />
-          <div className="flex flex-col md:grid md:grid-cols-4  -translate-y-12 md:-translate-y-24 mt-8 md:space-x-4 space-y-8">
+          <div className="flex flex-col md:grid md:grid-cols-4 -translate-y-12 md:-translate-y-24 mt-8 md:space-x-4 space-y-8">
             <div className="flex flex-col md:col-span-3">
               <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
                 Club Name Club Name (CN CN)
