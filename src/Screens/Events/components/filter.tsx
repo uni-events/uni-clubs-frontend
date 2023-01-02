@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { CategoryData, FilterData } from "../../../Data/dataTypes";
-import Slider from "../../../Components/slider";
+import { CategoryData, FilterData, sliderOpts } from "../../../Data/dataTypes";
 
 const EventsFilter = () => {
   const Filters: Array<FilterData> = [
@@ -13,7 +12,7 @@ const EventsFilter = () => {
       opposite: "Off Campus",
     },
     {
-      name: "Free Food",
+      name: "Food & Drinks",
       opposite: "No Food",
     },
   ];
@@ -61,22 +60,67 @@ const EventsFilter = () => {
 
   let BoolArrInit: boolean[] = [];
 
-  Filters.forEach((f) => {
-    BoolArrInit.push(false);
-  });
-
   Categories.forEach((f) => {
     BoolArrInit.push(false);
   });
   BoolArrInit[0] = true;
-
   const [catState, setCatState] = useState([...BoolArrInit]);
-  const [filterState, setFilterState] = useState([...BoolArrInit]);
+
+  let BoolArrInitFilter: sliderOpts[] = [];
+  Filters.forEach((f) => {
+    BoolArrInitFilter.push({ op1: false, op2: false });
+  });
+  const [filterState, setFilterState] = useState([...BoolArrInitFilter]);
 
   return (
     <>
       <div className="h-full w-full p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg">
-        <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center">
+        <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center ">
+          Filters
+        </h1>
+        <div className="space-y-4 mt-4">
+          {Filters.map((filters, index) => {
+            return (
+              <>
+                <div className="flex flex-row space-x-4 text-white text-md font-bold">
+                  <button
+                    onClick={() => {
+                      filterState[index].op1 = !filterState[index].op1;
+                      if (filterState[index].op2) {
+                        filterState[index].op2 = !filterState[index].op2;
+                      }
+                      setFilterState([...filterState]);
+                    }}
+                    className={`w-full rounded-lg p-1 ${
+                      filterState[index].op1
+                        ? "bg-Green hover:bg-DarkGreen"
+                        : "bg-Blue hover:bg-DarkBlue"
+                    }`}
+                  >
+                    <div className="text-center">{filters.name}</div>
+                  </button>
+                  <button
+                    onClick={() => {
+                      filterState[index].op2 = !filterState[index].op2;
+                      if (filterState[index].op1) {
+                        filterState[index].op1 = !filterState[index].op1;
+                      }
+                      setFilterState([...filterState]);
+                    }}
+                    className={`w-full rounded-lg p-1 ${
+                      filterState[index].op2
+                        ? "bg-Green hover:bg-DarkGreen"
+                        : "bg-Blue hover:bg-DarkBlue"
+                    }`}
+                  >
+                    <div className="text-center">{filters.opposite}</div>
+                  </button>
+                </div>
+              </>
+            );
+          })}
+        </div>
+        <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center mt-4">
           Categories
         </h1>
         <div className="space-y-4 mt-4">
@@ -97,31 +141,6 @@ const EventsFilter = () => {
                   </h1>
                 </button>
               </div>
-            );
-          })}
-        </div>
-        <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center mt-4">
-          Filters
-        </h1>
-        <div className="space-y-4 mt-4">
-          {Filters.map((filters, index) => {
-            return (
-              <>
-                <Slider option1={filters.name} option2={filters.opposite} />
-              </>
-              // <div className="flex flex-row space-x-2" key={index}>
-              //   <button
-              //     onClick={() => {
-              //       filterState[index] = !filterState[index];
-              //       setFilterState([...filterState]);
-              //     }}
-              //     className={`w-full h-fit p-1 text-white text-md font-extrabold rounded-lg ${
-              //       !filterState[index] ? "bg-Blue" : "bg-Green"
-              //     }`}
-              //   >
-              //     <h1>{filters.name}</h1>
-              //   </button>
-              // </div>
             );
           })}
         </div>
