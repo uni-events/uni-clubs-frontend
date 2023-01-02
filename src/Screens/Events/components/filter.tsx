@@ -58,21 +58,22 @@ const EventsFilter = () => {
     },
   ];
 
-  let BoolArrInit: boolean[] = [];
+  let BoolArrInitCategory: boolean[] = [];
 
   Categories.forEach((f) => {
-    BoolArrInit.push(false);
+    BoolArrInitCategory.push(false);
   });
-  BoolArrInit[0] = true;
-  const [catState, setCatState] = useState([...BoolArrInit]);
+  BoolArrInitCategory[0] = true;
+  const [catState, setCatState] = useState([...BoolArrInitCategory]);
 
   let BoolArrInitFilter: sliderOpts[] = [];
   Filters.forEach((f) => {
     BoolArrInitFilter.push({ op1: false, op2: false });
   });
   const [filterState, setFilterState] = useState([...BoolArrInitFilter]);
+
   const resetFilters = () => {
-    setCatState([...BoolArrInit]);
+    setCatState([...BoolArrInitCategory]);
     setFilterState([...BoolArrInitFilter]);
   };
 
@@ -82,8 +83,11 @@ const EventsFilter = () => {
         <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center ">
           Filters
         </h1>
-        <button className="text-center" onClick={() => resetFilters()}>
-          Reset All Filters
+        <button
+          className="text-center"
+          onClick={() => setFilterState([...BoolArrInitFilter])}
+        >
+          Reset Filters
         </button>
         <div className="space-y-4 mt-4">
           {Filters.map((filters, index) => {
@@ -130,6 +134,12 @@ const EventsFilter = () => {
         <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center mt-4">
           Categories
         </h1>
+        <button
+          className="text-center"
+          onClick={() => setCatState([...BoolArrInitCategory])}
+        >
+          Reset Categories
+        </button>
         <div className="space-y-4 mt-4">
           {Categories.map((category, index) => {
             return (
