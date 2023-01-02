@@ -36,6 +36,12 @@ const Navbar = () => {
             >
               Events
             </NavLink>
+            <NavLink
+              to="/Announcements"
+              className="text-Blue text-2xl font-bold hover:text-Green hover:underline underline-offset-4 mt-1 hidden md:flex"
+            >
+              Announcements
+            </NavLink>
           </div>
           <button className="bg-Blue h-fit w-fit px-4 py-2 rounded-lg xs:hidden md:block hover:bg-Green">
             <NavLink
