@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-interface sliderOpt {
-  option1: string;
-  option2: string;
-}
 const Slider = ({ option1, option2 }: sliderOpt) => {
   const [op1, setOp1] = useState(2);
 
