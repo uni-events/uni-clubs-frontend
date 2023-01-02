@@ -10,6 +10,7 @@ import ManageEvents from "./Screens/Admin/ManageEvents/manageEvents";
 import ClubDetails from "./Screens/Admin/ClubDetails/clubDetails";
 import ClubPage from "./Screens/Club/clubPage";
 import EventPage from "./Screens/Events/eventPage";
+import AnnouncementPage from "./Screens/Announcemets/announcementPage";
 function App() {
   return (
     <div>
@@ -22,6 +23,7 @@ function App() {
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/manage-events" element={<ManageEvents />} />
           <Route path="/events" element={<EventPage />} />
+          <Route path="/Announcements" element={<AnnouncementPage />} />
           <Route path="/reviews" element={<AdminReview />} />
           <Route path="/club" element={<ClubPage />} />
           <Route path="/club-details" element={<ClubDetails />} />
