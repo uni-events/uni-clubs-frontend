@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { EventsCardData } from "../../../Data/dataTypes";
 
 const EventsCarousel = () => {
-  const CarouselData = [
+  const CarouselData: EventsCardData[] = [
     {
       name: "Weekly Meetup 1",
       date: "Wed 28th December",
