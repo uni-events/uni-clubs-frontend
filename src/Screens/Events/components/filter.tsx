@@ -71,6 +71,10 @@ const EventsFilter = () => {
     BoolArrInitFilter.push({ op1: false, op2: false });
   });
   const [filterState, setFilterState] = useState([...BoolArrInitFilter]);
+  const resetFilters = () => {
+    setCatState([...BoolArrInit]);
+    setFilterState([...BoolArrInitFilter]);
+  };
 
   return (
     <>
@@ -78,6 +82,9 @@ const EventsFilter = () => {
         <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center ">
           Filters
         </h1>
+        <button className="text-center" onClick={() => resetFilters()}>
+          Reset All Filters
+        </button>
         <div className="space-y-4 mt-4">
           {Filters.map((filters, index) => {
             return (
@@ -129,7 +136,9 @@ const EventsFilter = () => {
               <div key={index}>
                 <button
                   onClick={() => {
-                    catState[index] = !catState[index];
+                    if (index !== 0) {
+                      catState[index] = !catState[index];
+                    }
                     setCatState([...catState]);
                   }}
                   className={`w-full h-fit p-1 rounded-lg ${
