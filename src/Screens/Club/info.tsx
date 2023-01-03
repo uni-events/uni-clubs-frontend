@@ -12,7 +12,7 @@ const ClubInfo = () => {
     <>
       <div>
         <div
-          className="bg-fixed h-40 md:h-96"
+          className="bg-fixed bg-no-repeat h-40 md:h-96"
           style={{
             backgroundImage: `url(${require("../../Assets/page-banner.png")})`,
           }}
