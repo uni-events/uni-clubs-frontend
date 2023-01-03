@@ -9,17 +9,13 @@ const Discover = () => {
 
   return (
     <>
-      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG  overflow-x-hidden">
+      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden">
         <Navbar />
         <div className="flex flex-col max-w-screen-xl mx-auto my-6 md:flex-row ">
-          <div className="w-full block">
-            <div className=" flex flex-row ">
-              <div className="w-full">
-                <SearchBar />
-              </div>
-
+          <div className="w-full block px-4 space-y-4">
+            <div className="flex flex-row space-x-4">
               <button
-                className="bg-BlueGrey h-12 w-12 px-2 mr-6 rounded-lg xs:block md:hidden dark:bg-BlueBlack"
+                className="bg-BlueGrey h-fit w-fit p-3 rounded-lg xs:block md:hidden dark:bg-BlueBlack"
                 onClick={() => setShowFilter(!showFilter)}
               >
                 <svg
@@ -31,6 +27,9 @@ const Discover = () => {
                   <path d="M11 21v-6h2v2h8v2h-8v2Zm-8-2v-2h6v2Zm4-4v-2H3v-2h4V9h2v6Zm4-2v-2h10v2Zm4-4V3h2v2h4v2h-4v2ZM3 7V5h10v2Z" />
                 </svg>
               </button>
+              <div className="flex w-full ">
+                <SearchBar purpose="Clubs" />
+              </div>
             </div>
             <div className={`${showFilter ? "hidden md:block" : "block"}`}>
               <ClubTiles />
