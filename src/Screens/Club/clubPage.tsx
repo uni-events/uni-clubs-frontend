@@ -6,7 +6,7 @@ const ClubPage = () => {
     <>
       <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG  overflow-x-hidden">
         <Navbar />
-        <h1 className="w-full max-w-7xl h-full mx-auto">
+        <h1 className="w-full max-w-screen-xl h-full mx-auto">
           <ClubInfo />
         </h1>
       </div>
