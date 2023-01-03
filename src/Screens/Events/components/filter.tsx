@@ -77,18 +77,42 @@ const EventsFilter = () => {
     setFilterState([...BoolArrInitFilter]);
   };
 
+  const handleFilterClick = (index: number) => {
+    filterState[index].op1 = !filterState[index].op1;
+    if (filterState[index].op2) {
+      filterState[index].op2 = !filterState[index].op2;
+    }
+    setFilterState([...filterState]);
+  };
+
+  const handleCategoryClick = (index: number) => {
+    if (index !== 0) {
+      catState[index] = !catState[index];
+      catState[0] = false;
+      setCatState([...catState]);
+    }
+    if (index === 0) {
+      setCatState([...BoolArrInitCategory]);
+    }
+  };
+
   return (
     <>
       <div className="h-full w-full p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg">
-        <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center ">
-          Filters
-        </h1>
-        <button
-          className="text-center"
-          onClick={() => setFilterState([...BoolArrInitFilter])}
-        >
-          Reset Filters
+        <button className="text-center" onClick={() => resetFilters()}>
+          Reset All Filters
         </button>
+        <div className="flex flex-row justify-between">
+          <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center ">
+            Filters
+          </h1>
+          <button
+            className="text-center text-sm"
+            onClick={() => setFilterState([...BoolArrInitFilter])}
+          >
+            Reset Filters
+          </button>
+        </div>
         <div className="space-y-4 mt-4">
           {Filters.map((filters, index) => {
             return (
@@ -96,11 +120,7 @@ const EventsFilter = () => {
                 <div className="flex flex-row space-x-4 text-white text-md font-bold">
                   <button
                     onClick={() => {
-                      filterState[index].op1 = !filterState[index].op1;
-                      if (filterState[index].op2) {
-                        filterState[index].op2 = !filterState[index].op2;
-                      }
-                      setFilterState([...filterState]);
+                      handleFilterClick(index);
                     }}
                     className={`w-full rounded-lg p-1 ${
                       filterState[index].op1
@@ -131,25 +151,24 @@ const EventsFilter = () => {
             );
           })}
         </div>
-        <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center mt-4">
-          Categories
-        </h1>
-        <button
-          className="text-center"
-          onClick={() => setCatState([...BoolArrInitCategory])}
-        >
-          Reset Categories
-        </button>
+        <div className="flex flex-row justify-between mt-4">
+          <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center ">
+            Categories
+          </h1>
+          <button
+            className="text-center text-sm "
+            onClick={() => setCatState([...BoolArrInitCategory])}
+          >
+            Reset Categories
+          </button>
+        </div>
         <div className="space-y-4 mt-4">
           {Categories.map((category, index) => {
             return (
               <div key={index}>
                 <button
                   onClick={() => {
-                    if (index !== 0) {
-                      catState[index] = !catState[index];
-                    }
-                    setCatState([...catState]);
+                    handleCategoryClick(index);
                   }}
                   className={`w-full h-fit p-1 rounded-lg ${
                     !catState[index] ? "bg-Blue" : "bg-Green"
