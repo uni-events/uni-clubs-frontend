@@ -72,11 +72,6 @@ const EventsFilter = () => {
   });
   const [filterState, setFilterState] = useState([...BoolArrInitFilter]);
 
-  const resetFilters = () => {
-    setCatState([...BoolArrInitCategory]);
-    setFilterState([...BoolArrInitFilter]);
-  };
-
   const handleFilterClick = (index: number) => {
     filterState[index].op1 = !filterState[index].op1;
     if (filterState[index].op2) {
@@ -108,7 +103,7 @@ const EventsFilter = () => {
               className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
               onClick={() => setFilterState([...BoolArrInitFilter])}
             >
-              Reset Filters
+              Reset
             </button>
           </div>
         </div>
@@ -159,7 +154,7 @@ const EventsFilter = () => {
               className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
               onClick={() => setCatState([...BoolArrInitCategory])}
             >
-              Reset Categories
+              Reset
             </button>
           </div>
         </div>
@@ -182,14 +177,6 @@ const EventsFilter = () => {
               </div>
             );
           })}
-        </div>
-        <div className="flex flex-col justify-center mt-4">
-          <button
-            className="text-center h-fit p-1 font-bold w-full text-base rounded-lg bg-Red hover:bg-DarkRed"
-            onClick={() => resetFilters()}
-          >
-            Reset All
-          </button>
         </div>
       </div>
     </>
