@@ -108,7 +108,7 @@ const EventsFilter = () => {
               className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
               onClick={() => setFilterState([...BoolArrInitFilter])}
             >
-              Reset Filters
+              Reset
             </button>
           </div>
         </div>
@@ -159,7 +159,7 @@ const EventsFilter = () => {
               className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
               onClick={() => setCatState([...BoolArrInitCategory])}
             >
-              Reset Categories
+              Reset
             </button>
           </div>
         </div>
