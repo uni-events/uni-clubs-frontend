@@ -28,7 +28,7 @@ const ClubInfo = () => {
               <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
                 Club Name Club Name (CN CN)
               </h1>
-              <p className="text-md mt-4 text-black dark:text-WhiteBG max-w-4xl">
+              <p className="text-base mt-4 text-black dark:text-WhiteBG max-w-4xl">
                 {longStr}
               </p>
               <EventsCarousel />

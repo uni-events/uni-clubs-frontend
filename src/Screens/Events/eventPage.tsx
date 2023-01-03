@@ -12,7 +12,7 @@ const EventPage = () => {
     <>
       <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden">
         <Navbar />
-        <div className="flex flex-row w-full h-full max-w-none mx-auto grid-cols-3 space-x-4">
+        <div className="flex flex-row w-full h-full max-w-screen-xl mx-auto grid-cols-3 space-x-4">
           <div
             className={`w-1/4 h-fit col-span-1 hidden lg:block ${
               showFilter ? "block" : "hidden md:block"
