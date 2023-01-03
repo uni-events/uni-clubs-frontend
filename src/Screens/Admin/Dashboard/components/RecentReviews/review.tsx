@@ -3,7 +3,7 @@ const ReviewPreview = () => {
     <>
       <div className="w-full">
         <div className="flex flex-col sm:flex-row  items-center justify-between px-4 pt-4">
-          <h1 className="text-md md:text-lg font-bold ">ANONYMOUS</h1>
+          <h1 className="text-base md:text-lg font-bold ">ANONYMOUS</h1>
           <div className="grid grid-cols-5 gap-0.5">
             <svg
               className="fill-black dark:fill-WhiteBG"

@@ -80,7 +80,7 @@ const EventsCarousel = () => {
                         key={index}
                         className={
                           index === cState
-                            ? "block w-full h-full object-cover bg-center rounded-xl"
+                            ? "block w-full h-full object-cover bg-center rounded-xl bg-no-repeat"
                             : "hidden"
                         }
                       />

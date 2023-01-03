@@ -12,7 +12,7 @@ const ExecutiveInfo = () => {
         </div>
 
         <div className="flex flex-col">
-          <h1 className="text-md font-semibold">Name Name Exec</h1>
+          <h1 className="text-base font-semibold">Name Name Exec</h1>
           <p className="text-base font-extralight">President</p>
         </div>
       </div>

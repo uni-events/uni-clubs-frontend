@@ -4,7 +4,7 @@ const Event = () => {
       <div className="w-full">
         <div className="flex flex-row sm:flex-col sm:grid sm:grid-cols-5 gap-4 my-4">
           <div className="flex flex-col col-span-1 ">
-            <h1 className="text-center text-md md:text-lg font-semibold overflow-clip">
+            <h1 className="text-center text-base md:text-lg font-semibold overflow-clip">
               19th Dec
             </h1>
             <h1 className="text-center text-sm md:text-base ">11:00am</h1>
