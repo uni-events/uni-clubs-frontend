@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { longStr } from "../../../Data/dataTypes";
 
-const TempEvent = () => {
+const EventsListEdit = () => {
   const EventDetails = [
     {
       name: "Weekly Meetup",
@@ -79,4 +79,4 @@ const TempEvent = () => {
     </>
   );
 };
-export default TempEvent;
+export default EventsListEdit;
