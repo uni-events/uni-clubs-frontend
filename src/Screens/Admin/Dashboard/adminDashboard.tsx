@@ -9,12 +9,12 @@ const AdminDashboard = () => {
     <>
       <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden">
         <AdminNavbar />
-        <div className="grid grid-cols-1 max-w-screen-xl xl:w-3/4 mx-8 lg:mx-auto lg:px-8 content-center md:grid-cols-3 gap-8 my-12">
-          <div className="col-span-1 space-y-8">
+        <div className="flex flex-col lg:flex-row w-full max-w-screen-xl mx-auto px-4 content-center gap-8 my-12">
+          <div className="flex flex-col w-full lg:w-1/4 space-y-8">
             <StatisticsCard />
             <WeeklyTip />
           </div>
-          <div className="col-span-1 md:col-span-2 space-y-8">
+          <div className="flex flex-col w-full lg:w-3/4 md:col-span-2 space-y-8">
             <RecentReviews />
             <EventCard />
           </div>
