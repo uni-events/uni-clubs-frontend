@@ -38,8 +38,8 @@ const TempEvent = () => {
                 <div className="">{event.time}</div>
                 <div className="">{event.tags}</div>
               </div>
-              <div className="flex flex-row float-right mt-4">
-                {!editState[index] ? (
+              {!editState[index] ? (
+                <div className="flex flex-row float-left mt-4">
                   <button
                     className="text-white font-bold bg-Green hover:bg-DarkGreen px-4 py-2 w-fit h-fit rounded-lg"
                     onClick={() => {
@@ -49,29 +49,29 @@ const TempEvent = () => {
                   >
                     Edit
                   </button>
-                ) : (
-                  <div className="space-x-4 ">
-                    <button
-                      className="text-white font-bold bg-Red hover:bg-DarkRed px-4 py-2 w-fit h-fit rounded-lg"
-                      onClick={() => {
-                        editState[index] = false;
-                        setEditState([...editState]);
-                      }}
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      className="text-white font-bold bg-Blue hover:bg-DarkBlue px-4 py-2 w-fit h-fit rounded-lg"
-                      onClick={() => {
-                        editState[index] = false;
-                        setEditState([...editState]);
-                      }}
-                    >
-                      Save
-                    </button>
-                  </div>
-                )}
-              </div>
+                </div>
+              ) : (
+                <div className="flex flex-row justify-between space-x-4 mt-4">
+                  <button
+                    className="text-white font-bold bg-Red hover:bg-DarkRed px-4 py-2 w-fit h-fit rounded-lg"
+                    onClick={() => {
+                      editState[index] = false;
+                      setEditState([...editState]);
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className="text-white font-bold bg-Blue hover:bg-DarkBlue px-4 py-2 w-fit h-fit rounded-lg"
+                    onClick={() => {
+                      editState[index] = false;
+                      setEditState([...editState]);
+                    }}
+                  >
+                    Save
+                  </button>
+                </div>
+              )}
             </div>
           </>
         );
