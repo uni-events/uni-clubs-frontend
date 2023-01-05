@@ -7,10 +7,10 @@ const Event = () => {
 
   return (
     <>
-      <div className="flex flex-row my-2 h-fit">
-        <div className="flex flex-col w-5/6 p-4 bg-BlueGrey dark:bg-BlueBlack dark:text-white rounded-l-lg">
+      <div className="flex flex-row w-full h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-white rounded-l-lg">
+        <div className="flex flex-col w-5/6 p-4">
           <div className="flex flex-col my-2 space-y-2 p-4">
-            <h1 className="font-bold ">Weekly Meetup</h1>
+            <h1 className="font-bold text-xl">Weekly Meetup</h1>
             {doEdit ? (
               <textarea className="p-4 rounded-md h-24 max-h-128 focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white">
                 {eventStr}
@@ -58,37 +58,19 @@ const Event = () => {
             </div>
           </div>
         </div>
-        {doEdit ? (
-          <div className="flex flex-col items-center w-1/6">
-            <button
-              className="h-1/2 w-full text-white text-xl font-bold bg-Red hover:bg-DarkRed rounded-tr-lg "
-              onClick={() => setDoEdit(!doEdit)}
-            >
-              Cancel
-            </button>
-            <button
-              className="text-white text-xl font-bold bg-Blue hover:bg-DarkBlue w-full h-1/2 rounded-br-lg"
-              onClick={() => setDoEdit(!doEdit)}
-            >
-              Save
-            </button>
-          </div>
-        ) : (
-          <button
-            className="flex flex-col items-center justify-center w-1/6 p-4 bg-LightBlueGrey hover:bg-BlueGrey dark:bg-LightBlueBlack dark:hover:bg-BlueBlack dark:text-white  rounded-r-lg"
-            onClick={() => setDoEdit(!doEdit)}
-          >
-            <svg
-              className="fill-black  dark:fill-WhiteBG"
-              xmlns="http://www.w3.org/2000/svg"
-              height="48"
-              width="48"
-            >
-              <path d="M24 42v-3.55l10.8-10.8 3.55 3.55L27.55 42ZM6 31.5v-3h15v3Zm34.5-2.45-3.55-3.55 1.45-1.45q.4-.4 1.05-.4t1.05.4l1.45 1.45q.4.4.4 1.05t-.4 1.05ZM6 23.25v-3h23.5v3ZM6 15v-3h23.5v3Z" />
-            </svg>
-            <h1>Edit Event</h1>
+      </div>
+      <div className="flex flex-row mx-4 content-center justify-between right">
+        <button className="text-white bg-Green hover:bg-DarkGreen px-4 py-2 w-fit h-fit rounded-lg">
+          Edit
+        </button>
+        <div className="space-x-4">
+          <button className="text-white bg-Red hover:bg-DarkRed px-4 py-2 w-fit h-fit rounded-lg">
+            Cancel
           </button>
-        )}
+          <button className="text-white bg-Blue hover:bg-DarkBlue px-4 py-2 w-fit h-fit rounded-lg">
+            Save
+          </button>
+        </div>
       </div>
     </>
   );

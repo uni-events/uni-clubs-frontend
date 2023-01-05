@@ -1,17 +1,18 @@
 import AdminNavbar from "../../../Components/adminNavbar";
 import Event from "./Event";
+import TempEvent from "./TempEvent";
 
 const ManageEvents = () => {
   return (
     <>
       <div className="w-screen h-screen items-center bg-WhiteBG dark:bg-BlackBG overflow-x-hidden">
         <AdminNavbar />
-        <div className="grid grid-cols-1 my-12 max-w-screen-xl xl:w-3/4 mx-8 lg:mx-auto lg:px-8 content-center gap-8">
+        <div className="flex flex-col mt-12 px-4 max-w-screen-xl mx-auto space-y-8">
+          <TempEvent />
+          {/* <Event />
           <Event />
           <Event />
-          <Event />
-          <Event />
-          <Event />
+          <Event /> */}
         </div>
       </div>
     </>

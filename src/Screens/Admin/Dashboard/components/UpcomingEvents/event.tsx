@@ -3,8 +3,8 @@ import { longStr } from "../../../../../Data/dataTypes";
 const Event = () => {
   return (
     <>
-      <div className="w-full">
-        <div className="flex flex-row sm:flex-col sm:grid sm:grid-cols-5 gap-4 my-4">
+      <div className="w-full my-4">
+        <div className="flex flex-row sm:flex-col sm:grid sm:grid-cols-5 gap-4">
           <div className="flex flex-col col-span-1 ">
             <h1 className="text-center text-base md:text-lg font-semibold overflow-clip">
               19th Dec
