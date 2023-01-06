@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { EventDetailsData, longStr } from "../../../Data/dataTypes";
-import { inputToDate } from "./timeFormat";
+import { dateToInput, inputToDate } from "./timeFormat";
 import DatePickerComponent from "./datePicker";
+import TimePicker from "./timePicker";
 
 const EventDetails: EventDetailsData[] = [
   {
@@ -12,7 +13,7 @@ const EventDetails: EventDetailsData[] = [
   },
   {
     name: "Weekly BBQ",
-    time: "2023-06-01T08:30",
+    time: "2023-06-01T22:30",
     description: longStr,
     tags: ["no-food", "paid"],
   },
@@ -153,7 +154,7 @@ const ViewAllEventCards = () => {
     };
 
     const changeDate = (event: any) => {
-      eventDetails.time = event.target.value;
+      eventDetails.time = dateToInput(event);
       setEventDetails({ ...eventDetails });
     };
 
@@ -198,24 +199,16 @@ const ViewAllEventCards = () => {
           </textarea>
 
           <div className="flex flex-row justify-between mt-2">
-            <DatePickerComponent />
-            {/* <div className="text-base md:text-lg rounded-md p-2 bg-WhiteBG dark:bg-BlackBG dark:text-white focus:outline-none focus:ring-2 focus:ring-Green">
-              <Datetime onChange={changeDate} />
-            </div> */}
-            {/* <input
-              className="text-base md:text-lg rounded-md p-2 bg-WhiteBG dark:bg-BlackBG dark:text-white focus:outline-none focus:ring-2 focus:ring-Green"
-              style={{}}
-              type="datetime-local"
-              name="event-time"
-              value={eventDetails.time}
-              onChange={changeDate}
-            /> */}
-
-            {/* <DateTimePicker
-              calendarClassName="text-base md:text-lg rounded-md p-2 bg-WhiteBG dark:bg-BlackBG dark:text-white focus:outline-none focus:ring-2 focus:ring-Green"
-              onChange={changeDate}
-              // value={new Date(eventDetails.time)}
-            /> */}
+            <div className="flex flex-row space-x-4">
+              <DatePickerComponent
+                onChange={changeDate}
+                value={new Date(eventDetails.time)}
+              />
+              <TimePicker
+                date={new Date(eventDetails.time)}
+                onChange={changeDate}
+              />
+            </div>
             <div className="flex flex-row space-x-4 bg-WhiteBG dark:bg-BlackBG p-4 rounded-lg">
               <button
                 onClick={() => handleIconClick("food", index)}

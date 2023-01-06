@@ -12,15 +12,20 @@ import {
 
 type DatepickerType = "date" | "month" | "year";
 
-const DatePickerComponent = () => {
+const DatePickerComponent = ({
+  onChange,
+  value,
+}: {
+  onChange: Function;
+  value: Date;
+}) => {
   const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const [dayCount, setDayCount] = useState<Array<number>>([]);
   const [blankDays, setBlankDays] = useState<Array<number>>([]);
   const [showDatepicker, setShowDatepicker] = useState(false);
   const [datepickerHeaderDate, setDatepickerHeaderDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(value);
   const [type, setType] = useState<DatepickerType>("date");
-
   const decrement = () => {
     switch (type) {
       case "date":
@@ -64,6 +69,7 @@ const DatePickerComponent = () => {
       )
     );
     setShowDatepicker(false);
+    onChange(selectedDate);
   };
 
   const getDayCount = (date: Date) => {
@@ -228,7 +234,7 @@ const DatePickerComponent = () => {
                       key={i}
                       style={{ width: "14.26%" }}
                       className="text-center border p-1 border-transparent text-sm"
-                    ></div>
+                    />
                   ))}
                   {dayCount.map((d, i) => (
                     <div
@@ -281,14 +287,14 @@ const DatePickerComponent = () => {
                   ))}
               </div>
             )}{" "}
-            {/* {type === "year" && (
+            {/* {{type === "year" && (
                       <Datepicker
                         datepickerHeaderDate={datepickerHeaderDate}
                         selectedDate={selectedDate}
                         setSelectedDate={setSelectedDate}
                         closeDatepicker={() => setShowDatepicker(false)}
                       />
-                    )} */}
+              )}} */}
           </div>
         )}
       </div>
