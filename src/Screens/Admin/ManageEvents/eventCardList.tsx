@@ -4,7 +4,7 @@ import { EventDetailsData, longStr } from "../../../Data/dataTypes";
 const EventDetails: EventDetailsData[] = [
   {
     name: "Weekly Meetup",
-    time: "19th December 11:00am",
+    time: "2023-06-01T08:30",
     description: longStr,
     tags: ["food", "free"],
   },
@@ -33,7 +33,7 @@ EventDetails.forEach(() => {
   BoolEditStateInit.push(false);
 });
 
-// defining sets of tags and opposites
+// defining sets of 1ags and opposites
 const iconTagSet: { tag: string; tagOpp: string }[] = [
   { tag: "free", tagOpp: "paid" },
   { tag: "paid", tagOpp: "free" },
@@ -43,24 +43,9 @@ const iconTagSet: { tag: string; tagOpp: string }[] = [
 
 const ViewAllEventCards = () => {
   let [editState, setEditState] = useState([...BoolEditStateInit]);
-  let [tempEventsInfoState, setTempEventsInfoState] = useState([
-    ...EventDetails,
-  ]);
   let [finalEventsInfoState, setFinalEventsInfoState] = useState([
     ...EventDetails,
   ]);
-  const handleIconClick = (icon: string, index: number) => {
-    let currTag = iconTagSet.find((t) => t.tag === icon);
-    // removing the current tag
-    tempEventsInfoState[index].tags = tempEventsInfoState[index].tags.filter(
-      (tag) => tag !== icon
-    );
-    // pushing the opposite tag as it is a toggle button
-    if (currTag !== undefined) {
-      tempEventsInfoState[index].tags.push(currTag.tagOpp);
-    }
-    setTempEventsInfoState([...tempEventsInfoState]);
-  };
 
   const ViewEventCard = ({
     event,
@@ -146,25 +131,82 @@ const ViewAllEventCards = () => {
     event: EventDetailsData;
     index: number;
   }) => {
+    const eventDetailsInit = {
+      name: event.name,
+      description: event.description,
+      time: event.time,
+      tags: event.tags,
+    };
+    const [eventDetails, setEventDetails] = useState({ ...eventDetailsInit });
+
+    const changeName = (event: any) => {
+      eventDetails.name = event.target.value;
+      setEventDetails({ ...eventDetails });
+    };
+
+    const changeDescription = (event: any) => {
+      eventDetails.description = event.target.value;
+      setEventDetails({ ...eventDetails });
+    };
+
+    const changeDate = (event: any) => {
+      eventDetails.time = event.target.value;
+      setEventDetails({ ...eventDetails });
+    };
+
+    const handleSave = () => {
+      editState[index] = false;
+      setEditState([...editState]);
+      finalEventsInfoState[index] = eventDetails;
+      setFinalEventsInfoState([...finalEventsInfoState]);
+    };
+
+    const handleCancel = () => {
+      editState[index] = false;
+      setEditState([...editState]);
+    };
+
+    const handleIconClick = (icon: string, index: number) => {
+      let currTag = iconTagSet.find((t) => t.tag === icon);
+      // removing the current tag
+      eventDetails.tags = eventDetails.tags.filter((tag) => tag !== icon);
+      // pushing the opposite tag as it is a toggle button
+      if (currTag !== undefined) {
+        eventDetails.tags.push(currTag.tagOpp);
+      }
+      setEventDetails({ ...eventDetails });
+    };
+
     return (
       <>
         <div className="w-full h-fit p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg">
           <input
-            placeholder={event.name}
+            placeholder={eventDetails.name}
             className="text-xl font-bold p-2 rounded-md w-1/4 h-fit focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white"
+            value={eventDetails.name}
+            onChange={changeName}
           />
-          <textarea className="p-4 rounded-md w-full h-fit max-h-128 mt-4 focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white">
-            {event.description}
+          <textarea
+            className="p-4 rounded-md w-full h-fit max-h-128 mt-4 focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white"
+            value={eventDetails.description}
+            onChange={changeDescription}
+          >
+            {eventDetails.description}
           </textarea>
           <div className="flex flex-row justify-between mt-2">
             <input
               className="rounded-md p-2 dark:bg-BlackBG dark:text-white focus:outline-none focus:ring-2 focus:ring-Green"
               type="datetime-local"
+              name="event-time"
+              value={eventDetails.time}
+              onChange={changeDate}
             />
             <div className="flex flex-row space-x-4">
               <button
                 onClick={() => handleIconClick("food", index)}
-                className={event.tags.includes("food") ? "block" : "hidden"}
+                className={
+                  eventDetails.tags.includes("food") ? "block" : "hidden"
+                }
               >
                 <svg
                   className=" fill-black dark:fill-WhiteBG"
@@ -177,7 +219,9 @@ const ViewAllEventCards = () => {
               </button>
               <button
                 onClick={() => handleIconClick("no-food", index)}
-                className={event.tags.includes("no-food") ? "block" : "hidden"}
+                className={
+                  eventDetails.tags.includes("no-food") ? "block" : "hidden"
+                }
               >
                 <svg
                   className="fill-black dark:fill-WhiteBG"
@@ -191,7 +235,9 @@ const ViewAllEventCards = () => {
 
               <button
                 onClick={() => handleIconClick("paid", index)}
-                className={event.tags.includes("paid") ? "block" : "hidden"}
+                className={
+                  eventDetails.tags.includes("paid") ? "block" : "hidden"
+                }
               >
                 <svg
                   className="fill-black dark:fill-WhiteBG"
@@ -204,7 +250,9 @@ const ViewAllEventCards = () => {
               </button>
               <button
                 onClick={() => handleIconClick("free", index)}
-                className={event.tags.includes("free") ? "block" : "hidden"}
+                className={
+                  eventDetails.tags.includes("free") ? "block" : "hidden"
+                }
               >
                 <svg
                   className="fill-black dark:fill-WhiteBG"
@@ -221,9 +269,7 @@ const ViewAllEventCards = () => {
             <button
               className="text-white font-bold bg-Red hover:bg-DarkRed px-4 py-2 w-fit h-fit rounded-lg"
               onClick={() => {
-                editState[index] = false;
-                setEditState([...editState]);
-                setTempEventsInfoState([...EventDetails]);
+                handleCancel();
               }}
             >
               Cancel
@@ -231,9 +277,7 @@ const ViewAllEventCards = () => {
             <button
               className="text-white font-bold bg-Blue hover:bg-DarkBlue px-4 py-2 w-fit h-fit rounded-lg"
               onClick={() => {
-                editState[index] = false;
-                setEditState([...editState]);
-                setFinalEventsInfoState([...tempEventsInfoState]);
+                handleSave();
               }}
             >
               Save
