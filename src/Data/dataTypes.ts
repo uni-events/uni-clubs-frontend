@@ -23,3 +23,9 @@ export interface EventDetailsData {
   description: string;
   tags: string[];
 }
+
+export interface TimeData {
+  hours: number;
+  minutes: number;
+  indicator: string;
+}

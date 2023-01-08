@@ -8,6 +8,7 @@ import {
   isEqual,
   getDaysInMonth,
   getDay,
+  setDate,
 } from "date-fns";
 
 type DatepickerType = "date" | "month" | "year";
@@ -54,13 +55,15 @@ const DatePickerComponent = ({
     }
   };
 
-  const isToday = (date: number) =>
-    isEqual(
+  const isToday = (date: number) => {
+    const isTodayBool: boolean = isEqual(
       new Date(selectedDate.getFullYear(), selectedDate.getMonth(), date),
       selectedDate
     );
+    return isTodayBool;
+  };
 
-  const setDateValue = (date: number) => () => {
+  const setDateValue = (date: number) => {
     setSelectedDate(
       new Date(
         datepickerHeaderDate.getFullYear(),
@@ -68,8 +71,16 @@ const DatePickerComponent = ({
         date
       )
     );
-    setShowDatepicker(false);
-    onChange(selectedDate);
+    // do not touch this variable, as the useState
+    // for selectedDate does not update its value
+    // right after being called above
+    const chosenDate = new Date(
+      datepickerHeaderDate.getFullYear(),
+      datepickerHeaderDate.getMonth(),
+      date
+    );
+    toggleDatepicker();
+    onChange(chosenDate);
   };
 
   const getDayCount = (date: Date) => {
@@ -243,7 +254,9 @@ const DatePickerComponent = ({
                       className="px-1 mb-1"
                     >
                       <div
-                        onClick={setDateValue(d)}
+                        onClick={() => {
+                          setDateValue(d);
+                        }}
                         className={`cursor-pointer text-center text-sm rounded-lg leading-loose transition ease-in-out duration-100 ${
                           isToday(d)
                             ? "dark:bg-Green bg-Blue text-white"
