@@ -1,13 +1,18 @@
 import { useState } from "react";
+import { TimeData } from "../../../Data/dataTypes";
+import { format } from "date-fns";
+import { dateAndTimeToDate } from "./timeFormat";
 
 const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
-  const [showTimerPicker, setShowTimerPicker] = useState(false);
-  const timeInit = {
-    hours: date.getHours(),
-    minutes: date.getMinutes(),
-    indicator: "am",
+  const timeFormatArr = format(new Date(date), "hh mm aaaaa'm'").split(" ");
+
+  let timeInit: TimeData = {
+    hours: Number(timeFormatArr[0]),
+    minutes: Number(timeFormatArr[1]),
+    indicator: String(timeFormatArr[2]).toUpperCase(),
   };
-  const [selectTime, setSelectTime] = useState(timeInit);
+
+  const [selectTime, setSelectTime] = useState({ ...timeInit });
   const [fullDate, setFullDate] = useState(date);
 
   const setTimeValue = (date: Date) => () => {
@@ -21,53 +26,70 @@ const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
       )
     );
     setSelectTime({
-      hours: selectTime.hours,
-      minutes: selectTime.minutes,
-      indicator: selectTime.indicator,
+      ...{
+        hours: selectTime.hours,
+        minutes: selectTime.minutes,
+        indicator: selectTime.indicator,
+      },
     });
     onChange(fullDate);
   };
+  const handleHourOpt = (event: any) => {
+    selectTime.hours = event.target.value;
+    setSelectTime({ ...selectTime });
+    setFullDate(dateAndTimeToDate(date, selectTime));
+  };
 
-  const hoursOptions: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const hoursOptions: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const minuteOptions: number[] = [0, 15, 30, 45];
+  const indicatorOptions: string[] = ["AM", "PM"];
   return (
     <>
       <div className="h-fit w-fit flex items-center justify-center bg-WhiteBG dark:bg-BlackBG rounded-lg ">
         <div className="flex flex-row p-4">
           <select
             name="hours"
-            className="cursor-pointer px-1 bg-transparent text-base appearance-none outline-none hover:bg-Green "
-            placeholder={String(selectTime.hours)}
+            className="cursor-pointer text-black dark:text-white px-1 bg-transparent text-base appearance-none outline-none hover:bg-Blue dark:hover:bg-Green "
+            onChange={handleHourOpt}
           >
-            {hoursOptions.map((hourOpt, index) => (
-              <option className="text-base" value={hourOpt}>
-                {Number(hourOpt)}
-              </option>
-            ))}
+            {hoursOptions.map((hourOpt) =>
+              selectTime.hours === hourOpt ? (
+                <option value={hourOpt} selected className="text-base">
+                  {hourOpt}
+                </option>
+              ) : (
+                <option className="text-base">{hourOpt}</option>
+              )
+            )}
           </select>
           <span className="text-base px-1">:</span>
           <select
             name="minutes"
-            className="cursor-pointer px-1 bg-transparent text-base appearance-none outline-none hover:bg-Green"
-            placeholder={String(selectTime.minutes)}
+            className="cursor-pointer px-1 bg-transparent text-base appearance-none outline-none hover:bg-Blue dark:hover:bg-Green"
           >
-            {minuteOptions.map((minuteOpt, index) => (
-              <option className="text-base" value={Number(minuteOpt)}>
-                {minuteOpt}
-              </option>
-            ))}
+            {minuteOptions.map((minuteOpt, index) =>
+              selectTime.minutes === minuteOpt ? (
+                <option selected className="text-base">
+                  {minuteOpt}
+                </option>
+              ) : (
+                <option className="text-base">{minuteOpt}</option>
+              )
+            )}
           </select>
           <select
             name="ampm"
-            className="cursor-pointer px-1 bg-transparent text-base appearance-none outline-none hover:bg-Green"
-            placeholder={String(selectTime.indicator)}
+            className="cursor-pointer px-1 bg-transparent text-base appearance-none outline-none hover:bg-Blue dark:hover:bg-Green"
           >
-            <option className="text-base" value="am">
-              AM
-            </option>
-            <option className="text-base" value="pm">
-              PM
-            </option>
+            {indicatorOptions.map((indicatorOpt, index) =>
+              selectTime.indicator === indicatorOpt ? (
+                <option selected className="text-base">
+                  {indicatorOpt}
+                </option>
+              ) : (
+                <option className="text-base">{indicatorOpt}</option>
+              )
+            )}
           </select>
           <div className="pl-7 pr-1">
             <svg
