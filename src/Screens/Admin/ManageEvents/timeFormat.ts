@@ -8,6 +8,17 @@ export const dateToInput = (date: Date): string => {
   return format(new Date(date), "yyyy-mm-dd'T'hh:mm");
 };
 
+export const dateToDay = (date: Date): string => {
+  const dateStr =
+    String(date.getFullYear()) +
+    "-" +
+    String(date.getMonth()) +
+    "-" +
+    String(date.getDay());
+
+  return dateStr;
+};
+
 export const dateAndTimeToDate = (date: Date, selectedTime: TimeData) => {
   let hours: number = Number(selectedTime.hours);
   let indicator = selectedTime.indicator;

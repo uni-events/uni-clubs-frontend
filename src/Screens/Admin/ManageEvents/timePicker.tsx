@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TimeData } from "../../../Data/dataTypes";
-import { format } from "date-fns";
-import { dateAndTimeToDate } from "./timeFormat";
+import { format, parse } from "date-fns";
+import { dateAndTimeToDate, dateToDay } from "./timeFormat";
 
 const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
   const timeFormatArr = format(new Date(date), "hh mm aaaaa'm'").split(" ");
@@ -15,29 +15,43 @@ const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
   const [selectTime, setSelectTime] = useState({ ...timeInit });
   const [fullDate, setFullDate] = useState(date);
 
-  const setTimeValue = (date: Date) => () => {
-    setFullDate(
-      new Date(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDay(),
-        date.getHours(),
-        date.getMinutes()
-      )
-    );
-    setSelectTime({
-      ...{
-        hours: selectTime.hours,
-        minutes: selectTime.minutes,
-        indicator: selectTime.indicator,
-      },
-    });
-    onChange(fullDate);
-  };
-  const handleHourOpt = (event: any) => {
-    selectTime.hours = event.target.value;
+  // const setTimeValue = (date: Date) => () => {
+  //   setFullDate(
+  //     new Date(
+  //       date.getFullYear(),
+  //       date.getMonth(),
+  //       date.getDay(),
+  //       date.getHours(),
+  //       date.getMinutes()
+  //     )
+  //   );
+  //   setSelectTime({
+  //     ...{
+  //       hours: selectTime.hours,
+  //       minutes: selectTime.minutes,
+  //       indicator: selectTime.indicator,
+  //     },
+  //   });
+  //   const chosenDate: Date = new Date();
+  //   console.log(date);
+  //   onChange(chosenDate);
+  // };
+
+  const handleIndicatorOpt = (event: any) => {
+    selectTime.indicator = event.target.value;
     setSelectTime({ ...selectTime });
-    setFullDate(dateAndTimeToDate(date, selectTime));
+  };
+
+  const handleHourOpt = (event: any) => {
+    let hours: number = Number(event.target.value);
+    if (selectTime.indicator === "PM") {
+      hours += 12;
+    }
+    fullDate.setHours(hours);
+    console.log(hours);
+  };
+  const handleMinsOpt = (event: any) => {
+    fullDate.setMinutes(event.target.value);
   };
 
   const hoursOptions: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -80,6 +94,7 @@ const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
           <select
             name="ampm"
             className="cursor-pointer px-1 bg-transparent text-base appearance-none outline-none hover:bg-Blue dark:hover:bg-Green"
+            onChange={handleIndicatorOpt}
           >
             {indicatorOptions.map((indicatorOpt, index) =>
               selectTime.indicator === indicatorOpt ? (
