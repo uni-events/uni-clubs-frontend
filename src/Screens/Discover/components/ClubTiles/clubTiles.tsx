@@ -16,12 +16,48 @@ const ClubTiles = () => {
       logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
       banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
     },
+
+    {
+      clubStr: "csesoc",
+      name: "CSE Society",
+      description: longStr,
+      logo: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
+      banner: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
+    },
+    {
+      clubStr: "catsoc",
+      name: "Cat Appreciation Society",
+      description: longStr,
+      logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
+      banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
+    },
     {
       clubStr: "cserevue",
       name: "Computer Science and Engineering Revue",
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
       banner: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
+    },
+    {
+      clubStr: "dogsoc",
+      name: "Dog Appreciation Society",
+      description: longStr,
+      logo: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
+      banner: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
+    },
+    {
+      clubStr: "digisoc",
+      name: "Digital Society UNSW",
+      description: longStr,
+      logo: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
+      banner: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
+    },
+    {
+      clubStr: "catsoc",
+      name: "Cat Appreciation Society",
+      description: longStr,
+      logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
+      banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
     },
     {
       clubStr: "csesoc",
