@@ -2,7 +2,7 @@ import Navbar from "../../Components/navbar";
 import ClubTiles from "./components/ClubTiles/clubTiles";
 import SearchBar from "./components/searchbar";
 import { useState } from "react";
-import ClubFilter from "./components/filter";
+import DiscoverFilter from "./components/filter";
 
 const Discover = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -11,8 +11,15 @@ const Discover = () => {
     <>
       <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden">
         <Navbar />
-        <div className="flex flex-col max-w-screen-xl mx-auto md:pr-4 my-6 md:flex-row ">
-          <div className="block w-full px-4 space-y-4">
+        <div className="flex flex-col-reverse max-w-screen-xl mx-auto md:pl-4 my-6 md:flex-row ">
+          <div
+            className={`px-4 my-6 w-full md:w-1/4 md:my-0 md:px-0 ${
+              showFilter ? "block" : "hidden md:block"
+            }`}
+          >
+            <DiscoverFilter />
+          </div>
+          <div className="block w-full md:w-3/4 px-4 space-y-4">
             <div className="flex flex-row space-x-4 md:space-x-0">
               <button
                 className="bg-BlueGrey h-fit w-fit p-3 rounded-lg xs:block md:hidden dark:bg-BlueBlack"
@@ -34,13 +41,6 @@ const Discover = () => {
             <div className={`${showFilter ? "hidden md:block" : "block"}`}>
               <ClubTiles />
             </div>
-          </div>
-          <div
-            className={`px-4 my-6 md:my-0 md:px-0 ${
-              showFilter ? "block" : "hidden md:block"
-            }`}
-          >
-            <ClubFilter />
           </div>
         </div>
       </div>
