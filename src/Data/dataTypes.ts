@@ -29,3 +29,11 @@ export interface TimeData {
   minutes: number;
   indicator: string;
 }
+
+export interface ClubTileData {
+  clubStr: string;
+  name: string;
+  description: string;
+  logo: string;
+  banner: string;
+}

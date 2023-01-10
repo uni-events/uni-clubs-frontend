@@ -6,6 +6,10 @@ import DiscoverFilter from "./components/filter";
 
 const Discover = () => {
   const [showFilter, setShowFilter] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+  const handleSearch = (query: string) => {
+    setSearchInput(query);
+  };
 
   return (
     <>
@@ -13,7 +17,7 @@ const Discover = () => {
         <Navbar />
         <div className="flex flex-col-reverse max-w-screen-xl mx-auto md:pl-4 my-6 md:flex-row ">
           <div
-            className={`px-4 my-6 w-full md:w-1/4 md:my-0 md:px-0 ${
+            className={`px-4 my-6 w-full h-full md:w-1/4 md:my-0 md:px-0 ${
               showFilter ? "block" : "hidden md:block"
             }`}
           >
@@ -35,11 +39,11 @@ const Discover = () => {
                 </svg>
               </button>
               <div className="flex w-full">
-                <SearchBar purpose="Clubs" />
+                <SearchBar purpose="Clubs" onChange={handleSearch} />
               </div>
             </div>
             <div className={`${showFilter ? "hidden md:block" : "block"}`}>
-              <ClubTiles />
+              <ClubTiles searchQuery={searchInput} />
             </div>
           </div>
         </div>
