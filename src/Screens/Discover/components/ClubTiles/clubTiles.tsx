@@ -1,8 +1,15 @@
 import { NavLink } from "react-router-dom";
 import { ClubTileData, longStr } from "../../../../Data/dataTypes";
-import { useState } from "react";
 
-const ClubTiles = ({ searchQuery }: { searchQuery: string }) => {
+const ClubTiles = ({
+  searchQuery,
+  filterTags,
+  categoryTags,
+}: {
+  searchQuery: string;
+  filterTags: string[];
+  categoryTags: string[];
+}) => {
   const ClubData: ClubTileData[] = [
     {
       clubStr: "catsoc",
@@ -10,6 +17,8 @@ const ClubTiles = ({ searchQuery }: { searchQuery: string }) => {
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
       banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
+      tags: ["exec"],
+      categories: ["Hobby"],
     },
 
     {
@@ -18,13 +27,8 @@ const ClubTiles = ({ searchQuery }: { searchQuery: string }) => {
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
       banner: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
-    },
-    {
-      clubStr: "catsoc",
-      name: "Cat Appreciation Society",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
+      tags: ["sub", "vol"],
+      categories: ["Academic/Career"],
     },
     {
       clubStr: "cserevue",
@@ -32,6 +36,8 @@ const ClubTiles = ({ searchQuery }: { searchQuery: string }) => {
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
       banner: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
+      tags: ["sub"],
+      categories: ["Hobby"],
     },
     {
       clubStr: "dogsoc",
@@ -39,6 +45,8 @@ const ClubTiles = ({ searchQuery }: { searchQuery: string }) => {
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
       banner: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
+      tags: ["exec"],
+      categories: ["Hobby"],
     },
     {
       clubStr: "digisoc",
@@ -46,74 +54,35 @@ const ClubTiles = ({ searchQuery }: { searchQuery: string }) => {
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
       banner: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
-    },
-    {
-      clubStr: "catsoc",
-      name: "Cat Appreciation Society",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
-    },
-    {
-      clubStr: "csesoc",
-      name: "CSE Society",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
-    },
-    {
-      clubStr: "dogsoc",
-      name: "Dog Appreciation Society",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
-    },
-    {
-      clubStr: "digisoc",
-      name: "Digital Society UNSW",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
-    },
-    {
-      clubStr: "catsoc",
-      name: "Cat Appreciation Society",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
-    },
-    {
-      clubStr: "cserevue",
-      name: "Computer Science and Engineering Revue",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
-    },
-    {
-      clubStr: "csesoc",
-      name: "CSE Society",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
-    },
-    {
-      clubStr: "dogsoc",
-      name: "Dog Appreciation Society",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
-    },
-    {
-      clubStr: "digisoc",
-      name: "Digital Society UNSW",
-      description: longStr,
-      logo: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
+      tags: ["exec"],
+      categories: ["Academic/Career"],
     },
   ];
 
-  const filteredList: ClubTileData[] = ClubData.filter((club) => {
+  // filters results based on search input words and queries
+  let filteredList: ClubTileData[] = ClubData.filter((club) => {
     return club.name.toLowerCase().includes(searchQuery.toLowerCase()) && club;
+  });
+  // filters results based on filter options and category
+  let returnClub = false;
+  filteredList = filteredList.filter((club) => {
+    returnClub = false;
+    // based on filter options
+    if (filterTags.length === 0) {
+      return club;
+    }
+    club.tags.forEach((tag) => {
+      if (filterTags.includes(tag)) {
+        returnClub = true;
+      }
+    });
+    // based on category options
+    club.categories.forEach((category) => {
+      if (categoryTags.includes(category)) {
+        returnClub = true;
+      }
+    });
+    return returnClub && club;
   });
 
   return (
@@ -138,6 +107,7 @@ const ClubTiles = ({ searchQuery }: { searchQuery: string }) => {
                     <h1 className="font-bold text-lg md:text-xl">
                       {club.name}
                     </h1>
+                    <h1 className="text-base font-light">{club.tags}</h1>
                     <h1 className="text-base font-light">{club.description}</h1>
                   </div>
                 </div>

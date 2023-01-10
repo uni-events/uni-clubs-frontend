@@ -3,12 +3,24 @@ import ClubTiles from "./components/ClubTiles/clubTiles";
 import SearchBar from "./components/searchbar";
 import { useState } from "react";
 import DiscoverFilter from "./components/filter";
+import { TagsData } from "../../Data/dataTypes";
 
 const Discover = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [searchInput, setSearchInput] = useState("");
+  const tagsInit: TagsData = {
+    filters: [],
+    categories: [],
+  };
+  const [tags, setTags] = useState({ ...tagsInit });
+
   const handleSearch = (query: string) => {
     setSearchInput(query);
+  };
+
+  const handleFilters = (sortTags: TagsData) => {
+    console.log(sortTags);
+    setTags({ ...sortTags });
   };
 
   return (
@@ -21,7 +33,7 @@ const Discover = () => {
               showFilter ? "block" : "hidden md:block"
             }`}
           >
-            <DiscoverFilter />
+            <DiscoverFilter onChange={handleFilters} />
           </div>
           <div className="block w-full md:w-3/4 px-4 space-y-4">
             <div className="flex flex-row space-x-4 md:space-x-0">
@@ -43,7 +55,11 @@ const Discover = () => {
               </div>
             </div>
             <div className={`${showFilter ? "hidden md:block" : "block"}`}>
-              <ClubTiles searchQuery={searchInput} />
+              <ClubTiles
+                searchQuery={searchInput}
+                filterTags={tags.filters}
+                categoryTags={tags.categories}
+              />
             </div>
           </div>
         </div>

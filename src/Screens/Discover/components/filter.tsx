@@ -1,19 +1,23 @@
 import { useState } from "react";
-import { CategoryData } from "../../../Data/dataTypes";
+import { CategoryData, TagsData } from "../../../Data/dataTypes";
 
-const DiscoverFilter = () => {
-  const Filters: { name: string }[] = [
+const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
+  const Filters: { name: string; handleStr: string }[] = [
     {
       name: "Recruiting Executives",
+      handleStr: "exec",
     },
     {
       name: "Recruiting Subcommittee",
+      handleStr: "sub",
     },
     {
       name: "Recruiting Volunteers",
+      handleStr: "vol",
     },
     {
       name: "Event Today",
+      handleStr: "event",
     },
   ];
   const Categories: Array<CategoryData> = [
@@ -72,9 +76,23 @@ const DiscoverFilter = () => {
   });
   const [filterState, setFilterState] = useState([...BoolArrInitFilter]);
 
+  const setTags = (catState: boolean[], filterState: boolean[]) => {
+    let tags: TagsData = {
+      filters: [],
+      categories: [],
+    };
+    catState.forEach((catBool, index) => {
+      if (catBool) tags.categories.push(Categories[index].name);
+    });
+    filterState.forEach((filterBool, index) => {
+      if (filterBool) tags.filters.push(Filters[index].handleStr);
+    });
+    return tags;
+  };
   const handleFilterClick = (index: number) => {
     filterState[index] = !filterState[index];
     setFilterState([...filterState]);
+    onChange(setTags(catState, filterState));
   };
 
   const handleCategoryClick = (index: number) => {
@@ -86,6 +104,16 @@ const DiscoverFilter = () => {
     if (index === 0) {
       setCatState([...BoolArrInitCategory]);
     }
+    onChange(setTags(catState, filterState));
+  };
+
+  const handlFilReset = () => {
+    setFilterState([...BoolArrInitFilter]);
+    onChange(setTags(catState, BoolArrInitFilter));
+  };
+  const handleCatReset = () => {
+    setCatState([...BoolArrInitCategory]);
+    onChange(setTags(BoolArrInitCategory, filterState));
   };
 
   return (
@@ -98,7 +126,7 @@ const DiscoverFilter = () => {
           <div className="flex flex-col justify-center">
             <button
               className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
-              onClick={() => setFilterState([...BoolArrInitFilter])}
+              onClick={handlFilReset}
             >
               Reset
             </button>
@@ -133,7 +161,7 @@ const DiscoverFilter = () => {
           <div className="flex flex-col justify-center">
             <button
               className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
-              onClick={() => setCatState([...BoolArrInitCategory])}
+              onClick={handleCatReset}
             >
               Reset
             </button>

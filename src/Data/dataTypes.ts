@@ -36,4 +36,11 @@ export interface ClubTileData {
   description: string;
   logo: string;
   banner: string;
+  tags: string[];
+  categories: string[];
+}
+
+export interface TagsData {
+  filters: string[];
+  categories: string[];
 }
