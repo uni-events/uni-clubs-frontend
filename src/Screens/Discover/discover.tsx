@@ -10,7 +10,7 @@ const Discover = () => {
   const [searchInput, setSearchInput] = useState("");
   const tagsInit: TagsData = {
     filters: [],
-    categories: [],
+    categories: ["All"],
   };
   const [tags, setTags] = useState({ ...tagsInit });
 

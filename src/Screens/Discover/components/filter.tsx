@@ -64,27 +64,32 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
 
   let BoolArrInitCategory: boolean[] = [];
 
-  Categories.forEach((f) => {
-    BoolArrInitCategory.push(false);
+  Categories.forEach((f, index) => {
+    if (index === 0) {
+      BoolArrInitCategory.push(true);
+    } else {
+      BoolArrInitCategory.push(false);
+    }
   });
-  BoolArrInitCategory[0] = true;
+  console.log(BoolArrInitCategory);
   const [catState, setCatState] = useState([...BoolArrInitCategory]);
 
   let BoolArrInitFilter: boolean[] = [];
   Filters.forEach((f) => {
     BoolArrInitFilter.push(false);
   });
+
   const [filterState, setFilterState] = useState([...BoolArrInitFilter]);
 
-  const setTags = (catState: boolean[], filterState: boolean[]) => {
+  const setTags = (catStateTag: boolean[], filterStateTag: boolean[]) => {
     let tags: TagsData = {
       filters: [],
       categories: [],
     };
-    catState.forEach((catBool, index) => {
+    catStateTag.forEach((catBool, index) => {
       if (catBool) tags.categories.push(Categories[index].name);
     });
-    filterState.forEach((filterBool, index) => {
+    filterStateTag.forEach((filterBool, index) => {
       if (filterBool) tags.filters.push(Filters[index].handleStr);
     });
     return tags;
@@ -100,11 +105,12 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
       catState[index] = !catState[index];
       catState[0] = false;
       setCatState([...catState]);
+      onChange(setTags(catState, filterState));
     }
-    if (index === 0) {
+    if (index === 0 || !catState.includes(true)) {
       setCatState([...BoolArrInitCategory]);
+      onChange(setTags(BoolArrInitCategory, filterState));
     }
-    onChange(setTags(catState, filterState));
   };
 
   const handlFilReset = () => {

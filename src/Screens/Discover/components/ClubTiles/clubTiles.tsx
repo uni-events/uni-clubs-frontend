@@ -63,11 +63,11 @@ const ClubTiles = ({
   let filteredList: ClubTileData[] = ClubData.filter((club) => {
     return club.name.toLowerCase().includes(searchQuery.toLowerCase()) && club;
   });
-  // filters results based on filter options and category
+  // Filtering clubs displayed based on category options
   let returnClub = false;
   filteredList = filteredList.filter((club) => {
     returnClub = false;
-    // based on filter options
+    // if no filters return all clubs
     if (filterTags.length === 0) {
       return club;
     }
@@ -76,8 +76,16 @@ const ClubTiles = ({
         returnClub = true;
       }
     });
-    // based on category options
+    return returnClub && club;
+  });
+  // Filtering clubs displayed based on category options
+  filteredList = filteredList.filter((club) => {
+    returnClub = false;
+    // if no category filters return all clubs
     club.categories.forEach((category) => {
+      if (categoryTags[0] === "All") {
+        returnClub = true;
+      }
       if (categoryTags.includes(category)) {
         returnClub = true;
       }
