@@ -29,3 +29,18 @@ export interface TimeData {
   minutes: number;
   indicator: string;
 }
+
+export interface ClubTileData {
+  clubStr: string;
+  name: string;
+  description: string;
+  logo: string;
+  banner: string;
+  tags: string[];
+  categories: string[];
+}
+
+export interface TagsData {
+  filters: string[];
+  categories: string[];
+}

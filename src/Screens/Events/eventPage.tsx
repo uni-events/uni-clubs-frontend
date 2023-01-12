@@ -8,12 +8,17 @@ import TrendingEvents from "./components/trendingEvents";
 
 const EventPage = () => {
   const [showFilter, setShowFilter] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+  const handleSearch = (query: string) => {
+    console.log(query);
+    setSearchInput(query);
+  };
 
   return (
     <>
       <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden">
         <Navbar />
-        <div className="flex flex-row w-full h-full max-w-screen-xl md:space-x-4 px-2 md:px-4 mx-auto">
+        <div className="flex flex-row w-full h-full max-w-screen-xl md:space-x-4 py-2 px-2 md:px-4 mx-auto">
           <div className="hidden md:block md:w-1/4 h-fit">
             <EventsFilter />
           </div>
@@ -32,7 +37,7 @@ const EventPage = () => {
                   <path d="M11 21v-6h2v2h8v2h-8v2Zm-8-2v-2h6v2Zm4-4v-2H3v-2h4V9h2v6Zm4-2v-2h10v2Zm4-4V3h2v2h4v2h-4v2ZM3 7V5h10v2Z" />
                 </svg>
               </button>
-              <SearchBar purpose="Events" />
+              <SearchBar purpose="Events" onChange={handleSearch} />
             </div>
 
             <div

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { NavLink } from "react-router-dom";
+import { Toggle } from "../Theme/toggle";
 const Navbar = () => {
   return (
     <>
@@ -43,14 +44,17 @@ const Navbar = () => {
               Announcements
             </NavLink>
           </div>
-          <button className="bg-Blue h-fit w-fit px-4 py-2 rounded-lg xs:hidden md:block hover:bg-Green">
-            <NavLink
-              to="/login"
-              className="text-WhiteBG text-xl font-bold mt-1 "
-            >
-              Login
-            </NavLink>
-          </button>
+          <div className="flex flex-row space-x-4 justify-center">
+            <Toggle />
+            <button className="bg-Blue h-fit w-fit px-4 py-2 rounded-lg hidden md:block hover:bg-Green">
+              <NavLink
+                to="/login"
+                className="text-WhiteBG text-xl font-bold mt-1 "
+              >
+                Login
+              </NavLink>
+            </button>
+          </div>
         </div>
       </nav>
     </>

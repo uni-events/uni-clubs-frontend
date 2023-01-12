@@ -3,9 +3,25 @@ import ClubTiles from "./components/ClubTiles/clubTiles";
 import SearchBar from "./components/searchbar";
 import { useState } from "react";
 import DiscoverFilter from "./components/filter";
+import { TagsData } from "../../Data/dataTypes";
 
 const Discover = () => {
   const [showFilter, setShowFilter] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+  const tagsInit: TagsData = {
+    filters: [],
+    categories: ["All"],
+  };
+  const [tags, setTags] = useState({ ...tagsInit });
+
+  const handleSearch = (query: string) => {
+    setSearchInput(query);
+  };
+
+  const handleFilters = (sortTags: TagsData) => {
+    console.log(sortTags);
+    setTags({ ...sortTags });
+  };
 
   return (
     <>
@@ -13,11 +29,11 @@ const Discover = () => {
         <Navbar />
         <div className="flex flex-col-reverse max-w-screen-xl mx-auto md:pl-4 my-6 md:flex-row ">
           <div
-            className={`px-4 my-6 w-full md:w-1/4 md:my-0 md:px-0 ${
+            className={`px-4 my-6 w-full h-full md:w-1/4 md:my-0 md:px-0 ${
               showFilter ? "block" : "hidden md:block"
             }`}
           >
-            <DiscoverFilter />
+            <DiscoverFilter onChange={handleFilters} />
           </div>
           <div className="block w-full md:w-3/4 px-4 space-y-4">
             <div className="flex flex-row space-x-4 md:space-x-0">
@@ -35,11 +51,15 @@ const Discover = () => {
                 </svg>
               </button>
               <div className="flex w-full">
-                <SearchBar purpose="Clubs" />
+                <SearchBar purpose="Clubs" onChange={handleSearch} />
               </div>
             </div>
             <div className={`${showFilter ? "hidden md:block" : "block"}`}>
-              <ClubTiles />
+              <ClubTiles
+                searchQuery={searchInput}
+                filterTags={tags.filters}
+                categoryTags={tags.categories}
+              />
             </div>
           </div>
         </div>
