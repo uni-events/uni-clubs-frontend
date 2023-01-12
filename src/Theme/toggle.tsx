@@ -6,7 +6,7 @@ export const Toggle = () => {
 
   return (
     <button
-      className="bg-BlueGrey dark:bg-BlueBlack px-2 py-2 rounded-lg transition-transform duration-500 hover:scale-105"
+      className="bg-BlueGrey dark:bg-BlueBlack px-2 py-2 rounded-lg transition-transform duration-ThemeDuration hover:scale-105"
       onClick={() => setIsDark(!isDark)}
     >
       <DarkModeSwitch

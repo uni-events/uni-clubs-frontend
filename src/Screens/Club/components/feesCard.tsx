@@ -1,7 +1,7 @@
 const FeesCard = () => {
   return (
     <>
-      <div className="w-full h-fit p-4 space-y-2 rounded-lg bg-BlueGrey dark:bg-BlueBlack text-black dark:text-WhiteBG">
+      <div className="w-full h-fit p-4 space-y-2 rounded-lg bg-BlueGrey dark:bg-BlueBlack text-black dark:text-WhiteBG duration-ThemeDuration">
         <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
           Membership
         </h1>

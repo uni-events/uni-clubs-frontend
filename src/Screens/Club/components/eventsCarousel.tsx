@@ -47,7 +47,7 @@ const EventsCarousel = () => {
 
   return (
     <>
-      <div className="w-full h-fit">
+      <div className="w-full h-fit ">
         <h1 className="text-2xl font-bold text-black dark:text-WhiteBG mt-8">
           Upcoming Events
         </h1>
@@ -88,7 +88,7 @@ const EventsCarousel = () => {
                         key={index}
                         className={
                           index === cState
-                            ? "block w-fit h-fit rounded-xl p-4 text-black bg-WhiteBG dark:bg-BlueBlack dark:text-WhiteBG -translate-y-24 translate-x-4 drop-shadow-lg"
+                            ? "block w-fit h-fit rounded-xl p-4 text-black bg-WhiteBG dark:bg-BlueBlack dark:text-WhiteBG -translate-y-24 translate-x-4 drop-shadow-lg duration-ThemeDuration"
                             : "hidden"
                         }
                       >
