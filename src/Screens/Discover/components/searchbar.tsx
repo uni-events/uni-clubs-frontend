@@ -35,7 +35,7 @@ const SearchBar = ({
           <input
             type="text"
             id="simple-search"
-            className="bg-BlueGrey text-black text-base rounded-lg focus:outline-none focus:ring-2 focus:ring-Green block w-full pl-10 p-2.5  dark:bg-BlueBlack dark:placeholder-BlueGrey dark:text-white"
+            className="bg-BlueGrey text-black text-base rounded-lg focus:outline-none focus:ring-2 focus:ring-Green block w-full pl-10 p-2.5  dark:bg-BlueBlack dark:placeholder-BlueGrey dark:text-white duration-ThemeDuration"
             placeholder={`Search for ${purpose}`}
             onChange={handleInput}
           />

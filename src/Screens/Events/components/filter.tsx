@@ -93,7 +93,7 @@ const EventsFilter = () => {
 
   return (
     <>
-      <div className="h-full w-full p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg">
+      <div className="h-full w-full p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg duration-ThemeDuration">
         <div className="flex flex-row justify-between">
           <h1 className="h-fit text-2xl font-bold text-black dark:text-WhiteBG text-center">
             Filters

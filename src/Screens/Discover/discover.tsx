@@ -25,7 +25,7 @@ const Discover = () => {
 
   return (
     <>
-      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden">
+      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden duration-ThemeDuration">
         <Navbar />
         <div className="flex flex-col-reverse max-w-screen-xl mx-auto md:pl-4 my-6 md:flex-row ">
           <div
