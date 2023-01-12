@@ -95,11 +95,11 @@ const ClubTiles = ({
 
   return (
     <>
-      <div className="grid grid-flow-row w-full gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 ">
-        {filteredList.map((club, index) => {
+      <div className="grid grid-flow-row w-full gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {filteredList.map((club) => {
           return (
             <NavLink to={`/club`}>
-              <body className="p-2 bg-BlueGrey dark:bg-BlueBlack rounded-lg">
+              <body className="p-2 bg-BlueGrey dark:bg-BlueBlack rounded-lg ease-in-out hover:scale-105 duration-ThemeDuration">
                 <div className="relative">
                   <img
                     className="rounded-lg w-full h-24 object-cover mb-6"
@@ -111,7 +111,7 @@ const ClubTiles = ({
                     src={club.logo}
                     alt="logo"
                   />
-                  <div className="text-black whitespace-pre-wrap overflow-hidden p-4 mb-2 max-h-36 dark:text-WhiteBG ">
+                  <div className="text-black whitespace-pre-wrap overflow-hidden p-4 mb-2 max-h-36 dark:text-WhiteBG">
                     <h1 className="font-bold text-lg md:text-xl">
                       {club.name}
                     </h1>

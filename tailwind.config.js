@@ -16,6 +16,9 @@ module.exports = {
         128: "32rem",
         168: "42rem",
       },
+      transitionDuration: {
+        ThemeDuration: "500ms",
+      },
       colors: {
         Blue: "hsl(192, 45%, 57%)",
         DarkBlue: "hsl(192, 34%, 44%)",

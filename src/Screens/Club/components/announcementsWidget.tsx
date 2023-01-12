@@ -3,7 +3,7 @@ import { longStr } from "../../../Data/dataTypes";
 const AnnouncementCard = () => {
   return (
     <>
-      <div className="snap-center h-96 w-full rounded-2xl text-black bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG p-4">
+      <div className="snap-center h-96 w-full rounded-2xl text-black bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG p-4 duration-ThemeDuration">
         <div>
           <h1 className="text-lg font-bold mb-2">New Merch Release!</h1>
           <p className="text-sm font-light h-64 overflow-hidden">

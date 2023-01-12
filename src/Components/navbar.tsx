@@ -5,7 +5,7 @@ import { Toggle } from "../Theme/toggle";
 const Navbar = () => {
   return (
     <>
-      <nav className="sticky top-0 z-30 bg-WhiteBG dark:bg-BlackBG bg-opacity-95 h-fit mx-auto p-6 ">
+      <nav className="sticky top-0 z-30 bg-WhiteBG dark:bg-BlackBG bg-opacity-95 h-fit mx-auto p-6 duration-ThemeDuration">
         <div className="flex items-center justify-between">
           <button className="block md:hidden">
             <svg

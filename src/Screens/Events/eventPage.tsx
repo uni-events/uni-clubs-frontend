@@ -16,7 +16,7 @@ const EventPage = () => {
 
   return (
     <>
-      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden">
+      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden duration-ThemeDuration">
         <Navbar />
         <div className="flex flex-row w-full h-full max-w-screen-xl md:space-x-4 py-2 px-2 md:px-4 mx-auto">
           <div className="hidden md:block md:w-1/4 h-fit">

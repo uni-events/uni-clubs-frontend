@@ -4,6 +4,10 @@ import { CategoryData, TagsData } from "../../../Data/dataTypes";
 const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
   const Filters: { name: string; handleStr: string }[] = [
     {
+      name: "Event Today",
+      handleStr: "event",
+    },
+    {
       name: "Recruiting Executives",
       handleStr: "exec",
     },
@@ -14,10 +18,6 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
     {
       name: "Recruiting Volunteers",
       handleStr: "vol",
-    },
-    {
-      name: "Event Today",
-      handleStr: "event",
     },
   ];
   const Categories: Array<CategoryData> = [
@@ -124,14 +124,14 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
 
   return (
     <>
-      <div className="h-fit w-full p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg">
+      <div className="h-fit w-full p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg duration-ThemeDuration">
         <div className="flex flex-row justify-between">
           <h1 className="h-fit text-2xl font-bold text-black dark:text-WhiteBG text-center">
             Filters
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
+              className="h-fit text-center text-base font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed duration-150"
               onClick={handlFilReset}
             >
               Reset
@@ -142,15 +142,15 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
           {Filters.map((filters, index) => {
             return (
               <>
-                <div className="flex flex-row space-x-4 text-white text-base font-bold">
+                <div className="flex flex-row space-x-4 text-white text-lg font-bold">
                   <button
                     onClick={() => {
                       handleFilterClick(index);
                     }}
-                    className={`w-full rounded-lg p-1 ${
+                    className={`w-full rounded-lg p-1 duration-150 ${
                       filterState[index]
-                        ? "bg-Green hover:bg-DarkGreen"
-                        : "bg-Blue hover:bg-DarkBlue"
+                        ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
+                        : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
                     }`}
                   >
                     <div className="text-center">{filters.name}</div>
@@ -166,7 +166,7 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
+              className="h-fit text-center text-base font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed duration-150"
               onClick={handleCatReset}
             >
               Reset
@@ -181,8 +181,10 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
                   onClick={() => {
                     handleCategoryClick(index);
                   }}
-                  className={`w-full h-fit p-1 rounded-lg ${
-                    !catState[index] ? "bg-Blue" : "bg-Green"
+                  className={`w-full h-fit p-1 duration-150 rounded-lg ${
+                    catState[index]
+                      ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue "
+                      : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen "
                   }`}
                 >
                   <h1 className="text-white text-base font-extrabold ">

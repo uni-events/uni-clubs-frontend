@@ -17,7 +17,7 @@ const ClubInfo = () => {
             backgroundImage: `url(${require("../../Assets/page-banner.png")})`,
           }}
         />
-        <div className="bg-WhiteBG dark:bg-BlackBG p-4 mx-6 md:mx-12">
+        <div className="bg-WhiteBG dark:bg-BlackBG p-4 mx-6 md:mx-12 duration-ThemeDuration">
           <img
             className="-translate-y-12 h-24 w-24 md:h-32 md:w-32 md:-translate-y-24 bg-center object-cover drop-shadow-lg"
             src={logo}
