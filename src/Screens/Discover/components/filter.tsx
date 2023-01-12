@@ -131,7 +131,7 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
+              className="h-fit text-center text-base font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed hover:duration-150"
               onClick={handlFilReset}
             >
               Reset
@@ -149,8 +149,8 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
                     }}
                     className={`w-full rounded-lg p-1 ${
                       filterState[index]
-                        ? "bg-Green hover:bg-DarkGreen"
-                        : "bg-Blue hover:bg-DarkBlue"
+                        ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue hover:duration-150"
+                        : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen hover:duration-150"
                     }`}
                   >
                     <div className="text-center">{filters.name}</div>
@@ -166,7 +166,7 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
+              className="h-fit text-center text-base font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed hover:duration-150"
               onClick={handleCatReset}
             >
               Reset
@@ -182,7 +182,9 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
                     handleCategoryClick(index);
                   }}
                   className={`w-full h-fit p-1 rounded-lg ${
-                    !catState[index] ? "bg-Blue" : "bg-Green"
+                    catState[index]
+                      ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue hover:duration-150"
+                      : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen hover:duration-150"
                   }`}
                 >
                   <h1 className="text-white text-base font-extrabold ">
