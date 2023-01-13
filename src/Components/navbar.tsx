@@ -5,7 +5,7 @@ import { Toggle } from "../Theme/toggle";
 const Navbar = () => {
   return (
     <>
-      <nav className="sticky top-0 z-30 bg-WhiteBG dark:bg-BlackBG bg-opacity-95 h-fit mx-auto p-6 duration-ThemeDuration">
+      <nav className="sticky top-0 z-30 p-6 mx-auto bg-WhiteBG dark:bg-BlackBG bg-opacity-95 h-fit duration-ThemeDuration">
         <div className="flex items-center justify-between">
           <button className="block md:hidden">
             <svg
@@ -21,35 +21,41 @@ const Navbar = () => {
           <div className="flex md:space-x-12 xs:mx-auto md:m-0">
             <NavLink
               to="/"
-              className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-Green to-Blue"
+              className="text-4xl font-extrabold text-transparent bg-center bg-gradient-to-r from-Green to-Blue bg-animate animation-bgMove animation-1s animation-ease animation-infinite "
             >
-              Uni Clubs
+              Uni Clubs bg-clip-text
             </NavLink>
             <NavLink
               to="/discover"
-              className="text-Blue text-2xl font-bold hover:text-Green hover:underline underline-offset-4 mt-1 hidden md:flex"
+              className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              Discover
+              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-150 ease-out underline-offset-4">
+                Discover
+              </span>
             </NavLink>
             <NavLink
               to="/events"
-              className="text-Blue text-2xl font-bold hover:text-Green hover:underline underline-offset-4 mt-1 hidden md:flex"
+              className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              Events
+              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-150 ease-out underline-offset-4">
+                Events
+              </span>
             </NavLink>
             <NavLink
               to="/Announcements"
-              className="text-Blue text-2xl font-bold hover:text-Green hover:underline underline-offset-4 mt-1 hidden md:flex"
+              className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              Announcements
+              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-150  ease-out underline-offset-4">
+                Announcements
+              </span>
             </NavLink>
           </div>
-          <div className="flex flex-row space-x-4 justify-center">
+          <div className="flex flex-row justify-center space-x-4">
             <Toggle />
-            <button className="bg-Blue h-fit w-fit px-4 py-2 rounded-lg hidden md:block hover:bg-Green">
+            <button className="hidden px-4 py-2 rounded-lg bg-Blue h-fit w-fit md:block hover:bg-Green active:bg-DarkGreen hover:scale-105 duration-ThemeDuration">
               <NavLink
                 to="/login"
-                className="text-WhiteBG text-xl font-bold mt-1 "
+                className="mt-1 text-xl font-bold text-WhiteBG"
               >
                 Login
               </NavLink>

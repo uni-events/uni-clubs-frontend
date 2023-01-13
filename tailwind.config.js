@@ -19,6 +19,16 @@ module.exports = {
       transitionDuration: {
         ThemeDuration: "500ms",
       },
+      animation: {
+        bgMove: {
+          "0%, 100%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+        },
+      },
       colors: {
         Blue: "hsl(192, 45%, 57%)",
         DarkBlue: "hsl(192, 34%, 44%)",

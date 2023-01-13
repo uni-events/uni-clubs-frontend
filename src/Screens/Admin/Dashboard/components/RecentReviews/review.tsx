@@ -2,8 +2,8 @@ const ReviewPreview = () => {
   return (
     <>
       <div className="w-full">
-        <div className="flex flex-col sm:flex-row  items-center justify-between px-4 pt-4">
-          <h1 className="text-base md:text-lg font-bold ">ANONYMOUS</h1>
+        <div className="flex flex-col items-center justify-between px-4 pt-4 sm:flex-row">
+          <h1 className="text-base font-bold md:text-lg ">ANONYMOUS</h1>
           <div className="grid grid-cols-5 gap-0.5">
             <svg
               className="fill-black dark:fill-WhiteBG"
@@ -47,7 +47,7 @@ const ReviewPreview = () => {
             </svg>
           </div>
         </div>
-        <h1 className="text-sm md:text-base px-4 pt-0 pb-2 whitespace-normal text-center sm:text-left overflow-clip">
+        <h1 className="px-4 pt-0 pb-2 text-sm text-center whitespace-normal md:text-base sm:text-left overflow-clip">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
           scelerisque nibh. Curabitur placerat ante eu luctus tempor.
         </h1>

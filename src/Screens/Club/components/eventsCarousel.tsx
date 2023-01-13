@@ -48,14 +48,14 @@ const EventsCarousel = () => {
   return (
     <>
       <div className="w-full h-fit ">
-        <h1 className="text-2xl font-bold text-black dark:text-WhiteBG mt-8">
+        <h1 className="mt-8 text-2xl font-bold text-black dark:text-WhiteBG">
           Upcoming Events
         </h1>
-        <div className="w-full h-fit mt-4">
-          <div className="flex flex-row space-x-4 w-full ">
+        <div className="w-full mt-4 h-fit">
+          <div className="flex flex-row w-full space-x-4 ">
             <div className="flex flex-col justify-center">
               <button
-                className="w-fit rounded-full h-fit bg-Green p-1"
+                className="p-1 rounded-full w-fit h-fit bg-Green"
                 onClick={prevImage}
               >
                 <svg
@@ -69,7 +69,7 @@ const EventsCarousel = () => {
               </button>
             </div>
 
-            <div className="w-full h-96 flex overflow-hidden relative">
+            <div className="relative flex w-full overflow-hidden h-96">
               {CarouselData.map((slide, index) => {
                 return (
                   <>
@@ -102,7 +102,7 @@ const EventsCarousel = () => {
             </div>
             <div className="flex flex-col justify-center">
               <button
-                className="h-fit rounded-full w-fit bg-Green p-1"
+                className="p-1 rounded-full h-fit w-fit bg-Green"
                 onClick={nextImage}
               >
                 <svg
@@ -117,7 +117,7 @@ const EventsCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-fit w-full justify-center px-2 pb-2 pt-4">
+        <div className="flex justify-center w-full px-2 pt-4 pb-2 h-fit">
           {CarouselData.map((element, index) => {
             return (
               <div

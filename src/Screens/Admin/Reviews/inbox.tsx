@@ -5,10 +5,10 @@ const Inbox = () => {
   return (
     <>
       <div className="w-full h-full">
-        <div className="flex flex-row justify-between px-6 py-8  bg-LightBlueGrey dark:bg-BlueBlack dark:text-WhiteBG">
-          <h1 className="text-3xl mx-4 font-bold">Review Inbox</h1>
+        <div className="flex flex-row justify-between px-6 py-8 bg-LightBlueGrey dark:bg-BlueBlack dark:text-WhiteBG">
+          <h1 className="mx-4 text-3xl font-bold">Review Inbox</h1>
           <svg
-            className="fill-black dark:fill-WhiteBG   "
+            className="fill-black dark:fill-WhiteBG "
             xmlns="http://www.w3.org/2000/svg"
             height="24"
             width="24"
@@ -17,53 +17,53 @@ const Inbox = () => {
           </svg>
         </div>
         <div className="grid grid-cols-3 h-[80vh] gap-4 px-6 pb-4 bg-LightBlueGrey dark:bg-BlueBlack dark:text-WhiteBG">
-          <div className="w-full overflow-y-scroll col-span-3 md:col-span-1 scrollbar-thin scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-xl scrollbar-track-transparent ">
+          <div className="w-full col-span-3 overflow-y-scroll md:col-span-1 scrollbar-thin scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-xl scrollbar-track-transparent ">
             <div className="mx-2">
-              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG  dark:border-l-WhiteBG hover:border-l-4">
+              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG dark:border-l-WhiteBG hover:border-l-4">
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG  dark:border-l-WhiteBG hover:border-l-4">
+              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG dark:border-l-WhiteBG hover:border-l-4">
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG  dark:border-l-WhiteBG hover:border-l-4">
+              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG dark:border-l-WhiteBG hover:border-l-4">
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG  dark:border-l-WhiteBG hover:border-l-4">
+              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG dark:border-l-WhiteBG hover:border-l-4">
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG  dark:border-l-WhiteBG hover:border-l-4">
+              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG dark:border-l-WhiteBG hover:border-l-4">
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG  dark:border-l-WhiteBG hover:border-l-4">
+              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG dark:border-l-WhiteBG hover:border-l-4">
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG  dark:border-l-WhiteBG hover:border-l-4">
+              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG dark:border-l-WhiteBG hover:border-l-4">
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG  dark:border-l-WhiteBG hover:border-l-4">
+              <button className="border-l-0 hover:bg-BlueGrey border-l-BlackBG hover:dark:bg-BlackBG dark:border-l-WhiteBG hover:border-l-4">
                 <ReviewInboxPreview />
               </button>
             </div>
           </div>
-          <div className="w-full overflow-y-scroll col-span-2 scrollbar-thin scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-xl scrollbar-track-transparent hidden md:flex">
+          <div className="hidden w-full col-span-2 overflow-y-scroll scrollbar-thin scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-xl scrollbar-track-transparent md:flex">
             <div>
-              <div className="flex flex-col mb-8 mx-8">
+              <div className="flex flex-col mx-8 mb-8">
                 <div className="flex flex-row space-x-4 text-lg">
-                  <h1 className="font-extrabold text-lg">From</h1>
+                  <h1 className="text-lg font-extrabold">From</h1>
                   <p className="text-base">Anonymous</p>
                 </div>
                 <div className="flex flex-row space-x-4 text-lg">
-                  <h1 className="font-extrabold text-lg">Date</h1>
+                  <h1 className="text-lg font-extrabold">Date</h1>
                   <p className="text-base">11/3/2022 10:00pm</p>
                 </div>
                 <div className="flex flex-row space-x-4 text-lg">
-                  <h1 className="font-extrabold text-lg">Event</h1>
-                  <button className="inline-block text-base text-WhiteBG bg-Purple w-fit h-8 px-2 font-extrabold rounded-lg hover:bg-Green">
+                  <h1 className="text-lg font-extrabold">Event</h1>
+                  <button className="inline-block h-8 px-2 text-base font-extrabold rounded-lg text-WhiteBG bg-Purple w-fit hover:bg-Green">
                     Yearly Flagship Event
                   </button>
                 </div>
                 <div className="flex flex-row space-x-4 text-lg">
-                  <h1 className="font-extrabold text-lg">Rating</h1>
+                  <h1 className="text-lg font-extrabold">Rating</h1>
                   <div className="flex flex-row gap-1">
                     <svg
                       className="fill-black dark:fill-WhiteBG"
@@ -107,7 +107,7 @@ const Inbox = () => {
                     </svg>
                   </div>
                 </div>
-                <div className="text-black bg-WhiteBG dark:text-white dark:bg-BlackBG p-8 mt-8">
+                <div className="p-8 mt-8 text-black bg-WhiteBG dark:text-white dark:bg-BlackBG">
                   {longStr}
                 </div>
               </div>

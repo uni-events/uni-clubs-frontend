@@ -5,13 +5,13 @@ import { NavLink } from "react-router-dom";
 const Login = () => {
   return (
     <>
-      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden ">
+      <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG ">
         <LoginNavbar />
-        <div className="flex items-center justify-center h-3/4 mx-4 md:mx-auto mt-12 md:mt-0 bg-WhiteBG dark:bg-BlackBG">
-          <div className="px-8 py-6 text-left bg-BlueGrey text-black dark:bg-BlueBlack dark:text-WhiteBG shadow-lg rounded-lg">
+        <div className="flex items-center justify-center mx-4 mt-12 h-3/4 md:mx-auto md:mt-0 bg-WhiteBG dark:bg-BlackBG">
+          <div className="px-8 py-6 text-left text-black rounded-lg shadow-lg bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG">
             <div className="flex justify-center drop-shadow-md">
               <img
-                className="mx-auto mt-4 mb-4 h-24 w-24 object-cover rounded-lg"
+                className="object-cover w-24 h-24 mx-auto mt-4 mb-4 rounded-lg"
                 src={pfp}
                 alt="club logo"
               />
@@ -28,7 +28,7 @@ const Login = () => {
                   <input
                     type="text"
                     placeholder="Email"
-                    className="w-full px-4 py-2 mt-2 border text-black rounded-md focus:outline-none focus:ring-2 focus:ring-Green"
+                    className="w-full px-4 py-2 mt-2 text-black border rounded-md focus:outline-none focus:ring-2 focus:ring-Green"
                   />
                   <span className="text-xs tracking-wide text-red-600">
                     Email field is required
@@ -39,13 +39,13 @@ const Login = () => {
                   <input
                     type="password"
                     placeholder="Password"
-                    className="w-full px-4 py-2 mt-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-Green"
+                    className="w-full px-4 py-2 mt-2 text-black border rounded-md focus:outline-none focus:ring-2 focus:ring-Green"
                   />
                 </div>
                 <div className="flex items-baseline justify-between">
                   <NavLink
                     to="/dashboard"
-                    className="px-6 py-2 mt-4 text-white bg-Blue rounded-lg hover:bg-Green"
+                    className="px-6 py-2 mt-4 text-white rounded-lg bg-Blue hover:bg-Green"
                   >
                     Login
                   </NavLink>

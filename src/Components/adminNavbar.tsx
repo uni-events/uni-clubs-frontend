@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const AdminNavbar = () => {
   return (
     <>
-      <nav className="sticky top-0 z-30 bg-WhiteBG dark:bg-BlackBG bg-opacity-95 h-fit mx-auto p-6 duration-ThemeDuration">
+      <nav className="sticky top-0 z-30 p-6 mx-auto bg-WhiteBG dark:bg-BlackBG bg-opacity-95 h-fit duration-ThemeDuration">
         <div className="flex items-center justify-between">
           <button className="block md:hidden">
             <svg
@@ -26,26 +26,26 @@ const AdminNavbar = () => {
             </NavLink>
             <NavLink
               to="/club-details"
-              className="text-Blue text-2xl font-bold hover:text-Green hover:underline underline-offset-4 mt-1 hidden md:flex"
+              className="hidden mt-1 text-2xl font-bold text-Blue hover:text-Green hover:underline underline-offset-4 md:flex"
             >
               Club Details
             </NavLink>
 
             <NavLink
               to="/manage-events"
-              className="text-Blue text-2xl font-bold hover:text-Green hover:underline underline-offset-4 mt-1 hidden md:flex"
+              className="hidden mt-1 text-2xl font-bold text-Blue hover:text-Green hover:underline underline-offset-4 md:flex"
             >
               Manage Events
             </NavLink>
             <NavLink
               to="/reviews"
-              className="text-Blue text-2xl font-bold hover:text-Green hover:underline underline-offset-4 mt-1 hidden md:flex"
+              className="hidden mt-1 text-2xl font-bold text-Blue hover:text-Green hover:underline underline-offset-4 md:flex"
             >
               Reviews
             </NavLink>
           </div>
           <NavLink to="/" className="">
-            <img className="h-10 w-10 rounded-xl" src={pfp} alt="pfp" />
+            <img className="w-10 h-10 rounded-xl" src={pfp} alt="pfp" />
           </NavLink>
         </div>
       </nav>

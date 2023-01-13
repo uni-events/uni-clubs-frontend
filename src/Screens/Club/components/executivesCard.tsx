@@ -5,7 +5,7 @@ const ExecutiveInfo = () => {
       <div className="flex flex-row space-x-4">
         <div className="my-auto">
           <img
-            className="h-12 w-12 rounded-lg object-cover bg-center"
+            className="object-cover w-12 h-12 bg-center rounded-lg"
             src={pfp}
             alt="pfp"
           />
@@ -23,7 +23,7 @@ const ExecutiveInfo = () => {
 const ExecutiveCard = () => {
   return (
     <>
-      <div className="w-full h-fit p-4 space-y-2 rounded-lg bg-BlueGrey dark:bg-BlueBlack text-black dark:text-WhiteBG duration-ThemeDuration">
+      <div className="w-full p-4 space-y-2 text-black rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG duration-ThemeDuration">
         <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
           Current Executives
         </h1>

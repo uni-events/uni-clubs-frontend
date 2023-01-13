@@ -16,16 +16,16 @@ const EventPage = () => {
 
   return (
     <>
-      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden duration-ThemeDuration">
+      <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
-        <div className="flex flex-row w-full h-full max-w-screen-xl md:space-x-4 py-2 px-2 md:px-4 mx-auto">
+        <div className="flex flex-row w-full h-full max-w-screen-xl px-2 py-2 mx-auto md:space-x-4 md:px-4">
           <div className="hidden md:block md:w-1/4 h-fit">
             <EventsFilter />
           </div>
-          <div className="flex flex-col w-full md:w-3/4 px-2">
+          <div className="flex flex-col w-full px-2 md:w-3/4">
             <div className="flex flex-row space-x-4 md:space-x-0">
               <button
-                className="block md:hidden bg-BlueGrey dark:bg-BlueBlack h-fit w-fit p-3 rounded-lg"
+                className="block p-3 rounded-lg md:hidden bg-BlueGrey dark:bg-BlueBlack h-fit w-fit"
                 onClick={() => setShowFilter(!showFilter)}
               >
                 <svg

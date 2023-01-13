@@ -25,9 +25,9 @@ const Discover = () => {
 
   return (
     <>
-      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden duration-ThemeDuration">
+      <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
-        <div className="flex flex-col-reverse max-w-screen-xl mx-auto md:pl-4 my-6 md:flex-row ">
+        <div className="flex flex-col-reverse max-w-screen-xl mx-auto my-6 md:pl-4 md:flex-row ">
           <div
             className={`px-4 my-6 w-full h-full md:w-1/4 md:my-0 md:px-0 ${
               showFilter ? "block" : "hidden md:block"
@@ -35,10 +35,10 @@ const Discover = () => {
           >
             <DiscoverFilter onChange={handleFilters} />
           </div>
-          <div className="block w-full md:w-3/4 px-4 space-y-4">
+          <div className="block w-full px-4 space-y-4 md:w-3/4">
             <div className="flex flex-row space-x-4 md:space-x-0">
               <button
-                className="bg-BlueGrey h-fit w-fit p-3 rounded-lg xs:block md:hidden dark:bg-BlueBlack"
+                className="p-3 rounded-lg bg-BlueGrey h-fit w-fit xs:block md:hidden dark:bg-BlueBlack"
                 onClick={() => setShowFilter(!showFilter)}
               >
                 <svg

@@ -3,10 +3,10 @@ import { longStr } from "../../../Data/dataTypes";
 const AnnouncementCard = () => {
   return (
     <>
-      <div className="snap-center h-96 w-full rounded-2xl text-black bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG p-4 duration-ThemeDuration">
+      <div className="w-full p-4 text-black snap-center h-96 rounded-2xl bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG duration-ThemeDuration">
         <div>
-          <h1 className="text-lg font-bold mb-2">New Merch Release!</h1>
-          <p className="text-sm font-light h-64 overflow-hidden">
+          <h1 className="mb-2 text-lg font-bold">New Merch Release!</h1>
+          <p className="h-64 overflow-hidden text-sm font-light">
             {longStr}
             {longStr}
             {longStr}
@@ -28,7 +28,7 @@ const AnnouncementsWidget = () => {
         <h1 className="text-2xl font-bold text-black dark:text-WhiteBG">
           Recent Announcements
         </h1>
-        <div className="snap-y mt-4 align-middle snap-mandatory max-w-4xl h-96 pr-2 space-y-4 overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-lg">
+        <div className="max-w-4xl pr-2 mt-4 space-y-4 overflow-x-hidden overflow-y-scroll align-middle snap-y snap-mandatory h-96 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-lg">
           <AnnouncementCard />
           <AnnouncementCard />
           <AnnouncementCard />

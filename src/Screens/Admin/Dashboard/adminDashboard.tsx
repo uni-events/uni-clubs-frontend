@@ -7,14 +7,14 @@ import WeeklyTip from "./components/weeklyTip";
 const AdminDashboard = () => {
   return (
     <>
-      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG overflow-x-hidden">
+      <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG">
         <AdminNavbar />
-        <div className="flex flex-col lg:flex-row w-full max-w-screen-xl mx-auto px-4 content-center gap-8 my-12">
-          <div className="flex flex-col w-full lg:w-1/4 space-y-8">
+        <div className="flex flex-col content-center w-full max-w-screen-xl gap-8 px-4 mx-auto my-12 lg:flex-row">
+          <div className="flex flex-col w-full space-y-8 lg:w-1/4">
             <StatisticsCard />
             <WeeklyTip />
           </div>
-          <div className="flex flex-col w-full lg:w-3/4 md:col-span-2 space-y-8">
+          <div className="flex flex-col w-full space-y-8 lg:w-3/4 md:col-span-2">
             <RecentReviews />
             <EventCard />
           </div>

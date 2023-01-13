@@ -130,23 +130,23 @@ const DatePickerComponent = ({
   }, [datepickerHeaderDate]);
 
   return (
-    <div className="h-fit w-fit flex items-center justify-center">
+    <div className="flex items-center justify-center h-fit w-fit">
       <div className="relative">
         <input type="hidden" name="date" />
         <input
           type="text"
           readOnly
-          className="cursor-pointer w-full pl-4 pr-10 py-4 bg-WhiteBG dark:bg-BlackBG rounded-lg focus:outline-none focus:ring-2 focus:ring-Green text-black dark:text-white"
+          className="w-full py-4 pl-4 pr-10 text-black rounded-lg cursor-pointer bg-WhiteBG dark:bg-BlackBG focus:outline-none focus:ring-2 focus:ring-Green dark:text-white"
           placeholder="Select date"
           value={format(selectedDate, "yyyy-MM-dd")}
           onClick={toggleDatepicker}
         />
         <div
-          className="cursor-pointer absolute top-0 right-0 px-4 py-4"
+          className="absolute top-0 right-0 px-4 py-4 cursor-pointer"
           onClick={toggleDatepicker}
         >
           <svg
-            className="h-6 w-6 text-black dark:text-WhiteBG"
+            className="w-6 h-6 text-black dark:text-WhiteBG"
             fill="none"
             height="24"
             width="24"
@@ -163,18 +163,18 @@ const DatePickerComponent = ({
         </div>
         {showDatepicker && (
           <div
-            className="bg-WhiteBG dark:bg-BlackBG mt-12 rounded-lg shadow p-4 absolute top-0 left-0"
+            className="absolute top-0 left-0 p-4 mt-12 rounded-lg shadow bg-WhiteBG dark:bg-BlackBG"
             style={{ width: "17rem" }}
           >
-            <div className="flex justify-between items-center mb-2">
+            <div className="flex items-center justify-between mb-2">
               <div>
                 <button
                   type="button"
-                  className="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-Blue dark:hover:bg-Green p-1 rounded-full"
+                  className="inline-flex p-1 transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-Blue dark:hover:bg-Green"
                   onClick={decrement}
                 >
                   <svg
-                    className="h-6 w-6 text-black dark:text-WhiteBG inline-flex"
+                    className="inline-flex w-6 h-6 text-black dark:text-WhiteBG"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -191,7 +191,7 @@ const DatePickerComponent = ({
               {type === "date" && (
                 <div
                   onClick={showMonthPicker}
-                  className="flex-grow p-1 text-lg font-bold text-black dark:text-WhiteBG cursor-pointer hover:bg-Blue dark:hover:bg-Green rounded-lg"
+                  className="flex-grow p-1 text-lg font-bold text-black rounded-lg cursor-pointer dark:text-WhiteBG hover:bg-Blue dark:hover:bg-Green"
                 >
                   <p className="text-center">
                     {format(datepickerHeaderDate, "MMMM")}
@@ -209,11 +209,11 @@ const DatePickerComponent = ({
               <div>
                 <button
                   type="button"
-                  className="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-Blue dark:hover:bg-Green p-1 rounded-full"
+                  className="inline-flex p-1 transition duration-100 ease-in-out rounded-full cursor-pointer hover:bg-Blue dark:hover:bg-Green"
                   onClick={increment}
                 >
                   <svg
-                    className="h-6 w-6 text-black dark:text-WhiteBG inline-flex"
+                    className="inline-flex w-6 h-6 text-black dark:text-WhiteBG"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -233,7 +233,7 @@ const DatePickerComponent = ({
                 <div className="flex flex-wrap mb-3 -mx-1">
                   {DAYS.map((day, i) => (
                     <div key={i} style={{ width: "14.26%" }} className="px-1">
-                      <div className="text-black dark:text-WhiteBG font-medium text-center text-xs">
+                      <div className="text-xs font-medium text-center text-black dark:text-WhiteBG">
                         {day}
                       </div>
                     </div>
@@ -244,7 +244,7 @@ const DatePickerComponent = ({
                     <div
                       key={i}
                       style={{ width: "14.26%" }}
-                      className="text-center border p-1 border-transparent text-sm"
+                      className="p-1 text-sm text-center border border-transparent"
                     />
                   ))}
                   {dayCount.map((d, i) => (

@@ -1,7 +1,7 @@
 const ErrorPage = () => {
   return (
     <>
-      <div className="w-screen h-screen bg-WhiteBG dark:bg-BlackBG  overflow-x-hidden">
+      <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG">
         <h1 className="dark:text-WhiteBG margin-auto">
           Error 404 this page does not exist
         </h1>

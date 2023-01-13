@@ -3,24 +3,24 @@ import { longStr } from "../../../Data/dataTypes";
 const InboxMessage = () => {
   return (
     <>
-      <div className=" text-black dark:text-white">
-        <div className="flex flex-col mb-8 mx-8">
+      <div className="text-black  dark:text-white">
+        <div className="flex flex-col mx-8 mb-8">
           <div className="flex flex-row space-x-4 text-lg">
-            <h1 className="font-extrabold text-lg">From</h1>
+            <h1 className="text-lg font-extrabold">From</h1>
             <p className="text-base">Anonymous</p>
           </div>
           <div className="flex flex-row space-x-4 text-lg">
-            <h1 className="font-extrabold text-lg">Date</h1>
+            <h1 className="text-lg font-extrabold">Date</h1>
             <p className="text-base">11/3/2022 10:00pm</p>
           </div>
           <div className="flex flex-row space-x-4 text-lg">
-            <h1 className="font-extrabold text-lg">Event</h1>
-            <button className="inline-block text-base text-WhiteBG bg-Purple w-fit h-8 px-2 font-extrabold rounded-lg hover:bg-Green">
+            <h1 className="text-lg font-extrabold">Event</h1>
+            <button className="inline-block h-8 px-2 text-base font-extrabold rounded-lg text-WhiteBG bg-Purple w-fit hover:bg-Green">
               Yearly Flagship Event
             </button>
           </div>
           <div className="flex flex-row space-x-4 text-lg">
-            <h1 className="font-extrabold text-lg">Rating</h1>
+            <h1 className="text-lg font-extrabold">Rating</h1>
             <div className="flex flex-row gap-1">
               <svg
                 className="fill-black dark:fill-WhiteBG"
@@ -64,7 +64,7 @@ const InboxMessage = () => {
               </svg>
             </div>
           </div>
-          <div className="text-black bg-WhiteBG dark:text-white dark:bg-BlackBG p-8 mt-8">
+          <div className="p-8 mt-8 text-black bg-WhiteBG dark:text-white dark:bg-BlackBG">
             {longStr}
           </div>
         </div>

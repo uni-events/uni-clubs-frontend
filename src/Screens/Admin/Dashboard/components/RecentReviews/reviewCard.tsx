@@ -3,11 +3,11 @@ import ReviewPreview from "./review";
 const RecentReviews = () => {
   return (
     <>
-      <div className="w-full h-fit bg-BlueGrey p-4 rounded-lg dark:bg-BlueBlack dark:text-WhiteBG">
+      <div className="w-full p-4 rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG">
         <div className="flex flex-row justify-between px-4 py-2">
           <h1 className="text-2xl font-bold">Recent Reviews</h1>
           <svg
-            className="fill-black dark:fill-WhiteBG  mt-1"
+            className="mt-1 fill-black dark:fill-WhiteBG"
             xmlns="http://www.w3.org/2000/svg"
             height="24"
             width="24"
