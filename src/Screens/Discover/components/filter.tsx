@@ -124,25 +124,25 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
 
   return (
     <>
-      <div className="h-fit w-full p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg duration-ThemeDuration">
+      <div className="w-full p-4 text-black rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-white duration-ThemeDuration">
         <div className="flex flex-row justify-between">
-          <h1 className="h-fit text-2xl font-bold text-black dark:text-WhiteBG text-center">
+          <h1 className="text-2xl font-bold text-center text-black h-fit dark:text-WhiteBG">
             Filters
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="h-fit text-center text-base font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed duration-150"
+              className="text-base font-bold text-center duration-150 h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed"
               onClick={handlFilReset}
             >
               Reset
             </button>
           </div>
         </div>
-        <div className="space-y-4 mt-4">
+        <div className="mt-4 space-y-4">
           {Filters.map((filters, index) => {
             return (
               <>
-                <div className="flex flex-row space-x-4 text-white text-lg font-bold">
+                <div className="flex flex-row space-x-4 text-lg font-bold text-white">
                   <button
                     onClick={() => {
                       handleFilterClick(index);
@@ -161,19 +161,19 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
           })}
         </div>
         <div className="flex flex-row justify-between mt-4">
-          <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center ">
+          <h1 className="text-2xl font-bold text-center text-black dark:text-WhiteBG ">
             Categories
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="h-fit text-center text-base font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed duration-150"
+              className="text-base font-bold text-center duration-150 h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed"
               onClick={handleCatReset}
             >
               Reset
             </button>
           </div>
         </div>
-        <div className="space-y-4 mt-4">
+        <div className="mt-4 space-y-4">
           {Categories.map((category, index) => {
             return (
               <div key={index}>
@@ -187,7 +187,7 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
                       : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen "
                   }`}
                 >
-                  <h1 className="text-white text-base font-extrabold ">
+                  <h1 className="text-base font-extrabold text-white ">
                     {category.name}
                   </h1>
                 </button>

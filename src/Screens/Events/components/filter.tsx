@@ -93,25 +93,25 @@ const EventsFilter = () => {
 
   return (
     <>
-      <div className="h-full w-full p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg duration-ThemeDuration">
+      <div className="w-full h-full p-4 text-black rounded-lg bg-BlueGrey dark:bg-BlueBlack dark:text-white duration-ThemeDuration">
         <div className="flex flex-row justify-between">
-          <h1 className="h-fit text-2xl font-bold text-black dark:text-WhiteBG text-center">
+          <h1 className="text-2xl font-bold text-center text-black h-fit dark:text-WhiteBG">
             Filters
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
+              className="text-sm font-bold text-center h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
               onClick={() => setFilterState([...BoolArrInitFilter])}
             >
               Reset
             </button>
           </div>
         </div>
-        <div className="space-y-4 mt-4">
+        <div className="mt-4 space-y-4">
           {Filters.map((filters, index) => {
             return (
               <>
-                <div className="flex flex-row space-x-4 text-white text-base font-bold">
+                <div className="flex flex-row space-x-4 text-base font-bold text-white">
                   <button
                     onClick={() => {
                       handleFilterClick(index);
@@ -146,19 +146,19 @@ const EventsFilter = () => {
           })}
         </div>
         <div className="flex flex-row justify-between mt-4">
-          <h1 className="text-2xl font-bold text-black dark:text-WhiteBG text-center ">
+          <h1 className="text-2xl font-bold text-center text-black dark:text-WhiteBG ">
             Categories
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="h-fit text-center text-sm font-bold text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
+              className="text-sm font-bold text-center h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
               onClick={() => setCatState([...BoolArrInitCategory])}
             >
               Reset
             </button>
           </div>
         </div>
-        <div className="space-y-4 mt-4">
+        <div className="mt-4 space-y-4">
           {Categories.map((category, index) => {
             return (
               <div key={index}>
@@ -170,7 +170,7 @@ const EventsFilter = () => {
                     !catState[index] ? "bg-Blue" : "bg-Green"
                   }`}
                 >
-                  <h1 className="text-white text-base font-extrabold ">
+                  <h1 className="text-base font-extrabold text-white ">
                     {category.name}
                   </h1>
                 </button>

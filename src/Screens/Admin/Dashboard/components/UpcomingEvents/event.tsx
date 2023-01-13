@@ -4,20 +4,20 @@ const Event = () => {
   return (
     <>
       <div className="w-full my-4">
-        <div className="flex flex-row sm:flex-col sm:grid sm:grid-cols-5 gap-4">
+        <div className="flex flex-row gap-4 sm:flex-col sm:grid sm:grid-cols-5">
           <div className="flex flex-col col-span-1 ">
-            <h1 className="text-center text-base md:text-lg font-semibold overflow-clip">
+            <h1 className="text-base font-semibold text-center md:text-lg overflow-clip">
               19th Dec
             </h1>
-            <h1 className="text-center text-sm md:text-base ">11:00am</h1>
+            <h1 className="text-sm text-center md:text-base ">11:00am</h1>
           </div>
           <div className="flex flex-col col-span-3 max-h-24 overflow-clip">
-            <h1 className="text-left text-base md:text-lg font-bold truncate">
+            <h1 className="text-base font-bold text-left truncate md:text-lg">
               Weekly Meetup
             </h1>
-            <p className="text-left text-sm md:text-base truncate">{longStr}</p>
+            <p className="text-sm text-left truncate md:text-base">{longStr}</p>
           </div>
-          <div className="flex flex-col my-auto col-span-1 xs:hidden sm:block">
+          <div className="flex flex-col col-span-1 my-auto xs:hidden sm:block">
             <div className="flex flex-row justify-evenly">
               <svg
                 className="fill-black dark:fill-white"

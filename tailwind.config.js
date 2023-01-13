@@ -16,6 +16,22 @@ module.exports = {
         128: "32rem",
         168: "42rem",
       },
+      animation: {
+        text: "text 5s ease infinite",
+        block: "text 2s ease infinite",
+      },
+      keyframes: {
+        text: {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+      },
       transitionDuration: {
         ThemeDuration: "500ms",
       },

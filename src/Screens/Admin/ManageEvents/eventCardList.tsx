@@ -61,7 +61,7 @@ const ViewAllEventCards = () => {
 
     return (
       <>
-        <div className="w-full h-fit p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg">
+        <div className="w-full p-4 text-black rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-white">
           <div className="flex flex-col">
             <div className="text-xl font-bold">{event.name}</div>
             <div className="mt-4 text-base">{event.description}</div>
@@ -115,7 +115,7 @@ const ViewAllEventCards = () => {
 
           <div className="flex flex-row float-left mt-4">
             <button
-              className="text-white font-bold bg-Green hover:bg-DarkGreen px-4 py-2 w-fit h-fit rounded-lg"
+              className="px-4 py-2 font-bold text-white rounded-lg bg-Green hover:bg-DarkGreen w-fit h-fit"
               onClick={() => {
                 editState[index] = !editState[index];
                 setEditState([...editState]);
@@ -184,22 +184,22 @@ const ViewAllEventCards = () => {
 
     return (
       <>
-        <div className="w-full h-fit p-4 bg-BlueGrey text-black dark:bg-BlueBlack dark:text-white rounded-lg">
+        <div className="w-full p-4 text-black rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-white">
           <div className="space-y-2">
-            <h1 className="text-lg font-semibold pl-2">Title</h1>
+            <h1 className="pl-2 text-lg font-semibold">Title</h1>
             <input
               placeholder={eventDetails.name}
-              className="text-base md:text-xl font-bold p-2 rounded-md w-fit h-fit focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white"
+              className="p-2 text-base font-bold rounded-md md:text-xl w-fit h-fit focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white"
               value={eventDetails.name}
               onChange={changeName}
             />
           </div>
-          <div className="space-y-2 mt-4">
-            <h1 className="text-lg font-semibold pl-2">Description</h1>
+          <div className="mt-4 space-y-2">
+            <h1 className="pl-2 text-lg font-semibold">Description</h1>
             <textarea
               spellCheck={true}
               autoCorrect="on"
-              className="text-sm md:text-base p-4 rounded-md w-full h-fit max-h-128  focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white"
+              className="w-full p-4 text-sm rounded-md md:text-base h-fit max-h-128 focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white"
               value={eventDetails.description}
               onChange={changeDescription}
             >
@@ -207,25 +207,25 @@ const ViewAllEventCards = () => {
             </textarea>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-start md:space-x-4">
-            <div className="space-y-2 mt-2">
-              <h1 className="text-lg font-semibold pl-2">Date</h1>
+          <div className="flex flex-col justify-start md:flex-row md:space-x-4">
+            <div className="mt-2 space-y-2">
+              <h1 className="pl-2 text-lg font-semibold">Date</h1>
               <DatePickerComponent
                 onChange={changeDate}
                 value={new Date(eventDetails.time)}
               />
             </div>
             <div className="flex flex-col xs:flex-row xs:space-x-4">
-              <div className="space-y-2 mt-2">
-                <h1 className="text-lg font-semibold pl-2">Time</h1>
+              <div className="mt-2 space-y-2">
+                <h1 className="pl-2 text-lg font-semibold">Time</h1>
                 <TimePicker
                   date={new Date(eventDetails.time)}
                   onChange={changeDate}
                 />
               </div>
-              <div className="space-y-2 mt-2">
-                <h1 className="text-lg font-semibold pl-2">Tags</h1>
-                <div className="flex flex-row w-fit mt-4 md:mt-0 bg-WhiteBG dark:bg-BlackBG p-2 rounded-lg">
+              <div className="mt-2 space-y-2">
+                <h1 className="pl-2 text-lg font-semibold">Tags</h1>
+                <div className="flex flex-row p-2 mt-4 rounded-lg w-fit md:mt-0 bg-WhiteBG dark:bg-BlackBG">
                   <button
                     onClick={() => handleIconClick("food", index)}
                     className={`hover:bg-Blue dark:hover:bg-Green p-2 rounded-lg
@@ -233,7 +233,7 @@ const ViewAllEventCards = () => {
                     `}
                   >
                     <svg
-                      className="h-6 w-6 fill-black dark:fill-WhiteBG"
+                      className="w-6 h-6 fill-black dark:fill-WhiteBG"
                       xmlns="http://www.w3.org/2000/svg"
                       height="24"
                       width="24"
@@ -250,7 +250,7 @@ const ViewAllEventCards = () => {
                     }`}
                   >
                     <svg
-                      className="h-6 w-6 fill-black dark:fill-WhiteBG"
+                      className="w-6 h-6 fill-black dark:fill-WhiteBG"
                       xmlns="http://www.w3.org/2000/svg"
                       height="24"
                       width="24"
@@ -268,7 +268,7 @@ const ViewAllEventCards = () => {
                       }`}
                   >
                     <svg
-                      className="h-6 w-6 fill-black dark:fill-WhiteBG"
+                      className="w-6 h-6 fill-black dark:fill-WhiteBG"
                       xmlns="http://www.w3.org/2000/svg"
                       height="24"
                       width="24"
@@ -285,7 +285,7 @@ const ViewAllEventCards = () => {
                       }`}
                   >
                     <svg
-                      className="h-6 w-6 fill-black dark:fill-WhiteBG"
+                      className="w-6 h-6 fill-black dark:fill-WhiteBG"
                       xmlns="http://www.w3.org/2000/svg"
                       height="24"
                       width="24"
@@ -298,9 +298,9 @@ const ViewAllEventCards = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-row justify-between space-x-4 mt-4">
+          <div className="flex flex-row justify-between mt-4 space-x-4">
             <button
-              className="text-white font-bold bg-Red hover:bg-DarkRed px-4 py-2 w-fit h-fit rounded-lg"
+              className="px-4 py-2 font-bold text-white rounded-lg bg-Red hover:bg-DarkRed w-fit h-fit"
               onClick={() => {
                 handleCancel();
               }}
@@ -308,7 +308,7 @@ const ViewAllEventCards = () => {
               Cancel
             </button>
             <button
-              className="text-white font-bold bg-Blue hover:bg-DarkBlue px-4 py-2 w-fit h-fit rounded-lg"
+              className="px-4 py-2 font-bold text-white rounded-lg bg-Blue hover:bg-DarkBlue w-fit h-fit"
               onClick={() => {
                 handleSave();
               }}
@@ -322,7 +322,7 @@ const ViewAllEventCards = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-8 w-full">
+    <div className="flex flex-col w-full space-y-8">
       {finalEventsInfoState.map((event, index) => {
         return (
           <>

@@ -95,24 +95,24 @@ const ClubTiles = ({
 
   return (
     <>
-      <div className="grid grid-flow-row w-full gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {filteredList.map((club) => {
           return (
             <NavLink to={`/club`}>
-              <body className="p-2 bg-BlueGrey dark:bg-BlueBlack rounded-lg ease-in-out hover:scale-105 duration-ThemeDuration">
+              <body className="p-2 ease-in-out rounded-lg bg-BlueGrey dark:bg-BlueBlack hover:scale-105 duration-ThemeDuration">
                 <div className="relative">
                   <img
-                    className="rounded-lg w-full h-24 object-cover mb-6"
+                    className="object-cover w-full h-24 mb-6 rounded-lg"
                     src={club.banner}
                     alt="banner"
                   />
                   <img
-                    className="absolute h-16 w-16 object-cover left-4 bottom-0 rounded-lg top-16 drop-shadow-lg"
+                    className="absolute bottom-0 object-cover w-16 h-16 rounded-lg left-4 top-16 drop-shadow-lg"
                     src={club.logo}
                     alt="logo"
                   />
-                  <div className="text-black whitespace-pre-wrap overflow-hidden p-4 mb-2 max-h-36 dark:text-WhiteBG">
-                    <h1 className="font-bold text-lg md:text-xl">
+                  <div className="p-4 mb-2 overflow-hidden text-black whitespace-pre-wrap max-h-36 dark:text-WhiteBG">
+                    <h1 className="text-lg font-bold md:text-xl">
                       {club.name}
                     </h1>
                     <h1 className="text-base font-light">{club.tags}</h1>

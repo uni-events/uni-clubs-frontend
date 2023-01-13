@@ -59,11 +59,11 @@ const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
   const indicatorOptions: string[] = ["AM", "PM"];
   return (
     <>
-      <div className="h-fit w-fit flex items-center justify-center bg-WhiteBG dark:bg-BlackBG rounded-lg ">
+      <div className="flex items-center justify-center rounded-lg h-fit w-fit bg-WhiteBG dark:bg-BlackBG ">
         <div className="flex flex-row p-4">
           <select
             name="hours"
-            className="cursor-pointer text-black dark:text-white px-1 bg-transparent text-base appearance-none outline-none hover:bg-Blue dark:hover:bg-Green "
+            className="px-1 text-base text-black bg-transparent outline-none appearance-none cursor-pointer dark:text-white hover:bg-Blue dark:hover:bg-Green "
             onChange={handleHourOpt}
           >
             {hoursOptions.map((hourOpt) =>
@@ -76,10 +76,10 @@ const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
               )
             )}
           </select>
-          <span className="text-base px-1">:</span>
+          <span className="px-1 text-base">:</span>
           <select
             name="minutes"
-            className="cursor-pointer px-1 bg-transparent text-base appearance-none outline-none hover:bg-Blue dark:hover:bg-Green"
+            className="px-1 text-base bg-transparent outline-none appearance-none cursor-pointer hover:bg-Blue dark:hover:bg-Green"
           >
             {minuteOptions.map((minuteOpt, index) =>
               selectTime.minutes === minuteOpt ? (
@@ -93,7 +93,7 @@ const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
           </select>
           <select
             name="ampm"
-            className="cursor-pointer px-1 bg-transparent text-base appearance-none outline-none hover:bg-Blue dark:hover:bg-Green"
+            className="px-1 text-base bg-transparent outline-none appearance-none cursor-pointer hover:bg-Blue dark:hover:bg-Green"
             onChange={handleIndicatorOpt}
           >
             {indicatorOptions.map((indicatorOpt, index) =>
@@ -106,9 +106,9 @@ const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
               )
             )}
           </select>
-          <div className="pl-7 pr-1">
+          <div className="pr-1 pl-7">
             <svg
-              className="h-6 w-6 fill-black dark:fill-WhiteBG"
+              className="w-6 h-6 fill-black dark:fill-WhiteBG"
               fill="none"
               height="24"
               width="24"
