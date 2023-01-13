@@ -7,13 +7,12 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 z-30 p-6 mx-auto bg-WhiteBG dark:bg-BlackBG bg-opacity-95 h-fit duration-ThemeDuration">
         <div className="flex items-center justify-between">
-          <button className="block md:hidden">
+          <button className="h-full w-fit md:hidden">
             <svg
               className="fill-Blue"
               xmlns="http://www.w3.org/2000/svg"
-              height="40"
-              width="40"
-              viewBox=" 0 0 40 40"
+              height="24"
+              width="24"
             >
               <path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z" />
             </svg>
@@ -27,7 +26,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/discover"
-              className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
+              className="hidden mt-1 text-4xl transition-all duration-75 ease-in-out md:flex group text-Blue hover:text-Green active:text-DarkGreen"
             >
               <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Discover
@@ -35,7 +34,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/events"
-              className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
+              className="hidden mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen md:flex "
             >
               <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Events
@@ -43,7 +42,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/Announcements"
-              className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
+              className="hidden mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen md:flex "
             >
               <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Announcements
