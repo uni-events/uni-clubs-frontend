@@ -2,6 +2,7 @@ import React from "react";
 import pfp from "../Assets/pfp.png";
 
 import { NavLink } from "react-router-dom";
+import { Toggle } from "../Theme/toggle";
 const AdminNavbar = () => {
   return (
     <>
@@ -20,33 +21,42 @@ const AdminNavbar = () => {
           <div className="flex md:space-x-12 xs:mx-auto md:m-0">
             <NavLink
               to="/dashboard"
-              className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-Green to-Blue"
+              className="text-4xl font-extrabold text-transparent hover:animate-text bg-gradient-to-r from-Green hover:via-Blue to-Blue hover:to-Green bg-clip-text"
             >
               Uni Clubs Admin
             </NavLink>
             <NavLink
               to="/club-details"
-              className="hidden mt-1 text-2xl font-bold text-Blue hover:text-Green hover:underline underline-offset-4 md:flex"
+              className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              Club Details
+              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
+                Club Details
+              </span>
+            </NavLink>
+            <NavLink
+              to="/manage-events"
+              className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
+            >
+              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
+                Manage Events
+              </span>
             </NavLink>
 
             <NavLink
-              to="/manage-events"
-              className="hidden mt-1 text-2xl font-bold text-Blue hover:text-Green hover:underline underline-offset-4 md:flex"
-            >
-              Manage Events
-            </NavLink>
-            <NavLink
               to="/reviews"
-              className="hidden mt-1 text-2xl font-bold text-Blue hover:text-Green hover:underline underline-offset-4 md:flex"
+              className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              Reviews
+              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
+                Inbox
+              </span>
             </NavLink>
           </div>
-          <NavLink to="/" className="">
-            <img className="w-10 h-10 rounded-xl" src={pfp} alt="pfp" />
-          </NavLink>
+          <div className="flex flex-row space-x-4">
+            <Toggle />
+            <NavLink to="/" className="duration-ThemeDuration hover:scale-105">
+              <img className="w-10 h-10 rounded-xl" src={pfp} alt="pfp" />
+            </NavLink>
+          </div>
         </div>
       </nav>
     </>

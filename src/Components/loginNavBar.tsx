@@ -1,6 +1,7 @@
 import React from "react";
 
 import { NavLink } from "react-router-dom";
+import { Toggle } from "../Theme/toggle";
 const LoginNavbar = () => {
   return (
     <>
@@ -19,11 +20,12 @@ const LoginNavbar = () => {
           <div className="flex md:space-x-12 xs:mx-auto md:m-0">
             <NavLink
               to="/"
-              className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-Green to-Blue"
+              className="text-4xl font-extrabold text-transparent hover:animate-text bg-gradient-to-r from-Green hover:via-Blue to-Blue hover:to-Green bg-clip-text"
             >
-              Uni Clubs
+              Uni Clubs Admin
             </NavLink>
           </div>
+          <Toggle />
         </div>
       </nav>
     </>

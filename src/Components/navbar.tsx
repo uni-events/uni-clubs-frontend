@@ -21,15 +21,15 @@ const Navbar = () => {
           <div className="flex md:space-x-12 xs:mx-auto md:m-0">
             <NavLink
               to="/"
-              className="text-4xl font-extrabold text-transparent bg-center bg-gradient-to-r from-Green to-Blue bg-animate animation-bgMove animation-1s animation-ease animation-infinite "
+              className="text-4xl font-extrabold text-transparent hover:animate-text bg-gradient-to-r from-Green hover:via-Blue to-Blue hover:to-Green bg-clip-text"
             >
-              Uni Clubs bg-clip-text
+              Uni Clubs
             </NavLink>
             <NavLink
               to="/discover"
               className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-150 ease-out underline-offset-4">
+              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Discover
               </span>
             </NavLink>
@@ -37,7 +37,7 @@ const Navbar = () => {
               to="/events"
               className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-150 ease-out underline-offset-4">
+              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Events
               </span>
             </NavLink>
@@ -45,14 +45,14 @@ const Navbar = () => {
               to="/Announcements"
               className="mt-1 transition-all duration-75 ease-in-out group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-150  ease-out underline-offset-4">
+              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Announcements
               </span>
             </NavLink>
           </div>
           <div className="flex flex-row justify-center space-x-4">
             <Toggle />
-            <button className="hidden px-4 py-2 rounded-lg bg-Blue h-fit w-fit md:block hover:bg-Green active:bg-DarkGreen hover:scale-105 duration-ThemeDuration">
+            <button className="hidden px-4 py-2 rounded-lg duration-ThemeDuration bg-gradient-to-bl hover:bg-gradient-to-tr from-Green to-Blue active:from-DarkGreen active:to-DarkBlue h-fit w-fit md:block hover:scale-105">
               <NavLink
                 to="/login"
                 className="mt-1 text-xl font-bold text-WhiteBG"

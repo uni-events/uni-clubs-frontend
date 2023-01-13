@@ -16,18 +16,24 @@ module.exports = {
         128: "32rem",
         168: "42rem",
       },
-      transitionDuration: {
-        ThemeDuration: "500ms",
-      },
       animation: {
-        bgMove: {
+        text: "text 5s ease infinite",
+        block: "text 2s ease infinite",
+      },
+      keyframes: {
+        text: {
           "0%, 100%": {
-            backgroundPosition: "0% 50%",
+            "background-size": "200% 200%",
+            "background-position": "left center",
           },
           "50%": {
-            backgroundPosition: "100% 50%",
+            "background-size": "200% 200%",
+            "background-position": "right center",
           },
         },
+      },
+      transitionDuration: {
+        ThemeDuration: "500ms",
       },
       colors: {
         Blue: "hsl(192, 45%, 57%)",
