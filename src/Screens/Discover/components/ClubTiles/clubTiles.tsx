@@ -98,7 +98,7 @@ const ClubTiles = ({
       <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {filteredList.map((club) => {
           return (
-            <NavLink to={`/club`}>
+            <NavLink to={`/club/${club.clubStr}`}>
               <body className="p-2 ease-in-out rounded-lg bg-BlueGrey dark:bg-BlueBlack hover:scale-105 duration-ThemeDuration">
                 <div className="relative">
                   <img

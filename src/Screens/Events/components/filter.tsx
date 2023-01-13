@@ -100,7 +100,7 @@ const EventsFilter = () => {
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="text-sm font-bold text-center h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
+              className="text-base font-bold text-center duration-150 h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed"
               onClick={() => setFilterState([...BoolArrInitFilter])}
             >
               Reset
@@ -116,10 +116,10 @@ const EventsFilter = () => {
                     onClick={() => {
                       handleFilterClick(index);
                     }}
-                    className={`w-full rounded-lg p-1 ${
+                    className={`w-full rounded-lg p-1 duration-150 ${
                       filterState[index].op1
-                        ? "bg-Green hover:bg-DarkGreen"
-                        : "bg-Blue hover:bg-DarkBlue"
+                        ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
+                        : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
                     }`}
                   >
                     <div className="text-center">{filters.name}</div>
@@ -132,10 +132,10 @@ const EventsFilter = () => {
                       }
                       setFilterState([...filterState]);
                     }}
-                    className={`w-full rounded-lg p-1 ${
+                    className={`w-full rounded-lg p-1 duration-150 ${
                       filterState[index].op2
-                        ? "bg-Green hover:bg-DarkGreen"
-                        : "bg-Blue hover:bg-DarkBlue"
+                        ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
+                        : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
                     }`}
                   >
                     <div className="text-center">{filters.opposite}</div>
@@ -151,7 +151,7 @@ const EventsFilter = () => {
           </h1>
           <div className="flex flex-col justify-center">
             <button
-              className="text-sm font-bold text-center h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed "
+              className="text-base font-bold text-center duration-150 h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed"
               onClick={() => setCatState([...BoolArrInitCategory])}
             >
               Reset
@@ -166,8 +166,10 @@ const EventsFilter = () => {
                   onClick={() => {
                     handleCategoryClick(index);
                   }}
-                  className={`w-full h-fit p-1 rounded-lg ${
-                    !catState[index] ? "bg-Blue" : "bg-Green"
+                  className={`w-full h-fit p-1 rounded-lg duration-150 ${
+                    !catState[index]
+                      ? "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
+                      : "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
                   }`}
                 >
                   <h1 className="text-base font-extrabold text-white ">

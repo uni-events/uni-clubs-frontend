@@ -25,7 +25,7 @@ function App() {
           <Route path="/events" element={<EventPage />} />
           <Route path="/Announcements" element={<AnnouncementPage />} />
           <Route path="/reviews" element={<AdminReview />} />
-          <Route path="/club" element={<ClubPage />} />
+          <Route path="/club/:id" element={<ClubPage />} />
           <Route path="/club-details" element={<ClubDetails />} />
         </Routes>
       </Router>
