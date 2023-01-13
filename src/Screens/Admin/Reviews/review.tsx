@@ -5,32 +5,32 @@ import InboxMessage from "./inboxMessage";
 const AdminReview = () => {
   return (
     <>
-      <div className="w-screen h-screen pt-2 overflow-x-hidden overflow-y-clip bg-WhiteBG dark:bg-BlackBG pb-28">
+      <div className="w-screen h-screen overflow-x-hidden overflow-y-clip bg-WhiteBG dark:bg-BlackBG pb-28 duration-ThemeDuration">
         <AdminNavbar />
         <div className="flex flex-row h-full px-4">
-          <div className="h-full p-4 overflow-y-scroll text-black border-r-2 w-96 dark:text-white bg-BlueGrey dark:bg-BlueBlack scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-lg rounded-l-xl border-Green dark:border-Blue">
+          <div className="h-full p-4 overflow-y-scroll text-black border-r-2 w-96 dark:text-white bg-BlueGrey dark:bg-BlueBlack scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-lg rounded-l-xl border-Green dark:border-Blue duration-ThemeDuration">
             <div className="">
-              <button className="border-l-0 hover:bg-LightBlueGrey border-l-BlackBG hover:dark:bg-LightBlueBlack dark:border-l-WhiteBG hover:border-l-4">
+              <button>
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-LightBlueGrey border-l-BlackBG hover:dark:bg-LightBlueBlack dark:border-l-WhiteBG hover:border-l-4">
+              <button>
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-LightBlueGrey border-l-BlackBG hover:dark:bg-LightBlueBlack dark:border-l-WhiteBG hover:border-l-4">
+              <button>
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-LightBlueGrey border-l-BlackBG hover:dark:bg-LightBlueBlack dark:border-l-WhiteBG hover:border-l-4">
+              <button>
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-LightBlueGrey border-l-BlackBG hover:dark:bg-LightBlueBlack dark:border-l-WhiteBG hover:border-l-4">
+              <button>
                 <ReviewInboxPreview />
               </button>
-              <button className="border-l-0 hover:bg-LightBlueGrey border-l-BlackBG hover:dark:bg-LightBlueBlack dark:border-l-WhiteBG hover:border-l-4">
+              <button>
                 <ReviewInboxPreview />
               </button>
             </div>
           </div>
-          <div className="w-full h-full p-4 overflow-y-scroll bg-LightBlueGrey dark:bg-LightBlueBlack scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-lg rounded-r-xl">
+          <div className="w-full h-full p-4 overflow-y-scroll bg-LightBlueGrey dark:bg-LightBlueBlack scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-lg rounded-r-xl duration-ThemeDuration">
             <InboxMessage />
           </div>
         </div>

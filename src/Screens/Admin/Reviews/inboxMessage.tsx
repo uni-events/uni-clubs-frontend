@@ -3,7 +3,7 @@ import { longStr } from "../../../Data/dataTypes";
 const InboxMessage = () => {
   return (
     <>
-      <div className="text-black  dark:text-white">
+      <div className="text-black dark:text-white">
         <div className="flex flex-col mx-8 mb-8">
           <div className="flex flex-row space-x-4 text-lg">
             <h1 className="text-lg font-extrabold">From</h1>
@@ -64,7 +64,7 @@ const InboxMessage = () => {
               </svg>
             </div>
           </div>
-          <div className="p-8 mt-8 text-black bg-WhiteBG dark:text-white dark:bg-BlackBG">
+          <div className="p-8 mt-8 text-black bg-WhiteBG dark:text-white dark:bg-BlackBG duration-ThemeDuration">
             {longStr}
           </div>
         </div>

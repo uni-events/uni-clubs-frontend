@@ -1,7 +1,7 @@
 const StatisticsCard = () => {
   return (
     <>
-      <div className="w-full p-4 rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG">
+      <div className="w-full p-4 rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG duration-ThemeDuration">
         <div className="flex flex-col items-center justify-between px-4 py-2 sm:flex-row">
           <h1 className="text-2xl font-bold">Statistics</h1>
           <h1 className="pr-2 text-base">past week</h1>

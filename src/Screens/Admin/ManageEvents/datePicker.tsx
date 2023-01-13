@@ -136,7 +136,7 @@ const DatePickerComponent = ({
         <input
           type="text"
           readOnly
-          className="w-full py-4 pl-4 pr-10 text-black rounded-lg cursor-pointer bg-WhiteBG dark:bg-BlackBG focus:outline-none focus:ring-2 focus:ring-Green dark:text-white"
+          className="w-full py-4 pl-4 pr-10 text-black rounded-lg cursor-pointer bg-WhiteBG dark:bg-BlackBG focus:outline-none focus:ring-2 focus:ring-Green dark:text-white duration-ThemeDuration"
           placeholder="Select date"
           value={format(selectedDate, "yyyy-MM-dd")}
           onClick={toggleDatepicker}
@@ -163,7 +163,7 @@ const DatePickerComponent = ({
         </div>
         {showDatepicker && (
           <div
-            className="absolute top-0 left-0 p-4 mt-12 rounded-lg shadow bg-WhiteBG dark:bg-BlackBG"
+            className="absolute top-0 left-0 p-4 mt-12 rounded-lg shadow bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration"
             style={{ width: "17rem" }}
           >
             <div className="flex items-center justify-between mb-2">
