@@ -7,7 +7,7 @@ const Login = () => {
     <>
       <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <LoginNavbar />
-        <div className="flex items-center justify-center mx-4 mt-12 h-3/4 md:mx-auto md:mt-0 bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+        <div className="flex items-center justify-center mx-4 mt-4 h-3/4 md:mx-auto md:mt-0 bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
           <div className="px-8 py-6 text-left text-black rounded-lg shadow-lg bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG duration-ThemeDuration">
             <div className="flex justify-center drop-shadow-md">
               <img
@@ -50,7 +50,7 @@ const Login = () => {
                     Forgot password?
                   </NavLink>
 
-                  <button className="hidden px-6 py-2 mt-4 rounded-lg duration-ThemeDuration bg-gradient-to-bl hover:bg-gradient-to-tr from-Green to-Blue active:from-DarkGreen active:to-DarkBlue h-fit w-fit md:block hover:scale-105">
+                  <button className="px-6 py-2 mt-4 rounded-lg duration-ThemeDuration bg-gradient-to-bl hover:bg-gradient-to-tr from-Green to-Blue active:from-DarkGreen active:to-DarkBlue h-fit w-fit hover:scale-105">
                     <NavLink
                       to="/dashboard"
                       className="mt-1 text-xl font-bold text-WhiteBG"
