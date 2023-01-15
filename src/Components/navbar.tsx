@@ -50,17 +50,17 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div className="flex flex-row justify-center space-x-4">
-            <div className="hidden md:block">
+            <div className="hidden mt-[2px] md:block">
               <Toggle />
             </div>
 
-            <button className="p-2 rounded-lg sm:px-4 sm:py-2 duration-ThemeDuration bg-gradient-to-bl hover:bg-gradient-to-tr from-Green to-Blue active:from-DarkGreen active:to-DarkBlue h-fit w-fit hover:scale-105">
-              <NavLink to="/login" className="mt-1 ">
-                <p className="hidden text-xl font-bold text-WhiteBG sm:block">
+            <button className="p-2 rounded-lg duration-ThemeDuration bg-gradient-to-bl hover:bg-gradient-to-tr from-Green to-Blue active:from-DarkGreen active:to-DarkBlue h-fit w-fit hover:scale-105">
+              <NavLink to="/login" className="">
+                <p className="hidden px-2 text-xl font-bold text-WhiteBG md:block">
                   Login
                 </p>
                 <svg
-                  className="block fill-white sm:hidden"
+                  className="block fill-white md:hidden"
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"
                   width="24"
