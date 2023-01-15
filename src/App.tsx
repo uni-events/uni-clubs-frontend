@@ -27,6 +27,7 @@ function App() {
           <Route path="/reviews" element={<AdminReview />} />
           <Route path="/club/:id" element={<ClubPage />} />
           <Route path="/club-details" element={<ClubDetails />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
     </div>
