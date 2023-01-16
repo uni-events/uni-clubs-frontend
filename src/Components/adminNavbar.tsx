@@ -30,7 +30,7 @@ const AdminNavbar = () => {
               to="/club-details"
               className="hidden mt-1 transition-all duration-75 ease-in-out md:block group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
+              <span className="text-2xl font-bold bg-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Club Details
               </span>
             </NavLink>
@@ -38,7 +38,7 @@ const AdminNavbar = () => {
               to="/manage-events"
               className="hidden mt-1 transition-all duration-75 ease-in-out md:block group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
+              <span className="text-2xl font-bold bg-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Manage Events
               </span>
             </NavLink>
@@ -47,7 +47,7 @@ const AdminNavbar = () => {
               to="/reviews"
               className="hidden mt-1 transition-all duration-75 ease-in-out md:block group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
+              <span className="text-2xl font-bold bg-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Inbox
               </span>
             </NavLink>

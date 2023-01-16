@@ -28,7 +28,7 @@ const Navbar = () => {
               to="/discover"
               className="hidden mt-1 text-2xl transition-all duration-75 ease-in-out md:block group text-Blue hover:text-Green active:text-DarkGreen"
             >
-              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
+              <span className="text-2xl font-bold bg-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Discover
               </span>
             </NavLink>
@@ -36,7 +36,7 @@ const Navbar = () => {
               to="/events"
               className="hidden mt-1 transition-all duration-75 ease-in-out md:block group text-Blue hover:text-Green active:text-DarkGreen "
             >
-              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
+              <span className="text-2xl font-bold bg-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Events
               </span>
             </NavLink>
@@ -44,7 +44,7 @@ const Navbar = () => {
               to="/Announcements"
               className="hidden mt-1 transition-all duration-75 ease-in-out md:block group text-Blue hover:text-Green active:text-DarkGreen "
             >
-              <span className="text-2xl font-bold bg-left-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
+              <span className="text-2xl font-bold bg-bottom bg-gradient-to-r from-Green to-Green bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out underline-offset-4">
                 Announcements
               </span>
             </NavLink>
