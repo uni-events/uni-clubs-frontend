@@ -84,7 +84,7 @@ const AdminReview = () => {
         <div className="flex flex-row h-full px-4">
           <div className="h-full p-4 overflow-y-scroll text-black border-r-2 w-96 dark:text-white bg-BlueGrey dark:bg-BlueBlack scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey dark:scrollbar-thumb-BlueGrey scrollbar-thumb-rounded-lg rounded-l-xl border-Green dark:border-Blue duration-ThemeDuration">
             <div>
-              {messages.map((message, index) => {
+              {messageData.map((message, index) => {
                 return (
                   <button onClick={() => handleClick(message)}>
                     <ReviewInboxPreview message={message} />
