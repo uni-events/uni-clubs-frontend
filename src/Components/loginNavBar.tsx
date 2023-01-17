@@ -5,7 +5,7 @@ import { Toggle } from "../Theme/toggle";
 const LoginNavbar = () => {
   return (
     <>
-      <nav className="sticky top-0 z-30 p-2 mx-auto bg-WhiteBG dark:bg-BlackBG bg-opacity-95 h-fit duration-ThemeDuration">
+      <nav className="sticky top-0 z-30 p-4 mx-auto bg-WhiteBG dark:bg-BlackBG bg-opacity-95 h-fit duration-ThemeDuration">
         <div className="flex items-center justify-between">
           <button className="block md:hidden">
             <svg
