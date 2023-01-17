@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
-        <div className="w-screen h-screen overflow-y-scroll snap snap-y snap-mandatory">
+        <div className="w-screen h-screen overflow-y-scroll -translate-y-12 snap snap-y snap-mandatory">
           <section className="w-screen h-screen snap-center">
             <DiscoverInfo />
           </section>
