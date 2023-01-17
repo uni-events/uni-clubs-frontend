@@ -35,13 +35,8 @@
     <script src="node_modules/aos/dist/aos.js"></script>
     <script>
       AOS.init();
-      AOS.init({
-        debounceDelay: 50,
-        once: false, // whether animation should happen only once - while scrolling down
-        mirror: true, // whether elements should animate out while scrolling past them
-      });
+      AOS.init({ easing: "ease-out-back", duration: 1000 });
     </script>
-    >
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
