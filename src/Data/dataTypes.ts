@@ -44,3 +44,10 @@ export interface TagsData {
   filters: string[];
   categories: string[];
 }
+export interface MessageData {
+  author: string;
+  rating: number;
+  eventName: string;
+  dateSent: Date;
+  content: string;
+}
