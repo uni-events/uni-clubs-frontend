@@ -59,20 +59,26 @@ const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
   const indicatorOptions: string[] = ["AM", "PM"];
   return (
     <>
-      <div className="flex items-center justify-center rounded-lg h-fit w-fit bg-WhiteBG dark:bg-BlackBG ">
+      <div className="flex items-center justify-center rounded-lg h-fit w-fit bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <div className="flex flex-row p-4">
           <select
             name="hours"
-            className="px-1 text-base text-black bg-transparent outline-none appearance-none cursor-pointer dark:text-white hover:bg-Blue dark:hover:bg-Green "
+            className="px-1 text-base bg-transparent outline-none appearance-none cursor-pointer hover:bg-Blue dark:hover:bg-Green "
             onChange={handleHourOpt}
           >
             {hoursOptions.map((hourOpt) =>
               selectTime.hours === hourOpt ? (
-                <option value={hourOpt} selected className="text-base">
+                <option
+                  value={hourOpt}
+                  selected
+                  className="text-base text-black dark:text-white"
+                >
                   {hourOpt}
                 </option>
               ) : (
-                <option className="text-base">{hourOpt}</option>
+                <option className="text-base text-black dark:text-white">
+                  {hourOpt}
+                </option>
               )
             )}
           </select>
@@ -83,11 +89,16 @@ const TimePicker = ({ date, onChange }: { date: Date; onChange: Function }) => {
           >
             {minuteOptions.map((minuteOpt, index) =>
               selectTime.minutes === minuteOpt ? (
-                <option selected className="text-base">
+                <option
+                  selected
+                  className="text-base text-black dark:text-white"
+                >
                   {minuteOpt}
                 </option>
               ) : (
-                <option className="text-base">{minuteOpt}</option>
+                <option className="text-base text-black dark:text-white">
+                  {minuteOpt}
+                </option>
               )
             )}
           </select>

@@ -61,7 +61,7 @@ const ViewAllEventCards = () => {
 
     return (
       <>
-        <div className="w-full p-4 text-black rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-white">
+        <div className="w-full p-4 text-black rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-white duration-ThemeDuration">
           <div className="flex flex-col">
             <div className="text-xl font-bold">{event.name}</div>
             <div className="mt-4 text-base">{event.description}</div>
@@ -184,12 +184,12 @@ const ViewAllEventCards = () => {
 
     return (
       <>
-        <div className="w-full p-4 text-black rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-white">
+        <div className="w-full p-4 text-black rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-white duration-ThemeDuration">
           <div className="space-y-2">
             <h1 className="pl-2 text-lg font-semibold">Title</h1>
             <input
               placeholder={eventDetails.name}
-              className="p-2 text-base font-bold rounded-md md:text-xl w-fit h-fit focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white"
+              className="p-2 text-base font-bold rounded-md md:text-xl w-fit h-fit focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white duration-ThemeDuration"
               value={eventDetails.name}
               onChange={changeName}
             />
@@ -199,7 +199,7 @@ const ViewAllEventCards = () => {
             <textarea
               spellCheck={true}
               autoCorrect="on"
-              className="w-full p-4 text-sm rounded-md md:text-base h-fit max-h-128 focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white"
+              className="w-full p-4 text-sm rounded-md md:text-base h-fit max-h-128 focus:outline-none focus:ring-2 focus:ring-Green dark:bg-BlackBG dark:text-white duration-ThemeDuration"
               value={eventDetails.description}
               onChange={changeDescription}
             >
@@ -225,7 +225,7 @@ const ViewAllEventCards = () => {
               </div>
               <div className="mt-2 space-y-2">
                 <h1 className="pl-2 text-lg font-semibold">Tags</h1>
-                <div className="flex flex-row p-2 mt-4 rounded-lg w-fit md:mt-0 bg-WhiteBG dark:bg-BlackBG">
+                <div className="flex flex-row p-2 mt-4 rounded-lg w-fit md:mt-0 bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
                   <button
                     onClick={() => handleIconClick("food", index)}
                     className={`hover:bg-Blue dark:hover:bg-Green p-2 rounded-lg

@@ -27,7 +27,7 @@ const Discover = () => {
     <>
       <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
-        <div className="flex flex-col-reverse max-w-screen-xl mx-auto my-6 md:pl-4 md:flex-row ">
+        <div className="flex flex-col-reverse max-w-screen-xl mx-auto my-4 md:pl-4 md:flex-row ">
           <div
             className={`px-4 my-6 w-full h-full md:w-1/4 md:my-0 md:px-0 ${
               showFilter ? "block" : "hidden md:block"

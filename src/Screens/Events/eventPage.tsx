@@ -18,7 +18,7 @@ const EventPage = () => {
     <>
       <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
-        <div className="flex flex-row w-full h-full max-w-screen-xl px-2 py-2 mx-auto md:space-x-4 md:px-4">
+        <div className="flex flex-row w-full h-full max-w-screen-xl px-2 mx-auto my-4 md:space-x-4 md:px-4">
           <div className="hidden md:block md:w-1/4 h-fit">
             <EventsFilter />
           </div>

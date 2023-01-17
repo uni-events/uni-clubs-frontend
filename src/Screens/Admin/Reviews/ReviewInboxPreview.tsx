@@ -1,7 +1,7 @@
 const ReviewInboxPreview = () => {
   return (
     <>
-      <div className="w-full">
+      <div className="w-full duration-150 border-l-0 h-fit hover:bg-LightBlueGrey border-l-BlackBG hover:dark:bg-LightBlueBlack dark:border-l-WhiteBG hover:border-l-4">
         <div className="flex flex-col items-center justify-between px-4 pt-4 md:flex-row">
           <h1 className="text-base font-bold md:text-lg ">ANONYMOUS</h1>
           <div className="grid grid-cols-5 gap-0.5 ">

@@ -11,6 +11,7 @@ import ClubDetails from "./Screens/Admin/ClubDetails/clubDetails";
 import ClubPage from "./Screens/Club/clubPage";
 import EventPage from "./Screens/Events/eventPage";
 import AnnouncementPage from "./Screens/Announcemets/announcementPage";
+
 function App() {
   return (
     <div>
@@ -25,8 +26,9 @@ function App() {
           <Route path="/events" element={<EventPage />} />
           <Route path="/Announcements" element={<AnnouncementPage />} />
           <Route path="/reviews" element={<AdminReview />} />
-          <Route path="/club" element={<ClubPage />} />
+          <Route path="/club/:id" element={<ClubPage />} />
           <Route path="/club-details" element={<ClubDetails />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
     </div>

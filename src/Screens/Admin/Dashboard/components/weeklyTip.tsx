@@ -1,7 +1,7 @@
 const WeeklyTip = () => {
   return (
     <>
-      <div className="w-full p-4 rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG">
+      <div className="w-full p-4 rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG duration-ThemeDuration">
         <div className="flex flex-row justify-between px-4 py-2">
           <h1 className="text-2xl font-bold">Tip of the Week</h1>
           <svg
