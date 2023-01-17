@@ -7,7 +7,7 @@ const Login = () => {
     <>
       <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <LoginNavbar />
-        <div className="flex items-center justify-center mx-4 mt-4 h-3/4 md:mx-auto md:mt-0 bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+        <div className="flex items-center justify-center h-[90vh] mx-4 mt-4 md:mx-auto md:mt-0 bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
           <div className="px-8 py-6 text-left text-black rounded-lg shadow-lg bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG duration-ThemeDuration">
             <div className="flex justify-center drop-shadow-md">
               <img
