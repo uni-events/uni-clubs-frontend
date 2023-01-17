@@ -3,7 +3,6 @@ import { useDarkMode } from "./darkMode";
 
 export const Toggle = () => {
   const [isDark, setIsDark] = useDarkMode();
-
   return (
     <button
       className="px-2 py-2 transition-transform rounded-lg bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration hover:scale-105"
