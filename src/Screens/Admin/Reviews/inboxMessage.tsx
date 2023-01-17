@@ -1,22 +1,22 @@
-import { longStr } from "../../../Data/dataTypes";
+import { MessageData, longStr } from "../../../Data/dataTypes";
 
-const InboxMessage = () => {
+const InboxMessage = ({ message }: { message: MessageData }) => {
   return (
     <>
       <div className="text-black dark:text-white">
         <div className="flex flex-col mx-8 mb-8">
           <div className="flex flex-row space-x-4 text-lg">
             <h1 className="text-lg font-extrabold">From</h1>
-            <p className="text-base">Anonymous</p>
+            <p className="text-base">{message.author}</p>
           </div>
           <div className="flex flex-row space-x-4 text-lg">
             <h1 className="text-lg font-extrabold">Date</h1>
-            <p className="text-base">11/3/2022 10:00pm</p>
+            <p className="text-base">{String(message.dateSent)}</p>
           </div>
           <div className="flex flex-row space-x-4 text-lg">
             <h1 className="text-lg font-extrabold">Event</h1>
             <button className="inline-block h-8 px-2 text-base font-extrabold rounded-lg text-WhiteBG bg-Purple w-fit hover:bg-Green">
-              Yearly Flagship Event
+              {message.eventName}
             </button>
           </div>
           <div className="flex flex-row space-x-4 text-lg">
@@ -65,7 +65,7 @@ const InboxMessage = () => {
             </div>
           </div>
           <div className="p-8 mt-8 text-black bg-WhiteBG dark:text-white dark:bg-BlackBG duration-ThemeDuration">
-            {longStr}
+            {message.content}
           </div>
         </div>
       </div>
