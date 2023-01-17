@@ -15,7 +15,7 @@ const AdminReview = () => {
     },
     {
       author: "anon",
-      rating: 4,
+      rating: 5,
       eventName: "Weekly Meetup",
       dateSent: new Date(),
       content: longStr,
@@ -29,7 +29,7 @@ const AdminReview = () => {
     },
     {
       author: "anon",
-      rating: 4,
+      rating: 1,
       eventName: "Weekly Meetup",
       dateSent: new Date(),
       content: longStr,
@@ -43,7 +43,7 @@ const AdminReview = () => {
     },
     {
       author: "anon",
-      rating: 4,
+      rating: 2,
       eventName: "Weekly Meetup",
       dateSent: new Date(),
       content: longStr,
@@ -57,7 +57,7 @@ const AdminReview = () => {
     },
     {
       author: "anon",
-      rating: 4,
+      rating: 3,
       eventName: "Weekly Meetup",
       dateSent: new Date(),
       content: longStr,
