@@ -6,23 +6,18 @@ import screen3 from "../../../Assets/screen3.png";
 import "animate.css";
 
 import "aos/dist/aos.css";
-// import { useEffect } from "react";
-// import AOS from "aos";
+import { useEffect } from "react";
+import AOS from "aos";
 
 const EventInfo = () => {
-  // useEffect(() => {
-  //   AOS.init();
-  // }, []);
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <div className="flex w-full h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <div className="flex flex-col items-center justify-center mx-auto space-x-8 space-y-8 lg:flex-row">
-          <div
-            // className="animate__animated animate__fadeInLeft"
-            data-aos="fade-right"
-            data-aos-duration="1500"
-            data-aos-easing="ease-out-cubic"
-          >
+          <div>
             <img
               className="block dark:hidden w-96 md:w-168 drop-shadow-lg"
               src={screen2}
@@ -35,10 +30,7 @@ const EventInfo = () => {
             />
           </div>
           <div className="flex flex-col space-y-4">
-            <div
-              // className="animate__animated animate__fadeInDown"
-              data-aos="fade-right"
-            >
+            <div>
               <NavLink
                 to="/discover"
                 className="text-4xl font-extrabold text-transparent md:text-6xl animate-text bg-gradient-to-r from-Green to-Blue bg-clip-text"
@@ -46,7 +38,7 @@ const EventInfo = () => {
                 Find Events
               </NavLink>
             </div>
-            <div className="space-y-4 animate__animated animate__fadeInRight">
+            <div className="space-y-4">
               <p className="max-w-md text-lg font-semibold md:text-xl text-DarkBlue dark:text-Blue">
                 Find Clubs you like.
               </p>

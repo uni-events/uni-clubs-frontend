@@ -6,9 +6,15 @@ import EventInfo from "./components/eventInfo";
 const Home = () => {
   return (
     <>
-      <div className="w-screen max-h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+      <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
-        <div className="w-screen h-full overflow-x-hidden overflow-y-scroll snap snap-y snap-proximity">
+        <div className="w-screen h-screen overflow-y-scroll snap snap-y snap-mandatory">
+          <section className="w-screen h-screen snap-center">
+            <DiscoverInfo />
+          </section>
+          <section className="w-screen h-full snap-center">
+            <EventInfo />
+          </section>
           <section className="w-screen h-screen bg-blue-200 snap-center">
             Section 2
           </section>
@@ -20,12 +26,6 @@ const Home = () => {
           </section>
           <section className="w-screen h-screen bg-yellow-200 snap-center">
             Section 5
-          </section>
-          <section className="w-screen h-screen snap-center">
-            <DiscoverInfo />
-          </section>
-          <section className="w-screen h-full snap-center">
-            <EventInfo />
           </section>
         </div>
       </div>
