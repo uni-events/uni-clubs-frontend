@@ -15,14 +15,14 @@ const AdminReview = () => {
     },
     {
       author: "anon",
-      rating: 5,
+      rating: 3,
       eventName: "Weekly Meetup",
       dateSent: new Date(),
       content: longStr,
     },
     {
       author: "anon",
-      rating: 4,
+      rating: 2,
       eventName: "Weekly Meetup",
       dateSent: new Date(),
       content: longStr,
@@ -70,7 +70,10 @@ const AdminReview = () => {
       content: longStr,
     },
   ];
+
+  const [messageData, setMessageData] = useState([...messages]);
   const [messageToDisplay, setMessageToDisplay] = useState(messages[0]);
+
   const handleClick = (message: MessageData) => {
     setMessageToDisplay(message);
   };

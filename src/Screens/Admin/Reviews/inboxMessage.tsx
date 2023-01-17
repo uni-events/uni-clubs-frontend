@@ -1,4 +1,4 @@
-import { MessageData, longStr } from "../../../Data/dataTypes";
+import { MessageData } from "../../../Data/dataTypes";
 
 const InboxMessage = ({ message }: { message: MessageData }) => {
   return (
@@ -22,12 +22,13 @@ const InboxMessage = ({ message }: { message: MessageData }) => {
           <div className="flex flex-row space-x-4 text-lg">
             <h1 className="text-lg font-extrabold">Rating</h1>
             <div className="flex flex-row gap-1">
-              {[...Array(message.rating)].map(() => (
+              {[...Array(message.rating)].map((e, i) => (
                 <svg
                   className="fill-black dark:fill-WhiteBG"
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"
                   width="24"
+                  key={i}
                 >
                   <path d="m5.825 22 1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625 7.2.625-5.45 4.725L18.175 22 12 18.275Z"></path>
                 </svg>
