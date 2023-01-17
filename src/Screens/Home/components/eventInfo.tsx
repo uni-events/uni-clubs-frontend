@@ -17,7 +17,7 @@ const EventInfo = () => {
     <>
       <div className="flex w-full h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <div className="flex flex-col items-center justify-center mx-auto space-x-8 space-y-8 lg:flex-row">
-          <div>
+          <div className="px-4">
             <img
               className="block dark:hidden w-96 md:w-168 drop-shadow-lg"
               src={screen2}
