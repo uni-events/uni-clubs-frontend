@@ -126,9 +126,21 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
     <>
       <div className="w-full p-4 text-black rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-white duration-ThemeDuration">
         <div className="flex flex-row justify-between">
-          <h1 className="text-2xl font-bold text-center text-black h-fit dark:text-WhiteBG">
-            Filters
-          </h1>
+          <div className="flex flex-row space-x-2">
+            {/* filter icon */}
+            <svg
+              className="my-auto dark:fill-white fill-black"
+              height="24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z" />
+            </svg>
+            <h1 className="text-2xl font-bold text-center text-black h-fit dark:text-WhiteBG">
+              Filters
+            </h1>
+          </div>
           <div className="flex flex-col justify-center">
             <button
               className="text-base font-bold text-center duration-150 h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed"
@@ -161,9 +173,21 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
           })}
         </div>
         <div className="flex flex-row justify-between mt-4">
-          <h1 className="text-2xl font-bold text-center text-black dark:text-WhiteBG ">
-            Categories
-          </h1>
+          <div className="flex flex-row space-x-2">
+            {/* tag icon */}
+            <svg
+              className="my-auto dark:fill-white fill-black"
+              height="24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 96c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z" />
+            </svg>
+            <h1 className="text-2xl font-bold text-center text-black dark:text-WhiteBG ">
+              Categories
+            </h1>
+          </div>
           <div className="flex flex-col justify-center">
             <button
               className="text-base font-bold text-center duration-150 h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed"
