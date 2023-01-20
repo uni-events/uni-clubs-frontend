@@ -71,7 +71,6 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
       BoolArrInitCategory.push(false);
     }
   });
-  console.log(BoolArrInitCategory);
   const [catState, setCatState] = useState([...BoolArrInitCategory]);
 
   let BoolArrInitFilter: boolean[] = [];
@@ -137,7 +136,7 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
             >
               <path d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z" />
             </svg>
-            <h1 className="text-2xl font-bold text-center text-black h-fit dark:text-WhiteBG">
+            <h1 className="text-xl font-bold text-center text-black h-fit dark:text-WhiteBG">
               Filters
             </h1>
           </div>
@@ -150,11 +149,11 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
             </button>
           </div>
         </div>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-2">
           {Filters.map((filters, index) => {
             return (
               <>
-                <div className="flex flex-row space-x-4 text-lg font-bold text-white">
+                <div className="flex flex-row space-x-4 text-base font-bold text-center text-white">
                   <button
                     onClick={() => {
                       handleFilterClick(index);
@@ -165,7 +164,7 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
                         : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
                     }`}
                   >
-                    <div className="text-center">{filters.name}</div>
+                    <div>{filters.name}</div>
                   </button>
                 </div>
               </>
@@ -184,7 +183,7 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
             >
               <path d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 96c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z" />
             </svg>
-            <h1 className="text-2xl font-bold text-center text-black dark:text-WhiteBG ">
+            <h1 className="text-xl font-bold text-center text-black dark:text-WhiteBG ">
               Categories
             </h1>
           </div>
@@ -197,10 +196,10 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
             </button>
           </div>
         </div>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-2">
           {Categories.map((category, index) => {
             return (
-              <div key={index}>
+              <div key={index} className="text-base font-extrabold text-white ">
                 <button
                   onClick={() => {
                     handleCategoryClick(index);
@@ -211,9 +210,7 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
                       : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen "
                   }`}
                 >
-                  <h1 className="text-base font-extrabold text-white ">
-                    {category.name}
-                  </h1>
+                  <h1 className="">{category.name}</h1>
                 </button>
               </div>
             );

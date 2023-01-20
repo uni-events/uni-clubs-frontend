@@ -19,7 +19,6 @@ const Discover = () => {
   };
 
   const handleFilters = (sortTags: TagsData) => {
-    console.log(sortTags);
     setTags({ ...sortTags });
   };
 

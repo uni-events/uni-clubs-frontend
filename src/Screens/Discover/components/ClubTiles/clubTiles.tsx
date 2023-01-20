@@ -27,7 +27,7 @@ const ClubTiles = ({
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
       banner: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
-      tags: ["sub", "vol"],
+      tags: ["sub", "vol", "exec"],
       categories: ["Academic/Career"],
     },
     {
@@ -36,7 +36,7 @@ const ClubTiles = ({
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
       banner: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
-      tags: ["sub"],
+      tags: ["sub", "exec", "vol"],
       categories: ["Hobby"],
     },
     {
@@ -54,7 +54,7 @@ const ClubTiles = ({
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
       banner: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
-      tags: ["exec"],
+      tags: [],
       categories: ["Academic/Career"],
     },
   ];
@@ -95,32 +95,55 @@ const ClubTiles = ({
 
   return (
     <>
-      <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {filteredList.map((club) => {
+      <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2">
+        {filteredList.map((club, i) => {
           return (
-            <NavLink to={`/club/${club.clubStr}`}>
-              <body className="p-2 ease-in-out rounded-lg bg-BlueGrey dark:bg-BlueBlack hover:scale-105 duration-ThemeDuration">
-                <div className="relative">
-                  <img
-                    className="object-cover w-full h-24 mb-6 rounded-lg"
-                    src={club.banner}
-                    alt="banner"
-                  />
-                  <img
-                    className="absolute bottom-0 object-cover w-16 h-16 rounded-lg left-4 top-16 drop-shadow-lg"
-                    src={club.logo}
-                    alt="logo"
-                  />
-                  <div className="p-4 mb-2 overflow-hidden text-black whitespace-pre-wrap max-h-36 dark:text-WhiteBG">
-                    <h1 className="text-lg font-bold md:text-xl">
-                      {club.name}
-                    </h1>
-                    <h1 className="text-base font-light">{club.tags}</h1>
-                    <h1 className="text-base font-light">{club.description}</h1>
+            <>
+              <NavLink key={i} to={`/club/${club.clubStr}`}>
+                <div className="p-2 rounded-lg h-72 bg-BlueGrey dark:bg-BlueBlack hover:scale-105 duration-ThemeDuration">
+                  <div className="h-[17rem]">
+                    <img
+                      className="object-cover w-full h-24 bg-center rounded-lg "
+                      src={club.banner}
+                      alt="banner"
+                    />
+                    <img
+                      className="relative object-cover w-16 h-16 translate-x-4 -translate-y-8 bg-center rounded-lg drop-shadow-lg"
+                      src={club.logo}
+                      alt="logo"
+                    />
+                    <div className="h-32 px-4 -translate-y-6 ">
+                      <div className="overflow-hidden text-black h-fit dark:text-white">
+                        <h1 className="right-0 overflow-x-scroll text-base font-semibold whitespace-nowrap md:text-base scrollbar-none">
+                          {club.name}
+                        </h1>
+                        <div className="flex flex-row pt-1 space-x-2 overflow-x-scroll scrollbar-none">
+                          {club.tags.map((tag, i) => {
+                            return (
+                              <div
+                                key={i}
+                                className="px-2 text-xs font-semibold text-white rounded-lg bg-Blue w-fit h-fit"
+                              >
+                                {tag === "sub" && "subcommittee"}
+                                {tag === "exec" && "executive"}
+                                {tag === "vol" && "volunteer"}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                      <p
+                        className={`w-full pr-1 mt-2 overflow-y-scroll text-xs text-black whitespace-pre-wrap scrollbar-none dark:text-white md:text-sm ${
+                          club.tags.length === 0 ? "h-4/5" : "h-3/5"
+                        }`}
+                      >
+                        {club.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </body>
-            </NavLink>
+              </NavLink>
+            </>
           );
         })}
       </div>
