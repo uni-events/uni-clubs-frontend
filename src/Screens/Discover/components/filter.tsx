@@ -71,7 +71,6 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
       BoolArrInitCategory.push(false);
     }
   });
-  console.log(BoolArrInitCategory);
   const [catState, setCatState] = useState([...BoolArrInitCategory]);
 
   let BoolArrInitFilter: boolean[] = [];
