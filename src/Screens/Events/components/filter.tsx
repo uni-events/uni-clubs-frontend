@@ -86,7 +86,8 @@ const EventsFilter = () => {
       catState[0] = false;
       setCatState([...catState]);
     }
-    if (index === 0) {
+
+    if (index === 0 || !catState.includes(true)) {
       setCatState([...BoolArrInitCategory]);
     }
   };
