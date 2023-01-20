@@ -1,3 +1,5 @@
+import { longStr } from "../../../../Data/dataTypes";
+
 const WeeklyTip = () => {
   return (
     <>
@@ -15,8 +17,7 @@ const WeeklyTip = () => {
           </svg>
         </div>
         <h1 className="px-4 py-2 text-base whitespace-normal overflow-clip">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
-          scelerisque nibh. Curabitur placerat ante eu luctus tempor.
+          {longStr}
         </h1>
       </div>
     </>

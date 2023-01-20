@@ -115,7 +115,17 @@ const ClubTiles = ({
                     <h1 className="text-lg font-bold md:text-xl">
                       {club.name}
                     </h1>
-                    <h1 className="text-base font-light">{club.tags}</h1>
+                    <div className="flex flex-row space-x-2">
+                      {club.tags.map((tag, index) => {
+                        return (
+                          <div className="px-2 text-sm font-semibold text-white rounded-lg bg-Blue w-fit h-hit">
+                            {tag === "sub" && "subcommittee"}
+                            {tag === "exec" && "executive"}
+                            {tag === "vol" && "volunteer"}
+                          </div>
+                        );
+                      })}
+                    </div>
                     <h1 className="text-base font-light">{club.description}</h1>
                   </div>
                 </div>
