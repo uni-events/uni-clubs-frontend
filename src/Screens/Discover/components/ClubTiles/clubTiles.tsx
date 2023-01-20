@@ -133,7 +133,7 @@ const ClubTiles = ({
                         </div>
                       </div>
                       <p
-                        className={`w-full pr-1 overflow-y-scroll text-xs md:text-sm text-black whitespace-pre-wrap scrollbar-none dark:text-white ${
+                        className={`w-full pr-1 overflow-y-scroll text-sm md:text-base text-black whitespace-pre-wrap dark:text-white scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey scrollbar-thumb-rounded-2xl ${
                           club.tags.length === 0 ? "h-4/5 " : "h-3/5 mt-1"
                         }`}
                       >
