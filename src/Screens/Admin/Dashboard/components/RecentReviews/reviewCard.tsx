@@ -6,13 +6,15 @@ const RecentReviews = () => {
       <div className="w-full p-4 rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack dark:text-WhiteBG duration-ThemeDuration">
         <div className="flex flex-row justify-between px-4 py-2">
           <h1 className="text-2xl font-bold">Recent Reviews</h1>
+
           <svg
-            className="mt-1 fill-black dark:fill-WhiteBG"
-            xmlns="http://www.w3.org/2000/svg"
-            height="24"
+            className="fill-black dark:fill-white"
             width="24"
+            height="24"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
           >
-            <path d="M10.5 14H18v-2h-5.5ZM6 14h2.45l5.9-5.85q.15-.15.15-.375t-.15-.375L12.6 5.65q-.15-.15-.375-.15t-.375.15L6 11.55Zm-4 8V4q0-.825.588-1.413Q3.175 2 4 2h16q.825 0 1.413.587Q22 3.175 22 4v12q0 .825-.587 1.413Q20.825 18 20 18H6Zm2-4.825L5.175 16H20V4H4ZM4 4v13.175Z" />
+            <path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z" />
           </svg>
         </div>
         <ReviewPreview />
