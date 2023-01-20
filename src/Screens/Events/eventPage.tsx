@@ -10,7 +10,6 @@ const EventPage = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const handleSearch = (query: string) => {
-    console.log(query);
     setSearchInput(query);
   };
 
