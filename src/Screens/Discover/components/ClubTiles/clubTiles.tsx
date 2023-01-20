@@ -54,7 +54,7 @@ const ClubTiles = ({
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
       banner: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
-      tags: ["exec"],
+      tags: [],
       categories: ["Academic/Career"],
     },
   ];
@@ -96,9 +96,9 @@ const ClubTiles = ({
   return (
     <>
       <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {filteredList.map((club) => {
+        {filteredList.map((club, i) => {
           return (
-            <NavLink to={`/club/${club.clubStr}`}>
+            <NavLink key={i} to={`/club/${club.clubStr}`}>
               <body className="p-2 ease-in-out rounded-lg bg-BlueGrey dark:bg-BlueBlack hover:scale-105 duration-ThemeDuration">
                 <div className="relative">
                   <img
@@ -111,14 +111,17 @@ const ClubTiles = ({
                     src={club.logo}
                     alt="logo"
                   />
-                  <div className="p-4 mb-2 overflow-hidden text-black whitespace-pre-wrap max-h-36 dark:text-WhiteBG">
-                    <h1 className="text-lg font-bold md:text-xl">
+                  <div className="p-4 mb-2 text-black whitespace-pre-wrap overflow-clip h-36 dark:text-WhiteBG">
+                    <h1 className="text-base font-bold md:text-xl">
                       {club.name}
                     </h1>
                     <div className="flex flex-row space-x-2">
-                      {club.tags.map((tag, index) => {
+                      {club.tags.map((tag, i) => {
                         return (
-                          <div className="px-2 text-sm font-semibold text-white rounded-lg bg-Blue w-fit h-hit">
+                          <div
+                            key={i}
+                            className="px-2 text-xs font-semibold text-white rounded-lg bg-Blue w-fit h-hit"
+                          >
                             {tag === "sub" && "subcommittee"}
                             {tag === "exec" && "executive"}
                             {tag === "vol" && "volunteer"}
@@ -126,7 +129,9 @@ const ClubTiles = ({
                         );
                       })}
                     </div>
-                    <h1 className="text-base font-light">{club.description}</h1>
+                    <h1 className="text-sm font-light overflow-clip">
+                      {club.description}
+                    </h1>
                   </div>
                 </div>
               </body>
