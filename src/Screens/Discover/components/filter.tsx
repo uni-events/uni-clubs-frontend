@@ -149,11 +149,11 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
             </button>
           </div>
         </div>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-2">
           {Filters.map((filters, index) => {
             return (
               <>
-                <div className="flex flex-row space-x-4 text-sm font-bold text-center text-white">
+                <div className="flex flex-row space-x-4 text-base font-bold text-center text-white">
                   <button
                     onClick={() => {
                       handleFilterClick(index);
@@ -196,10 +196,10 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
             </button>
           </div>
         </div>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-2">
           {Categories.map((category, index) => {
             return (
-              <div key={index} className="text-sm font-extrabold text-white ">
+              <div key={index} className="text-base font-extrabold text-white ">
                 <button
                   onClick={() => {
                     handleCategoryClick(index);
