@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CategoryData, FilterData, sliderOpts } from "../../../Data/dataTypes";
 
-const EventsFilter = () => {
+const EventsFilter = ({ onChange }: { onChange: Function }) => {
   const Filters: Array<FilterData> = [
     {
       name: "Free",
@@ -85,10 +85,14 @@ const EventsFilter = () => {
       catState[index] = !catState[index];
       catState[0] = false;
       setCatState([...catState]);
+      // REMEMBER TO PARSE IN A DICTIONARY OF FILTER[] AND CATEGORY[]
+      onChange([...catState]);
     }
 
     if (index === 0 || !catState.includes(true)) {
       setCatState([...BoolArrInitCategory]);
+      // REMEMBER TO PARSE IN A DICTIONARY OF FILTER[] AND CATEGORY[]
+      onChange([...BoolArrInitCategory]);
     }
   };
 

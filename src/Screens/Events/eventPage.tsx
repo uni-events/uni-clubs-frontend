@@ -4,22 +4,38 @@ import SearchBar from "../Discover/components/searchbar";
 // import EventOfTheDay from "./components/eventsOfDay";
 import EventsFilter from "./components/filter";
 
-import TrendingEvents from "./components/trendingEvents";
+import { TagsData } from "../../Data/dataTypes";
+import EventTiles from "./components/eventTiles";
+import EventsType from "./components/eventType";
 
 const EventPage = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [searchInput, setSearchInput] = useState("");
+  const [purpose, setPurpose] = useState("EventsOfDay");
+
   const handleSearch = (query: string) => {
     setSearchInput(query);
+  };
+  const tagsInit: TagsData = {
+    filters: [],
+    categories: ["All"],
+  };
+  const [tags, setTags] = useState({ ...tagsInit });
+  const handleFilters = (sortTags: TagsData) => {
+    setTags({ ...sortTags });
+  };
+  const handleEventType = (type: string) => {
+    setPurpose(type);
   };
 
   return (
     <>
-      <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+      <div className="w-screen h-full overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
         <div className="flex flex-row w-full h-full max-w-screen-xl px-2 mx-auto my-4 md:space-x-4 md:px-4">
-          <div className="hidden md:block md:w-1/4 h-fit">
-            <EventsFilter />
+          <div className="hidden space-y-4 md:block md:w-1/4 h-fit">
+            <EventsType onChange={handleEventType} />
+            <EventsFilter onChange={handleFilters} />
           </div>
           <div className="flex flex-col w-full px-2 md:w-3/4">
             <div className="flex flex-row space-x-4 md:space-x-0">
@@ -44,16 +60,15 @@ const EventPage = () => {
                 showFilter ? "hidden md:block" : "block"
               }`}
             >
-              <TrendingEvents />
-              <TrendingEvents />
-              <TrendingEvents />
+              <EventTiles purpose={purpose} />
             </div>
             <div
-              className={`w-full h-fit mt-8 ${
+              className={`w-full h-fit mt-8 space-y-4 ${
                 showFilter ? "block md:hidden" : "hidden"
               }`}
             >
-              <EventsFilter />
+              <EventsType onChange={handleEventType} />
+              <EventsFilter onChange={handleFilters} />
             </div>
           </div>
         </div>
