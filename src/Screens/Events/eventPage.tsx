@@ -30,7 +30,7 @@ const EventPage = () => {
 
   return (
     <>
-      <div className="w-screen h-full overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+      <div className="w-full h-full overflow-x-hidden overflow-y-auto bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
         <div className="flex flex-row w-full h-full max-w-screen-xl px-2 mx-auto my-4 md:space-x-4 md:px-4">
           <div className="hidden space-y-4 md:block md:w-1/4 h-fit">
