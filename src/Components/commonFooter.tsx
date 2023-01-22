@@ -20,7 +20,7 @@ const CommonFooter = () => {
         <button
           id="hari-tag"
           onClick={handleClick}
-          className="inline-block text-xl font-semibold text-transparent hover:animate-text bg-gradient-to-r from-Green hover:via-Blue to-Blue hover:to-Green bg-clip-text"
+          className="inline-block px-2 text-xl font-semibold text-black duration-150 rounded-lg hover:animate-text hover:scale-[101%] bg-gradient-to-r from-LightGreen hover:from-Green hover:via-Blue to-LightBlue hover:to-Green"
         >
           @Hari Pramod
         </button>
