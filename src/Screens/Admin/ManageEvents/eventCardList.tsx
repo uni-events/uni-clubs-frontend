@@ -74,7 +74,7 @@ const ViewAllEventCards = () => {
             <div className="flex flex-row space-x-4">
               {event.tags.includes("food") && (
                 <svg
-                  id="food-icon"
+                  id="food-icon-view"
                   className=" fill-black dark:fill-WhiteBG"
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"
@@ -85,12 +85,12 @@ const ViewAllEventCards = () => {
               )}
               <Tooltip
                 place="left"
-                anchorId="food-icon"
+                anchorId="food-icon-view"
                 content="This Event provides Food"
               />
               {event.tags.includes("no-food") && (
                 <svg
-                  id="no-food-icon"
+                  id="no-food-icon-view"
                   className="fill-black dark:fill-WhiteBG"
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"
@@ -101,12 +101,12 @@ const ViewAllEventCards = () => {
               )}
               <Tooltip
                 place="left"
-                anchorId="no-food-icon"
+                anchorId="no-food-icon-view"
                 content="This Event does not provide Food"
               />
               {event.tags.includes("paid") && (
                 <svg
-                  id="paid-icon"
+                  id="paid-icon-view"
                   className="fill-black dark:fill-WhiteBG"
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"
@@ -117,12 +117,12 @@ const ViewAllEventCards = () => {
               )}
               <Tooltip
                 place="left"
-                anchorId="paid-icon"
+                anchorId="paid-icon-view"
                 content="This Event requires Payment to Attend"
               />
               {event.tags.includes("free") && (
                 <svg
-                  id="free-icon"
+                  id="free-icon-view"
                   className="fill-black dark:fill-WhiteBG"
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"
@@ -133,7 +133,7 @@ const ViewAllEventCards = () => {
               )}
               <Tooltip
                 place="left"
-                anchorId="free-icon"
+                anchorId="free-icon-view"
                 content="This Event is Free to Attend"
               />
             </div>
