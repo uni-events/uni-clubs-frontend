@@ -3,7 +3,7 @@ import ClubTiles from "./components/ClubTiles/clubTiles";
 import SearchBar from "./components/searchbar";
 import { useState } from "react";
 import DiscoverFilter from "./components/filter";
-import { TagsData, longStr } from "../../Data/dataTypes";
+import { TagsData } from "../../Data/dataTypes";
 import CommonFooter from "../../Components/commonFooter";
 
 const Discover = () => {
