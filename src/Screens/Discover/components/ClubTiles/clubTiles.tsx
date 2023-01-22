@@ -100,7 +100,7 @@ const ClubTiles = ({
           return (
             <>
               <NavLink key={i} to={`/club/${club.clubStr}`}>
-                <div className="p-2 rounded-lg h-72 bg-BlueGrey dark:bg-BlueBlack hover:scale-105 duration-ThemeDuration">
+                <div className="p-2 rounded-lg h-72 bg-BlueGrey dark:bg-BlueBlack hover:scale-[101%] duration-ThemeDuration">
                   <div className="h-[17rem]">
                     <img
                       className="object-cover w-full h-24 bg-center rounded-lg "
@@ -114,15 +114,18 @@ const ClubTiles = ({
                     />
                     <div className="h-32 px-4 -translate-y-6 ">
                       <div className="overflow-hidden text-black h-fit dark:text-white">
-                        <h1 className="right-0 overflow-x-scroll text-base font-semibold whitespace-nowrap md:text-base scrollbar-none">
+                        <h1 className="overflow-x-scroll text-base font-semibold whitespace-nowrap md:text-lg scrollbar-none">
                           {club.name}
                         </h1>
-                        <div className="flex flex-row pt-1 space-x-2 overflow-x-scroll scrollbar-none">
+                        <div className="flex flex-row space-x-2 overflow-x-scroll scrollbar-none">
+                          {club.tags.length !== 0 && (
+                            <h1 className="text-sm font-bold">recruiting: </h1>
+                          )}
                           {club.tags.map((tag, i) => {
                             return (
                               <div
                                 key={i}
-                                className="px-2 text-xs font-semibold text-white rounded-lg bg-Blue w-fit h-fit"
+                                className="px-2 text-xs font-semibold text-white rounded-lg lg:text-sm bg-Blue w-fit h-fit"
                               >
                                 {tag === "sub" && "subcommittee"}
                                 {tag === "exec" && "executive"}
@@ -133,8 +136,8 @@ const ClubTiles = ({
                         </div>
                       </div>
                       <p
-                        className={`w-full pr-1 mt-2 overflow-y-scroll text-xs text-black whitespace-pre-wrap scrollbar-none dark:text-white md:text-sm ${
-                          club.tags.length === 0 ? "h-4/5" : "h-3/5"
+                        className={`w-full pr-1 overflow-y-scroll text-sm md:text-base text-black whitespace-pre-wrap dark:text-white scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey scrollbar-thumb-rounded-2xl ${
+                          club.tags.length === 0 ? "h-4/5 " : "h-3/5 mt-1"
                         }`}
                       >
                         {club.description}

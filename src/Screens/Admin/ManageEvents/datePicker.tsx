@@ -260,7 +260,7 @@ const DatePickerComponent = ({
                         className={`cursor-pointer text-center text-sm rounded-lg leading-loose transition ease-in-out duration-100 ${
                           isToday(d)
                             ? "dark:bg-Green bg-Blue text-white"
-                            : "text-black dark:text-WhiteBG hover:bg-Blue dark:hover:bg-Green"
+                            : "text-black dark:text-WhiteBG hover:bg-Blue dark:hover:bg-Green hover:font-bold hover:text-white"
                         }`}
                       >
                         {d}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CategoryData, FilterData, sliderOpts } from "../../../Data/dataTypes";
 
-const EventsFilter = () => {
+const EventsFilter = ({ onChange }: { onChange: Function }) => {
   const Filters: Array<FilterData> = [
     {
       name: "Free",
@@ -85,9 +85,14 @@ const EventsFilter = () => {
       catState[index] = !catState[index];
       catState[0] = false;
       setCatState([...catState]);
+      // REMEMBER TO PARSE IN A DICTIONARY OF FILTER[] AND CATEGORY[]
+      onChange([...catState]);
     }
-    if (index === 0) {
+
+    if (index === 0 || !catState.includes(true)) {
       setCatState([...BoolArrInitCategory]);
+      // REMEMBER TO PARSE IN A DICTIONARY OF FILTER[] AND CATEGORY[]
+      onChange([...BoolArrInitCategory]);
     }
   };
 
@@ -119,11 +124,11 @@ const EventsFilter = () => {
             </button>
           </div>
         </div>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-2">
           {Filters.map((filters, index) => {
             return (
               <>
-                <div className="flex flex-row space-x-4 text-base font-bold text-white">
+                <div className="flex flex-row space-x-2 text-base font-bold text-white">
                   <button
                     onClick={() => {
                       handleFilterClick(index);
@@ -182,7 +187,7 @@ const EventsFilter = () => {
             </button>
           </div>
         </div>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-2">
           {Categories.map((category, index) => {
             return (
               <div key={index}>
