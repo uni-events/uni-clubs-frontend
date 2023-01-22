@@ -40,7 +40,7 @@ const EventPage = () => {
           <div className="flex flex-col w-full px-2 md:w-3/4">
             <div className="flex flex-row space-x-4 md:space-x-0">
               <button
-                className="block p-3 rounded-lg md:hidden bg-BlueGrey dark:bg-BlueBlack h-fit w-fit"
+                className="block p-3 rounded-lg md:hidden bg-BlueGrey dark:bg-BlueBlack h-fit w-fit drop-shadow-sm"
                 onClick={() => setShowFilter(!showFilter)}
               >
                 <svg
