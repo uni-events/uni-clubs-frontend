@@ -8,10 +8,10 @@ const CommonFooter = () => {
   );
   const handleClick = () => {
     navigator.clipboard.writeText("Hehe#6969");
-    setTooltipContent("Copied Discord Tag");
+    setTooltipContent("Copied Discord Tag!");
     setTimeout(() => {
       setTooltipContent("Click to Copy Discord Tag!");
-    }, 5000);
+    }, 2000);
   };
   return (
     <div className="w-full p-6 text-center h-fit bg-LightBlueGrey dark:bg-LightBlueBlack">
