@@ -12,7 +12,7 @@ const SingleEventTile = ({
   };
 }) => {
   return (
-    <div className="w-full rounded-lg h-fit hover:scale-105 bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
+    <div className="w-full rounded-lg h-fit hover:scale-[101%] bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
       <div className="w-full p-2 rounded-t-lg h-72 ">
         <img
           className="object-cover w-full h-24 bg-center rounded-lg"
@@ -27,7 +27,7 @@ const SingleEventTile = ({
           </h1>
         </div>
       </div>
-      <div className="flex flex-row justify-between w-full h-12 px-2 border-t-2 rounded-b-lg border-LightBlueGrey dark:border-LightBlueBlack ">
+      <div className="flex flex-row justify-between w-full h-12 px-2 border border-t-2 rounded-b-lg border-LightBlueGrey dark:border-LightBlueBlack ">
         <h1 className="p-2 font-semibold text-black dark:text-white">
           Date:
           <p className="inline text-base font-normal"> 12th December 2:00pm</p>

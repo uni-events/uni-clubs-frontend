@@ -24,7 +24,7 @@ const Discover = () => {
 
   return (
     <>
-      <div className="w-screen h-screen overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+      <div className="w-full h-full overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
         <div className="flex flex-col-reverse max-w-screen-xl mx-auto my-4 md:pl-4 md:flex-row ">
           <div
@@ -37,7 +37,7 @@ const Discover = () => {
           <div className="block w-full px-4 space-y-4 md:w-3/4">
             <div className="flex flex-row space-x-4 md:space-x-0">
               <button
-                className="p-3 rounded-lg bg-BlueGrey h-fit w-fit xs:block md:hidden dark:bg-BlueBlack"
+                className="p-3 rounded-lg bg-BlueGrey h-fit w-fit xs:block md:hidden dark:bg-BlueBlack drop-shadow-sm"
                 onClick={() => setShowFilter(!showFilter)}
               >
                 <svg
