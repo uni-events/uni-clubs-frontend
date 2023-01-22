@@ -15,7 +15,10 @@ const SearchBar = ({
 
   return (
     <>
-      <form className="flex items-center w-full" onSubmit={handleFormSubmit}>
+      <form
+        className="flex items-center w-full drop-shadow-sm"
+        onSubmit={handleFormSubmit}
+      >
         <div className="relative w-full">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
