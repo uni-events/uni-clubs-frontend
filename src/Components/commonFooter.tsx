@@ -14,7 +14,7 @@ const CommonFooter = () => {
     }, 2000);
   };
   return (
-    <div className="w-full p-6 text-center h-fit bg-LightBlueGrey dark:bg-LightBlueBlack">
+    <div className="w-full p-6 mt-12 text-center h-fit bg-LightBlueGrey dark:bg-LightBlueBlack">
       <p className="text-lg font-normal text-black dark:text-white">
         Made with ❤️ by&nbsp;
         <button
