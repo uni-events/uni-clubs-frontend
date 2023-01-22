@@ -24,10 +24,10 @@ const Discover = () => {
   };
 
   return (
-    <>
-      <div className="w-full h-full overflow-x-hidden bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+    <div className="flex flex-col justify-between w-full h-screen bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+      <div className="bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
         <Navbar />
-        <div className="flex flex-col-reverse max-w-screen-xl mx-auto my-4 md:pl-4 md:flex-row ">
+        <div className="flex flex-col-reverse w-full mx-auto my-4 max-w-screen-xxl md:pl-4 md:flex-row">
           <div
             className={`px-4 my-6 w-full h-full md:w-1/4 md:my-0 md:px-0 ${
               showFilter ? "block" : "hidden md:block"
@@ -63,9 +63,9 @@ const Discover = () => {
             </div>
           </div>
         </div>
-        <CommonFooter />
       </div>
-    </>
+      <CommonFooter />
+    </div>
   );
 };
 

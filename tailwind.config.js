@@ -9,6 +9,7 @@ module.exports = {
       md: "768px",
       lg: "976px",
       xl: "1440px",
+      xxl: "2160px",
     },
     purge: [],
     extend: {
@@ -33,10 +34,11 @@ module.exports = {
         },
       },
       transitionDuration: {
-        ThemeDuration: "500ms",
+        ThemeDuration: "300ms",
       },
       colors: {
         Blue: "hsl(192, 45%, 57%)",
+        LightBlue: "hsl(192, 45%, 70%)",
         DarkBlue: "hsl(192, 34%, 44%)",
         Green: "hsl(93, 53%, 58%)",
         LightGreen: "hsl(101, 33%, 80%)",

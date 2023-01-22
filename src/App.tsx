@@ -14,24 +14,22 @@ import AnnouncementPage from "./Screens/Announcemets/announcementPage";
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/discover" element={<Discover />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/404" element={<ErrorPage />} />
-          <Route path="/dashboard" element={<AdminDashboard />} />
-          <Route path="/manage-events" element={<ManageEvents />} />
-          <Route path="/events" element={<EventPage />} />
-          <Route path="/Announcements" element={<AnnouncementPage />} />
-          <Route path="/reviews" element={<AdminReview />} />
-          <Route path="/club/:id" element={<ClubPage />} />
-          <Route path="/club-details" element={<ClubDetails />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/discover" element={<Discover />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/404" element={<ErrorPage />} />
+        <Route path="/dashboard" element={<AdminDashboard />} />
+        <Route path="/manage-events" element={<ManageEvents />} />
+        <Route path="/events" element={<EventPage />} />
+        <Route path="/Announcements" element={<AnnouncementPage />} />
+        <Route path="/reviews" element={<AdminReview />} />
+        <Route path="/club/:id" element={<ClubPage />} />
+        <Route path="/club-details" element={<ClubDetails />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 }
 

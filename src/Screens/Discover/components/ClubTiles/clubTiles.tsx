@@ -95,7 +95,7 @@ const ClubTiles = ({
 
   return (
     <>
-      <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2">
+      <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {filteredList.map((club, i) => {
           return (
             <>
