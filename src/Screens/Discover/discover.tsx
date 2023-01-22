@@ -4,6 +4,7 @@ import SearchBar from "./components/searchbar";
 import { useState } from "react";
 import DiscoverFilter from "./components/filter";
 import { TagsData } from "../../Data/dataTypes";
+import CommonFooter from "../../Components/commonFooter";
 
 const Discover = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -62,6 +63,7 @@ const Discover = () => {
             </div>
           </div>
         </div>
+        <CommonFooter />
       </div>
     </>
   );

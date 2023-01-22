@@ -7,6 +7,7 @@ import EventsFilter from "./components/filter";
 import { TagsData } from "../../Data/dataTypes";
 import EventTiles from "./components/eventTiles";
 import EventsType from "./components/eventType";
+import CommonFooter from "../../Components/commonFooter";
 
 const EventPage = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -72,6 +73,7 @@ const EventPage = () => {
             </div>
           </div>
         </div>
+        <CommonFooter />
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import AdminNavbar from "../../../Components/adminNavbar";
+import CommonFooter from "../../../Components/commonFooter";
 import ViewAllEventCards from "./eventCardList";
 
 const ManageEvents = () => {
@@ -9,6 +10,7 @@ const ManageEvents = () => {
         <div className="flex flex-col max-w-screen-xl px-4 mx-auto my-12 space-y-8">
           <ViewAllEventCards />
         </div>
+        <CommonFooter />
       </div>
     </>
   );
