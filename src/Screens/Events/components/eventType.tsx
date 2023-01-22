@@ -7,7 +7,7 @@ const EventsType = ({ onChange }: { onChange: Function }) => {
     onChange(event);
   };
   return (
-    <div className="w-full p-4 rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack">
+    <div className="w-full p-4 rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
       <div className="flex flex-col text-black dark:text-white">
         <button
           className="p-2 hover:rounded-lg hover:bg-LightBlueGrey dark:hover:bg-LightBlueBlack"

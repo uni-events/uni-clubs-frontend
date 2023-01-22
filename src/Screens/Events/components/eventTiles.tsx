@@ -62,13 +62,13 @@ const EventTiles = ({ purpose }: { purpose: string }) => {
     <>
       <div className="w-full pt-4 h-fit">
         {purpose === "EventsOfDay" ? (
-          <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2">
+          <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xxl:grid-cols-3">
             {eventDetails.map((event, index) => (
               <SingleEventTile key={index} eventDetails={event} />
             ))}
           </div>
         ) : (
-          <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2">
+          <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xxl:grid-cols-3">
             {eventDetails.map((event, index) => (
               <SingleEventTile key={index} eventDetails={event} />
             ))}
