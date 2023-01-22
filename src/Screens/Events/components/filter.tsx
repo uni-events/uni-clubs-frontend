@@ -124,11 +124,11 @@ const EventsFilter = ({ onChange }: { onChange: Function }) => {
             </button>
           </div>
         </div>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-2">
           {Filters.map((filters, index) => {
             return (
               <>
-                <div className="flex flex-row space-x-4 text-base font-bold text-white">
+                <div className="flex flex-row space-x-2 text-base font-bold text-white">
                   <button
                     onClick={() => {
                       handleFilterClick(index);
@@ -187,7 +187,7 @@ const EventsFilter = ({ onChange }: { onChange: Function }) => {
             </button>
           </div>
         </div>
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 space-y-2">
           {Categories.map((category, index) => {
             return (
               <div key={index}>
