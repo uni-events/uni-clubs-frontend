@@ -100,7 +100,7 @@ const ClubTiles = ({
           return (
             <>
               <NavLink key={i} to={`/club/${club.clubStr}`}>
-                <div className="p-2 rounded-lg h-72 bg-BlueGrey dark:bg-BlueBlack hover:scale-105 duration-ThemeDuration">
+                <div className="p-2 rounded-lg h-72 bg-BlueGrey dark:bg-BlueBlack hover:scale-[101%] duration-ThemeDuration">
                   <div className="h-[17rem]">
                     <img
                       className="object-cover w-full h-24 bg-center rounded-lg "
@@ -118,6 +118,9 @@ const ClubTiles = ({
                           {club.name}
                         </h1>
                         <div className="flex flex-row space-x-2 overflow-x-scroll scrollbar-none">
+                          {club.tags.length !== 0 && (
+                            <h1 className="text-sm font-bold">recruiting: </h1>
+                          )}
                           {club.tags.map((tag, i) => {
                             return (
                               <div
