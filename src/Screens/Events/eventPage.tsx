@@ -4,15 +4,17 @@ import SearchBar from "../Discover/components/searchbar";
 // import EventOfTheDay from "./components/eventsOfDay";
 import EventsFilter from "./components/filter";
 
-import { TagsData } from "../../Data/dataTypes";
+import { TagsData, longStr } from "../../Data/dataTypes";
 import EventTiles from "./components/eventTiles";
 import EventsType from "./components/eventType";
 import CommonFooter from "../../Components/commonFooter";
+import DetailedEventTile from "./components/detailedEventTile";
 
 const EventPage = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [purpose, setPurpose] = useState("EventsOfDay");
+  const [showEvent, setShowEvent] = useState(false);
 
   const handleSearch = (query: string) => {
     setSearchInput(query);
@@ -29,9 +31,20 @@ const EventPage = () => {
     setPurpose(type);
   };
 
+  const event = {
+    name: "Digital Society UNSW",
+    description: longStr,
+    event: "Digital Something Event",
+    logo: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
+    banner: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
+    tags: ["paid", "no-food"],
+    categories: ["Academic/Career"],
+  };
+
   return (
     <>
       <div className="flex flex-col justify-between w-full h-screen bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+        {showEvent && <DetailedEventTile eventInfo={event} />}
         <div className="bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
           <Navbar />
           <div className="flex flex-row w-full px-2 mx-auto my-4 h-fit max-w-screen-xxl md:space-x-4 md:px-4">
@@ -62,6 +75,9 @@ const EventPage = () => {
                   showFilter ? "hidden md:block" : "block"
                 }`}
               >
+                <button onClick={() => setShowEvent(!showEvent)}>
+                  Click Me !
+                </button>
                 <EventTiles purpose={purpose} />
               </div>
               <div

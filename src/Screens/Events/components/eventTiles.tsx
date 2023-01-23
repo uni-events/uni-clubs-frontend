@@ -1,4 +1,5 @@
 import { longStr } from "../../../Data/dataTypes";
+import DetailedEventTile from "./detailedEventTile";
 import SingleEventTile from "./singleEventTile";
 
 const EventTiles = ({ purpose }: { purpose: string }) => {

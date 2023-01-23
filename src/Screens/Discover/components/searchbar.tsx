@@ -16,7 +16,7 @@ const SearchBar = ({
   return (
     <>
       <form
-        className="flex items-center w-full drop-shadow-sm"
+        className="z-0 flex items-center w-full drop-shadow-sm"
         onSubmit={handleFormSubmit}
       >
         <div className="relative w-full">
