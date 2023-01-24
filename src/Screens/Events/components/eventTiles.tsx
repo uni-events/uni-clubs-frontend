@@ -1,9 +1,16 @@
+import { useState } from "react";
 import { longStr } from "../../../Data/dataTypes";
-import DetailedEventTile from "./detailedEventTile";
 import SingleEventTile from "./singleEventTile";
 
-const EventTiles = ({ purpose }: { purpose: string }) => {
+const EventTiles = ({
+  purpose,
+  onChange,
+}: {
+  purpose: string;
+  onChange: Function;
+}) => {
   const eventDetails: {
+    clubStr: string;
     name: string;
     description: string;
     logo: string;
@@ -13,6 +20,7 @@ const EventTiles = ({ purpose }: { purpose: string }) => {
     categories: string[];
   }[] = [
     {
+      clubStr: "catsoc",
       name: "Cat Appreciation Society",
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
@@ -23,6 +31,7 @@ const EventTiles = ({ purpose }: { purpose: string }) => {
     },
 
     {
+      clubStr: "csesoc",
       name: "CSE Society",
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
@@ -32,6 +41,7 @@ const EventTiles = ({ purpose }: { purpose: string }) => {
       categories: ["Academic/Career"],
     },
     {
+      clubStr: "cserevue",
       name: "Computer Science and Engineering Revue",
       description: longStr,
       event: "Standup Session",
@@ -41,6 +51,7 @@ const EventTiles = ({ purpose }: { purpose: string }) => {
       categories: ["Hobby"],
     },
     {
+      clubStr: "dogsoc",
       name: "Dog Appreciation Society",
       description: longStr,
       event: "Dog Petting Stall",
@@ -50,6 +61,7 @@ const EventTiles = ({ purpose }: { purpose: string }) => {
       categories: ["Hobby"],
     },
     {
+      clubStr: "digisoc",
       name: "Digital Society UNSW",
       description: longStr,
       event: "Digital Something Event",
@@ -59,19 +71,29 @@ const EventTiles = ({ purpose }: { purpose: string }) => {
       categories: ["Academic/Career"],
     },
   ];
+  const [eventSelection, setEventSelection] = useState(eventDetails[0]);
+  const handleSelection = (event: any) => {
+    setEventSelection(event);
+    onChange(event);
+  };
+
   return (
     <>
       <div className="w-full pt-4 h-fit">
         {purpose === "EventsOfDay" ? (
           <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xxl:grid-cols-3">
             {eventDetails.map((event, index) => (
-              <SingleEventTile key={index} eventDetails={event} />
+              <button onClick={() => handleSelection(event)}>
+                <SingleEventTile key={index} eventDetails={event} />
+              </button>
             ))}
           </div>
         ) : (
           <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xxl:grid-cols-3">
             {eventDetails.map((event, index) => (
-              <SingleEventTile key={index} eventDetails={event} />
+              <button onClick={() => handleSelection(event)}>
+                <SingleEventTile key={index} eventDetails={event} />
+              </button>
             ))}
           </div>
         )}
