@@ -26,7 +26,7 @@ const AnnouncementPage = () => {
       <div className="bg-WhiteBG dark:bg-BlackBG">
         <Navbar />
         <div className="items-center mx-auto h-fit">
-          <DetailedEventTile eventInfo={eventDetails} />
+          {/* <DetailedEventTile eventInfo={eventDetails} /> */}
         </div>
       </div>
       <CommonFooter />

@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 const DetailedEventTile = ({
   eventInfo,
+  onChange,
 }: {
   eventInfo: {
     name: string;
@@ -10,12 +13,16 @@ const DetailedEventTile = ({
     tags: string[];
     categories: string[];
   };
+  onChange: Function;
 }) => {
   return (
     <div className="absolute z-30 flex w-full h-full bg-[rgba(0,0,0,80%)] place-content-center">
       <div className="flex flex-col items-center justify-center mx-auto">
-        <div className="w-2/4 rounded-lg h-fit hover:scale-[101%] bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
-          <button className="float-right p-3 rounded-lg ">
+        <div className="w-1/2 max-w-[1440px] rounded-lg h-fit hover:scale-[101%] bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
+          <button
+            className="float-right p-3 rounded-lg"
+            onClick={() => onChange(false)}
+          >
             <svg
               className="fill-black dark:fill-white"
               height="24"

@@ -12,7 +12,7 @@ const SingleEventTile = ({
   };
 }) => {
   return (
-    <div className="w-full rounded-lg h-fit hover:scale-[101%] bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
+    <div className=" text-left w-full rounded-lg h-fit hover:scale-[101%] bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
       <div className="w-full p-2 rounded-t-lg h-72 ">
         <img
           className="object-cover w-full h-24 bg-center rounded-lg"

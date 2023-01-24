@@ -40,12 +40,30 @@ const EventPage = () => {
     tags: ["paid", "no-food"],
     categories: ["Academic/Career"],
   };
+  const [activeEvent, setActiveEvent] = useState(event);
+  const handleEventSelection = (event: any) => {
+    setActiveEvent(event);
+    setShowEvent(true);
+  };
+  const handleClose = (doClose: boolean) => {
+    setShowEvent(doClose);
+  };
 
   return (
     <>
-      <div className="flex flex-col justify-between w-full h-screen bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
-        {showEvent && <DetailedEventTile eventInfo={event} />}
-        <div className="bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration">
+      <div
+        className={`flex flex-col justify-between w-full h-screen bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration ${
+          showEvent && "max-h-screen overflow-hidden"
+        }`}
+      >
+        {showEvent && (
+          <DetailedEventTile eventInfo={activeEvent} onChange={handleClose} />
+        )}
+        <div
+          className={`bg-WhiteBG dark:bg-BlackBG duration-ThemeDuration ${
+            showEvent && "h-screen"
+          }`}
+        >
           <Navbar />
           <div className="flex flex-row w-full px-2 mx-auto my-4 h-fit max-w-screen-xxl md:space-x-4 md:px-4">
             <div className="hidden space-y-4 md:block md:w-1/4 h-fit">
@@ -75,10 +93,7 @@ const EventPage = () => {
                   showFilter ? "hidden md:block" : "block"
                 }`}
               >
-                <button onClick={() => setShowEvent(!showEvent)}>
-                  Click Me !
-                </button>
-                <EventTiles purpose={purpose} />
+                <EventTiles purpose={purpose} onChange={handleEventSelection} />
               </div>
               <div
                 className={`w-full h-fit mt-8 space-y-4 ${
@@ -91,7 +106,9 @@ const EventPage = () => {
             </div>
           </div>
         </div>
-        <CommonFooter />
+        <div className={`${showEvent ? "hidden" : "block"}`}>
+          <CommonFooter />
+        </div>
       </div>
     </>
   );
