@@ -28,10 +28,7 @@ const SingleEventTile = ({
         <div className="flex flex-col">
           <h1 className="font-semibold text-black dark:text-white">
             Date:
-            <p className="inline text-base font-normal">
-              {" "}
-              12th December 2:00pm
-            </p>
+            <p className="inline text-base font-normal">12th December 2:00pm</p>
           </h1>
           <h1 className="font-semibold text-black dark:text-white">
             Location:&nbsp;

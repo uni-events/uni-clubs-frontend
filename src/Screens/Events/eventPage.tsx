@@ -32,6 +32,7 @@ const EventPage = () => {
   };
 
   const event = {
+    clubStr: "digisoc",
     name: "Digital Society UNSW",
     description: longStr,
     event: "Digital Something Event",

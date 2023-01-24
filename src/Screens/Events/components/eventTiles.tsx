@@ -10,6 +10,7 @@ const EventTiles = ({
   onChange: Function;
 }) => {
   const eventDetails: {
+    clubStr: string;
     name: string;
     description: string;
     logo: string;
@@ -19,6 +20,7 @@ const EventTiles = ({
     categories: string[];
   }[] = [
     {
+      clubStr: "catsoc",
       name: "Cat Appreciation Society",
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
@@ -29,6 +31,7 @@ const EventTiles = ({
     },
 
     {
+      clubStr: "csesoc",
       name: "CSE Society",
       description: longStr,
       logo: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
@@ -38,6 +41,7 @@ const EventTiles = ({
       categories: ["Academic/Career"],
     },
     {
+      clubStr: "cserevue",
       name: "Computer Science and Engineering Revue",
       description: longStr,
       event: "Standup Session",
@@ -47,6 +51,7 @@ const EventTiles = ({
       categories: ["Hobby"],
     },
     {
+      clubStr: "dogsoc",
       name: "Dog Appreciation Society",
       description: longStr,
       event: "Dog Petting Stall",
@@ -56,6 +61,7 @@ const EventTiles = ({
       categories: ["Hobby"],
     },
     {
+      clubStr: "digisoc",
       name: "Digital Society UNSW",
       description: longStr,
       event: "Digital Something Event",
