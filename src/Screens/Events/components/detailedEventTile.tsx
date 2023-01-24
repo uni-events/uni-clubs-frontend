@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const DetailedEventTile = ({
   eventInfo,
   onChange,
 }: {
   eventInfo: {
+    clubStr: string;
     name: string;
     description: string;
     logo: string;
@@ -19,9 +20,16 @@ const DetailedEventTile = ({
     <div className="absolute z-30 flex w-full h-full bg-[rgba(0,0,0,80%)] place-content-center">
       <div className="flex flex-col items-center justify-center mx-auto">
         <div className="w-1/2 max-w-[1440px] rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
-          <div className="flex justify-end w-full p-2 h-fit">
+          <div className="flex justify-between w-full p-2 h-fit">
+            <NavLink
+              to={`/club/${eventInfo.clubStr}`}
+              className="p-2 rounded-lg bg-Blue active:bg-DarkBlue"
+              onClick={() => onChange(false)}
+            >
+              <h1 className="text-lg font-semibold text-white">Club Page</h1>
+            </NavLink>
             <button
-              className="float-right p-2 rounded-lg bg-Red active:bg-DarkRed"
+              className="p-2 rounded-lg bg-Red active:bg-DarkRed"
               onClick={() => onChange(false)}
             >
               <svg
