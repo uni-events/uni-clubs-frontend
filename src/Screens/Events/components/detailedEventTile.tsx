@@ -18,22 +18,24 @@ const DetailedEventTile = ({
   return (
     <div className="absolute z-30 flex w-full h-full bg-[rgba(0,0,0,80%)] place-content-center">
       <div className="flex flex-col items-center justify-center mx-auto">
-        <div className="w-1/2 max-w-[1440px] rounded-lg h-fit hover:scale-[101%] bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
-          <button
-            className="float-right p-3 rounded-lg"
-            onClick={() => onChange(false)}
-          >
-            <svg
-              className="fill-black dark:fill-white"
-              height="24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 320 512"
+        <div className="w-1/2 max-w-[1440px] rounded-lg h-fit bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
+          <div className="flex justify-end w-full p-2 h-fit">
+            <button
+              className="float-right p-2 rounded-lg bg-Red active:bg-DarkRed"
+              onClick={() => onChange(false)}
             >
-              <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
-            </svg>
-          </button>
-          <div className="w-full p-2 h-fit ">
+              <svg
+                className="fill-white"
+                height="24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+              >
+                <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+              </svg>
+            </button>
+          </div>
+          <div className="w-full px-2 pb-2 h-fit ">
             <img
               className="object-cover w-full bg-center rounded-lg h-44"
               src={eventInfo.banner}
