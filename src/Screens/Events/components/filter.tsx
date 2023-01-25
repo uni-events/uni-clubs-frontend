@@ -1,8 +1,13 @@
 import { useState } from "react";
-import { CategoryData, FilterData, sliderOpts } from "../../../Data/dataTypes";
+import {
+  CategoryData,
+  FilterData,
+  TagsData,
+  sliderOpts,
+} from "../../../Data/dataTypes";
 
 const EventsFilter = ({ onChange }: { onChange: Function }) => {
-  const Filters: Array<FilterData> = [
+  const Filters: FilterData[] = [
     {
       name: "Free",
       opposite: "Paid",
@@ -16,7 +21,7 @@ const EventsFilter = ({ onChange }: { onChange: Function }) => {
       opposite: "No Food",
     },
   ];
-  const Categories: Array<CategoryData> = [
+  const Categories: CategoryData[] = [
     {
       name: "All",
     },
@@ -44,6 +49,7 @@ const EventsFilter = ({ onChange }: { onChange: Function }) => {
     {
       name: "International/Cultural",
     },
+
     {
       name: "Political",
     },
@@ -72,12 +78,36 @@ const EventsFilter = ({ onChange }: { onChange: Function }) => {
   });
   const [filterState, setFilterState] = useState([...BoolArrInitFilter]);
 
-  const handleFilterClick = (index: number) => {
-    filterState[index].op1 = !filterState[index].op1;
-    if (filterState[index].op2) {
+  const handleFilterClick = (index: number, option: 1 | 2) => {
+    if (option === 1) {
+      filterState[index].op1 = !filterState[index].op1;
+      if (filterState[index].op2) {
+        filterState[index].op2 = !filterState[index].op2;
+      }
+    }
+    if (option === 2) {
       filterState[index].op2 = !filterState[index].op2;
+      if (filterState[index].op1) {
+        filterState[index].op1 = !filterState[index].op1;
+      }
     }
     setFilterState([...filterState]);
+    onChange(setTags([...filterState], catState));
+  };
+
+  const setTags = (filterTags: sliderOpts[], categoryTags: boolean[]) => {
+    let tags: TagsData = {
+      filters: [],
+      categories: [],
+    };
+    categoryTags.forEach((catBool, index) => {
+      if (catBool) tags.categories.push(Categories[index].name);
+    });
+    filterTags.forEach((filter, index) => {
+      if (filter.op1) tags.filters.push(Filters[index].name);
+      if (filter.op2) tags.filters.push(Filters[index].opposite);
+    });
+    return tags;
   };
 
   const handleCategoryClick = (index: number) => {
@@ -85,14 +115,21 @@ const EventsFilter = ({ onChange }: { onChange: Function }) => {
       catState[index] = !catState[index];
       catState[0] = false;
       setCatState([...catState]);
-      // REMEMBER TO PARSE IN A DICTIONARY OF FILTER[] AND CATEGORY[]
-      onChange([...catState]);
+      onChange(setTags(filterState, [...catState]));
     }
-
     if (index === 0 || !catState.includes(true)) {
       setCatState([...BoolArrInitCategory]);
-      // REMEMBER TO PARSE IN A DICTIONARY OF FILTER[] AND CATEGORY[]
-      onChange([...BoolArrInitCategory]);
+      onChange(setTags(filterState, [...BoolArrInitCategory]));
+    }
+  };
+  const handleReset = (type: string) => {
+    if (type === "filter") {
+      setFilterState([...BoolArrInitFilter]);
+      onChange(setTags([...BoolArrInitFilter], catState));
+    }
+    if (type === "category") {
+      setCatState([...BoolArrInitCategory]);
+      onChange(setTags(filterState, [...BoolArrInitCategory]));
     }
   };
 
@@ -118,7 +155,7 @@ const EventsFilter = ({ onChange }: { onChange: Function }) => {
           <div className="flex flex-col justify-center">
             <button
               className="text-base font-bold text-center duration-150 h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed"
-              onClick={() => setFilterState([...BoolArrInitFilter])}
+              onClick={() => handleReset("filter")}
             >
               Reset
             </button>
@@ -127,38 +164,35 @@ const EventsFilter = ({ onChange }: { onChange: Function }) => {
         <div className="mt-4 space-y-2">
           {Filters.map((filters, index) => {
             return (
-              <>
-                <div className="flex flex-row space-x-2 text-base font-bold text-white">
-                  <button
-                    onClick={() => {
-                      handleFilterClick(index);
-                    }}
-                    className={`w-full rounded-lg p-1 duration-150 ${
-                      filterState[index].op1
-                        ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
-                        : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
-                    }`}
-                  >
-                    <div className="text-center">{filters.name}</div>
-                  </button>
-                  <button
-                    onClick={() => {
-                      filterState[index].op2 = !filterState[index].op2;
-                      if (filterState[index].op1) {
-                        filterState[index].op1 = !filterState[index].op1;
-                      }
-                      setFilterState([...filterState]);
-                    }}
-                    className={`w-full rounded-lg p-1 duration-150 ${
-                      filterState[index].op2
-                        ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
-                        : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
-                    }`}
-                  >
-                    <div className="text-center">{filters.opposite}</div>
-                  </button>
-                </div>
-              </>
+              <div
+                key={index}
+                className="flex flex-row space-x-2 text-base font-bold text-white"
+              >
+                <button
+                  onClick={() => {
+                    handleFilterClick(index, 1);
+                  }}
+                  className={`w-full rounded-lg p-1 duration-150 ${
+                    filterState[index].op1
+                      ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
+                      : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
+                  }`}
+                >
+                  <div className="text-center">{filters.name}</div>
+                </button>
+                <button
+                  onClick={() => {
+                    handleFilterClick(index, 2);
+                  }}
+                  className={`w-full rounded-lg p-1 duration-150 ${
+                    filterState[index].op2
+                      ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
+                      : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
+                  }`}
+                >
+                  <div className="text-center">{filters.opposite}</div>
+                </button>
+              </div>
             );
           })}
         </div>
@@ -181,7 +215,7 @@ const EventsFilter = ({ onChange }: { onChange: Function }) => {
           <div className="flex flex-col justify-center">
             <button
               className="text-base font-bold text-center duration-150 h-fit text-DarkRed hover:text-Red dark:text-Red dark:hover:text-DarkRed"
-              onClick={() => setCatState([...BoolArrInitCategory])}
+              onClick={() => handleReset("category")}
             >
               Reset
             </button>
