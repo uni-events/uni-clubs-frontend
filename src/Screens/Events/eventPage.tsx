@@ -9,12 +9,14 @@ import EventTiles from "./components/eventTiles";
 import EventsType from "./components/eventType";
 import CommonFooter from "../../Components/commonFooter";
 import DetailedEventTile from "./components/detailedEventTile";
+import { eventDetails } from "../../Data/DummyData";
 
 const EventPage = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [purpose, setPurpose] = useState("EventsOfDay");
   const [showEvent, setShowEvent] = useState(false);
+  const [eventData, setEventData] = useState(eventDetails);
 
   const handleSearch = (query: string) => {
     setSearchInput(query);
@@ -23,25 +25,57 @@ const EventPage = () => {
     filters: [],
     categories: ["All"],
   };
+
   const [tags, setTags] = useState({ ...tagsInit });
   const handleFilters = (sortTags: TagsData) => {
+    console.log(sortTags);
     setTags({ ...sortTags });
+    if (sortTags.categories.includes("All") && sortTags.filters.length === 0) {
+      setEventData([...eventDetails]);
+    } else {
+      filterEvents({ ...sortTags });
+    }
   };
+
+  const filterEvents = (filterTags: TagsData) => {
+    let filteredEventData;
+    let doReturnEvent: boolean = false;
+    filteredEventData = eventData.filter((event, index) => {
+      doReturnEvent = false;
+      // for (const tag of filterTags.filters.) {
+      //   if (event.tags.includes(tag)) {
+      //     doReturnEvent = true;
+      //   }
+      // }
+      // THIS IS FILTERING BASED ON THE REMAINING EVENTS,
+      // SO THERE NEEDS TO BE SOME WAY TO RESET BACK TO ALL EVENTS
+      // WHEN THE TAGS ARE RESET
+      for (const category of filterTags.categories) {
+        if (event.categories.includes(category)) {
+          doReturnEvent = true;
+        }
+      }
+
+      return doReturnEvent && event;
+    });
+    setEventData([...filteredEventData]);
+  };
+
   const handleEventType = (type: string) => {
     setPurpose(type);
   };
 
-  const event = {
-    clubStr: "digisoc",
-    name: "Digital Society UNSW",
-    description: longStr,
-    event: "Digital Something Event",
-    logo: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
-    banner: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
-    tags: ["paid", "no-food"],
-    categories: ["Academic/Career"],
+  const eventInit = {
+    clubStr: "",
+    name: "",
+    description: "",
+    event: "",
+    logo: "",
+    banner: "",
+    tags: ["", ""],
+    categories: [""],
   };
-  const [activeEvent, setActiveEvent] = useState(event);
+  const [activeEvent, setActiveEvent] = useState(eventInit);
   const handleEventSelection = (event: any) => {
     setActiveEvent(event);
     setShowEvent(true);
@@ -94,7 +128,11 @@ const EventPage = () => {
                   showFilter ? "hidden md:block" : "block"
                 }`}
               >
-                <EventTiles purpose={purpose} onChange={handleEventSelection} />
+                <EventTiles
+                  purpose={purpose}
+                  onChange={handleEventSelection}
+                  eventData={eventData}
+                />
               </div>
               <div
                 className={`w-full h-fit mt-8 space-y-4 ${
