@@ -28,8 +28,13 @@ const EventPage = () => {
 
   const [tags, setTags] = useState({ ...tagsInit });
   const handleFilters = (sortTags: TagsData) => {
+    console.log(sortTags);
     setTags({ ...sortTags });
-    filterEvents({ ...sortTags });
+    if (sortTags.categories.includes("All") && sortTags.filters.length === 0) {
+      setEventData([...eventDetails]);
+    } else {
+      filterEvents({ ...sortTags });
+    }
   };
 
   const filterEvents = (filterTags: TagsData) => {
