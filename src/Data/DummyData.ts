@@ -17,10 +17,9 @@ export const eventDetails: {
     logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
     banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
     event: "Cat Petting Stall",
-    tags: ["free", "no-food"],
+    tags: ["Free", "No Food", "On Campus"],
     categories: ["Hobby"],
   },
-
   {
     clubStr: "csesoc",
     name: "CSE Society",
@@ -28,7 +27,7 @@ export const eventDetails: {
     logo: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
     banner: "https://cdn.linkupevents.com.au/society/csesoc.jpg",
     event: "Weekly BBQ",
-    tags: ["free", "food"],
+    tags: ["Paid", "Food & Drinks", "Off Campus"],
     categories: ["Academic/Career"],
   },
   {
@@ -38,7 +37,7 @@ export const eventDetails: {
     event: "Standup Session",
     logo: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
     banner: "https://cdn.linkupevents.com.au/society/cserevue.jpg",
-    tags: ["free", "no-food"],
+    tags: ["Free", "No Food", "Off Campus"],
     categories: ["Hobby"],
   },
   {
@@ -48,7 +47,7 @@ export const eventDetails: {
     event: "Dog Petting Stall",
     logo: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
     banner: "https://cdn.linkupevents.com.au/society/unswdogsoc.jpg",
-    tags: ["free", "food"],
+    tags: ["Free", "Food & Drinks", "On Campus"],
     categories: ["Hobby"],
   },
   {
@@ -58,7 +57,7 @@ export const eventDetails: {
     event: "Digital Something Event",
     logo: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
     banner: "https://cdn.linkupevents.com.au/society/unswdigitalsociety.jpg",
-    tags: ["paid", "no-food"],
+    tags: ["Paid", "No Food", "On Campus"],
     categories: ["Academic/Career"],
   },
 ];

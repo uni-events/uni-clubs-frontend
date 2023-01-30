@@ -11,7 +11,20 @@ const AdminReview = () => {
       rating: 4,
       eventName: "Weekly Meetup",
       dateSent: new Date(),
-      content: longStr,
+      content:
+        longStr +
+        longStr +
+        longStr +
+        longStr +
+        longStr +
+        longStr +
+        longStr +
+        longStr +
+        longStr +
+        longStr +
+        longStr +
+        longStr +
+        longStr,
     },
     {
       author: "anon",
