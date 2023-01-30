@@ -28,7 +28,6 @@ const EventPage = () => {
 
   const [tags, setTags] = useState({ ...tagsInit });
   const handleFilters = (sortTags: TagsData) => {
-    console.log(sortTags);
     setTags({ ...sortTags });
     if (sortTags.categories.includes("All") && sortTags.filters.length === 0) {
       setEventData([...eventDetails]);
@@ -39,25 +38,36 @@ const EventPage = () => {
 
   const filterEvents = (filterTags: TagsData) => {
     let filteredEventData;
-    let doReturnEvent: boolean = false;
-    filteredEventData = eventData.filter((event, index) => {
-      doReturnEvent = false;
-      // for (const tag of filterTags.filters.) {
-      //   if (event.tags.includes(tag)) {
-      //     doReturnEvent = true;
-      //   }
-      // }
-      // THIS IS FILTERING BASED ON THE REMAINING EVENTS,
-      // SO THERE NEEDS TO BE SOME WAY TO RESET BACK TO ALL EVENTS
-      // WHEN THE TAGS ARE RESET
+    let doReturnEventFinal: boolean = true;
+    // first filtering based on categories
+    filteredEventData = eventDetails.filter((event, index) => {
+      if (filterTags.categories.includes("All")) {
+        return event;
+      }
+      doReturnEventFinal = false;
       for (const category of filterTags.categories) {
         if (event.categories.includes(category)) {
-          doReturnEvent = true;
+          doReturnEventFinal = true;
         }
       }
-
-      return doReturnEvent && event;
+      return doReturnEventFinal && event;
     });
+    // then filtering based on filter tags
+    filteredEventData = filteredEventData.filter((event, index) => {
+      doReturnEventFinal = true;
+      // if no filters apply return all events
+      if (filterTags.filters.length === 0) {
+        return event;
+      }
+      for (const tag of filterTags.filters) {
+        if (event.tags.includes(tag)) {
+        } else {
+          doReturnEventFinal = false;
+        }
+      }
+      return doReturnEventFinal && event;
+    });
+
     setEventData([...filteredEventData]);
   };
 
