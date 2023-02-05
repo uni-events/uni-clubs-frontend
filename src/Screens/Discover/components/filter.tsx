@@ -152,22 +152,23 @@ const DiscoverFilter = ({ onChange }: { onChange: Function }) => {
         <div className="mt-4 space-y-2">
           {Filters.map((filters, index) => {
             return (
-              <>
-                <div className="flex flex-row space-x-4 text-base font-bold text-center text-white">
-                  <button
-                    onClick={() => {
-                      handleFilterClick(index);
-                    }}
-                    className={`w-full rounded-lg p-1 duration-150 ${
-                      filterState[index]
-                        ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
-                        : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
-                    }`}
-                  >
-                    <div>{filters.name}</div>
-                  </button>
-                </div>
-              </>
+              <div
+                className="flex flex-row space-x-4 text-base font-bold text-center text-white"
+                key={index}
+              >
+                <button
+                  onClick={() => {
+                    handleFilterClick(index);
+                  }}
+                  className={`w-full rounded-lg p-1 duration-150 ${
+                    filterState[index]
+                      ? "bg-Green hover:bg-DarkGreen active:bg-DarkBlue"
+                      : "bg-Blue hover:bg-DarkBlue active:bg-DarkGreen"
+                  }`}
+                >
+                  <div>{filters.name}</div>
+                </button>
+              </div>
             );
           })}
         </div>
