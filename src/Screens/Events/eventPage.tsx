@@ -9,7 +9,11 @@ import EventTiles from "./components/eventTiles";
 import EventsType from "./components/eventType";
 import CommonFooter from "../../Components/commonFooter";
 import DetailedEventTile from "./components/detailedEventTile";
+
+import axios from "axios";
+import { BackendURL } from "../../Data/config";
 import { eventDetails } from "../../Data/DummyData";
+axios.defaults.baseURL = BackendURL;
 
 const EventPage = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -17,6 +21,15 @@ const EventPage = () => {
   const [purpose, setPurpose] = useState("EventsOfDay");
   const [showEvent, setShowEvent] = useState(false);
   const [eventData, setEventData] = useState(eventDetails);
+
+  axios
+    .get("/events-data")
+    .then((response) => {
+      setEventData(response.data);
+    })
+    .catch((error) => {
+      console.log("encountered while fetching event details: ", error.message);
+    });
 
   const handleSearch = (query: string) => {
     setSearchInput(query);
