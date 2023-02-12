@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { ClubTileData, longStr } from "../../../../Data/dataTypes";
 import axios from "axios";
 import { useState } from "react";
+import { ClubDataTemp } from "../../../../Data/ClubData";
 
 const ClubTiles = ({
   searchQuery,
@@ -22,16 +23,25 @@ const ClubTiles = ({
       tags: [],
       categories: ["All"],
     },
+    {
+      clubStr: "initclub",
+      name: "Club Name",
+      description: "Club Description",
+      logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
+      banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
+      tags: [],
+      categories: ["All"],
+    },
   ];
-  const [ClubData, setClubData] = useState(ClubDataInit);
-  axios
-    .get("/club-data")
-    .then((response) => {
-      setClubData(response.data);
-    })
-    .catch((error) => {
-      console.log("encountered while fetching event details: ", error.message);
-    });
+  const [ClubData, setClubData] = useState(ClubDataTemp);
+  // axios
+  //   .get("/clubs-data")
+  //   .then((response) => {
+  //     setClubData(response.data);
+  //   })
+  //   .catch((error) => {
+  //     console.log("encountered while fetching event details: ", error.message);
+  //   });
 
   // filters results based on search input words and queries
   let filteredList: ClubTileData[] = ClubData.filter((club) => {
