@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { ClubTileData, longStr } from "../../../../Data/dataTypes";
 import axios from "axios";
-import { useState } from "react";
-import { ClubDataTemp } from "../../../../Data/ClubData";
+import { useEffect, useState } from "react";
+import { ClubDataInit } from "../../../../Data/InitialiseData";
 
 const ClubTiles = ({
   searchQuery,
@@ -13,35 +13,19 @@ const ClubTiles = ({
   filterTags: string[];
   categoryTags: string[];
 }) => {
-  let ClubDataInit: ClubTileData[] = [
-    {
-      clubStr: "initclub",
-      name: "Club Name",
-      description: "Club Description",
-      logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
-      tags: [],
-      categories: ["All"],
-    },
-    {
-      clubStr: "initclub",
-      name: "Club Name",
-      description: "Club Description",
-      logo: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
-      banner: "https://cdn.linkupevents.com.au/society/unswcatsoc.jpg",
-      tags: [],
-      categories: ["All"],
-    },
-  ];
-  const [ClubData, setClubData] = useState(ClubDataTemp);
-  // axios
-  //   .get("/clubs-data")
-  //   .then((response) => {
-  //     setClubData(response.data);
-  //   })
-  //   .catch((error) => {
-  //     console.log("encountered while fetching event details: ", error.message);
-  //   });
+  const [ClubData, setClubData] = useState(ClubDataInit);
+  const [isLoadingData, setIsLoadingData] = useState(true);
+  useEffect(() => {
+    axios
+      .get("/clubs-data")
+      .then((response) => {
+        setClubData(response.data);
+        setIsLoadingData(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [isLoadingData]);
 
   // filters results based on search input words and queries
   let filteredList: ClubTileData[] = ClubData.filter((club) => {
@@ -80,9 +64,9 @@ const ClubTiles = ({
   return (
     <>
       <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {ClubData[0].clubStr === "initclub"
+        {isLoadingData
           ? [...Array(10)].map((e, i) => (
-              <NavLink to={`/discover`} className="opacity-70">
+              <NavLink to={`/discover`} className="opacity-70" key={i}>
                 <div className="p-2 rounded-lg h-72 bg-BlueGrey dark:bg-BlueBlack duration-ThemeDuration">
                   <div className="h-[17rem]">
                     <div className="object-cover w-full h-24 bg-center rounded-lg bg-slate-400 dark:bg-slate-500" />
