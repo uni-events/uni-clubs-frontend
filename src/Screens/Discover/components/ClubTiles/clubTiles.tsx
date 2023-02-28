@@ -122,12 +122,14 @@ const ClubTiles = ({
                           </div>
                         </div>
                         <p
-                          className={`w-full pr-1 text-sm md:text-base text-black dark:text-white whitespace-pre-wrap overflow-y-scroll 
+                          className={`
+                          ${club.tags.length === 0 ? "h-4/5" : "h-3/5 mt-1"}
+                          w-full pr-1 text-sm md:text-base text-black dark:text-white
                           scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey scrollbar-thumb-rounded-2xl
-                          ${club.tags.length === 0 ? "h-4/5 " : "h-3/5 mt-1"}
+                          whitespace-pre-wrap overflow-y-scroll
                           `}
                         >
-                          {club.description}
+                          {club.description.substring(0, 140)}...
                         </p>
                       </div>
                     </div>
