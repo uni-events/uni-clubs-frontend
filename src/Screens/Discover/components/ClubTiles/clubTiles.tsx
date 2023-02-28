@@ -63,7 +63,7 @@ const ClubTiles = ({
 
   return (
     <>
-      <div className="grid w-full grid-flow-row gap-4 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="grid w-full grid-flow-row gap-8 xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {isLoadingData
           ? [...Array(10)].map((e, i) => (
               <NavLink to={`/discover`} className="opacity-70" key={i}>
@@ -122,11 +122,14 @@ const ClubTiles = ({
                           </div>
                         </div>
                         <p
-                          className={`w-full pr-1 overflow-y-scroll text-sm md:text-base text-black whitespace-pre-wrap dark:text-white scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey scrollbar-thumb-rounded-2xl ${
-                            club.tags.length === 0 ? "h-4/5 " : "h-3/5 mt-1"
-                          }`}
+                          className={`
+                          ${club.tags.length === 0 ? "h-4/5" : "h-3/5 mt-1"}
+                          w-full pr-1 text-sm md:text-base text-black dark:text-white
+                          scrollbar-thin scrollbar-track-transparent scrollbar-thumb-DarkBlueGrey scrollbar-thumb-rounded-2xl
+                          whitespace-pre-wrap overflow-y-scroll
+                          `}
                         >
-                          {club.description}
+                          {club.description.substring(0, 140)}...
                         </p>
                       </div>
                     </div>
