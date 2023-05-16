@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { NavLink } from "react-router-dom";
 import { Toggle } from "../Theme/toggle";
 const Navbar = () => {
+  const [displayOpts, setDisplayOpts] = useState(false);
   return (
     <>
-      <nav className="sticky top-0 z-30 w-full p-4 bg-opacity-90 backdrop-blur-sm duration-ThemeDuration bg-WhiteBG dark:bg-BlackBG h-fit ">
+      <nav className="sticky top-0 z-30 w-full p-4 bg-opacity-90 backdrop-blur-sm duration-ThemeDuration bg-WhiteBG dark:bg-BlackBG h-fit">
         <div className="flex items-center justify-between">
-          <button className="h-full p-2 w-fit md:hidden">
+          <button
+            onClick={() => setDisplayOpts(!displayOpts)}
+            className="h-full p-2 w-fit md:hidden"
+          >
             <svg
               className="fill-Blue"
               xmlns="http://www.w3.org/2000/svg"
@@ -71,6 +75,17 @@ const Navbar = () => {
             </button>
           </div>
         </div>
+        {displayOpts && (
+          <div className="flex flex-col py-8 space-y-8 text-xl font-semibold text-center bg-WhiteBG dark:bg-BlackBG dark:text-WhiteBG text-Blue">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/discover">Discover</NavLink>
+            <NavLink to="/events">Events</NavLink>
+            <NavLink to="/Announcements">Announcements</NavLink>
+            <div className="text-black dark:text-white">
+              <Toggle />
+            </div>
+          </div>
+        )}
       </nav>
     </>
   );

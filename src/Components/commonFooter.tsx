@@ -7,7 +7,7 @@ const CommonFooter = () => {
     "Click to Copy Discord Tag!"
   );
   const handleClick = () => {
-    navigator.clipboard.writeText("Hehe#6969");
+    navigator.clipboard.writeText("Hehe#7505");
     setTooltipContent("Copied Discord Tag!");
     setTimeout(() => {
       setTooltipContent("Click to Copy Discord Tag!");
