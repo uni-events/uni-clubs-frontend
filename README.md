@@ -25,4 +25,4 @@ for now though, this is what I've created during my first year at university usi
 - Typescript
 - TailwindCSS
 
-and deployed using Vercel accessible here: 
+and deployed using Vercel accessible here: https://uniclubs.vercel.app
