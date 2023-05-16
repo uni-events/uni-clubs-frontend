@@ -1,13 +1,28 @@
-# Uni Club and Events Tracking Website
+# University Club and Events Discovery Website
 
-## Features List
+## Current Features List
 
-### MVP
+### User Features
 
 - Discover Clubs Page
-- Club Admin Page
+- Exclusive Club Page diplaying data of a single club
+- Discover Events Page
 
-### Extended MVP
+### Club Admin Features
 
-- Events Page
-- Map Page
+- Dashboard with summary of club status
+- Club Details page, where admin can edit club displayed data
+- Manage Events page, where admin can create or edit events
+- Review Inbox, where admin can view incoming reviews
+
+## Extra Reading
+
+I developed this over my 2022 First Year Summer Holidays, to provide an alternative to accessing UNSW's Arc website which was undergoing changed at the time. I wished to provide further functionality like if there was free food etc, or sortable tags if the club was recruiting new Executives, Directors or Subcommittee. This was designed to help first years make their way into societies, but I realised that I needed a lot more web dev knowledge to make it fully functional.
+
+for now though, this is what I've created during my first year at university using
+
+- ReactJS
+- Typescript
+- TailwindCSS
+
+and deployed using Vercel accessible here: 
