@@ -1,36 +1,22 @@
 import { useState } from "react";
 import Navbar from "../../Components/navbar";
 import SearchBar from "../Discover/components/searchbar";
-// import EventOfTheDay from "./components/eventsOfDay";
 import EventsFilter from "./components/filter";
 
-import { TagsData, longStr } from "../../Data/dataTypes";
+import { TagsData } from "../../Data/dataTypes";
 import EventTiles from "./components/eventTiles";
 import EventsType from "./components/eventType";
 import CommonFooter from "../../Components/commonFooter";
 import DetailedEventTile from "./components/detailedEventTile";
 
-import axios from "axios";
-import { BackendURL } from "../../Data/config";
-import { eventDetails } from "../../Data/DummyData";
-axios.defaults.baseURL = BackendURL;
+import { eventDetailsDummy } from "../../Data/DummyData";
 
 const EventPage = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [purpose, setPurpose] = useState("EventsOfDay");
   const [showEvent, setShowEvent] = useState(false);
-  const [eventData, setEventData] = useState(eventDetails);
-
-  axios
-    .get("/events-data")
-    .then((response) => {
-      setEventData(response.data);
-    })
-    .catch((error) => {
-      console.log("encountered while fetching event details: ", error.message);
-    });
-
+  const [eventData, setEventData] = useState(eventDetailsDummy);
   const handleSearch = (query: string) => {
     setSearchInput(query);
   };
@@ -43,7 +29,7 @@ const EventPage = () => {
   const handleFilters = (sortTags: TagsData) => {
     setTags({ ...sortTags });
     if (sortTags.categories.includes("All") && sortTags.filters.length === 0) {
-      setEventData([...eventDetails]);
+      setEventData([...eventDetailsDummy]);
     } else {
       filterEvents({ ...sortTags });
     }
@@ -53,7 +39,7 @@ const EventPage = () => {
     let filteredEventData;
     let doReturnEventFinal: boolean = true;
     // first filtering based on categories
-    filteredEventData = eventDetails.filter((event, index) => {
+    filteredEventData = eventDetailsDummy.filter((event, index) => {
       if (filterTags.categories.includes("All")) {
         return event;
       }
