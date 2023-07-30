@@ -1,11 +1,14 @@
 # University Club and Events Discovery Website
 
+This Repository is archived due to UNSW ARC's image urls not working anymore making this website rather hard to look at,
+The scraper used to retrieve this data will also be archived due to image sources changing.
+
 ## Current Features List
 
 ### User Features
 
 - Discover Clubs Page
-- Exclusive Club Page diplaying data of a single club
+- Exclusive Club Page displaying data of a single club
 - Discover Events Page
 
 ### Club Admin Features
@@ -17,7 +20,7 @@
 
 ## Extra Reading
 
-I developed this over my 2022 First Year Summer Holidays, to provide an alternative to accessing UNSW's Arc website which was undergoing changed at the time. I wished to provide further functionality like if there was free food etc, or sortable tags if the club was recruiting new Executives, Directors or Subcommittee. This was designed to help first years make their way into societies, but I realised that I needed a lot more web dev knowledge to make it fully functional.
+I developed this over my 2022 First Year Summer Holidays, to provide an alternative to accessing UNSW's Arc website which was undergoing changes at the time. I wished to provide further functionality like if there was free food etc, or sortable tags if the club was recruiting new Executives, Directors or Subcommittee. This was designed to help first years make their way into societies, but I realised that I needed a lot more web dev knowledge to make it fully functional.
 
 for now though, this is what I've created during my first year at university using
 
